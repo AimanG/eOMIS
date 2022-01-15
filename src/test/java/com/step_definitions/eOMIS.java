@@ -6,6 +6,7 @@ import com.utilities.Pages;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.interactions.Actions;
 
 
 import javax.swing.*;
@@ -30,7 +31,10 @@ public class eOMIS {
     @Then("Click Landing Page menu")
     public void click_landing_page_menu() {
         Driver.getDriver().manage().window().maximize();
-        pages.getLoginPage().offenderDOCLookup.click();
+        pages.getLandingPage().offenderDOCLookup.click();
+        pages.getLandingPage().DOC177618.click();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(pages.getLandingPage().hamburger).perform();
 
 
     }
