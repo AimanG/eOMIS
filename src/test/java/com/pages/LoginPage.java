@@ -19,5 +19,8 @@ public class LoginPage {
     @FindBy(xpath = "//button[@id='buttonLogon']")
     public WebElement logon;
 
+    @FindBy(xpath = "//form[@name='OffenderLookupForm']/div/div[2]/div/span/span[1]/span/span[1]")
+    public WebElement offenderDOCLookup;
+
 
 }

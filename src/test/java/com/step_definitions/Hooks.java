@@ -1,6 +1,6 @@
 package com.step_definitions;
 import com.utilities.Driver;
-import io.cucumber.java.Scenario;
+import io.cucumber.core.api.Scenario;
 import org.junit.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
