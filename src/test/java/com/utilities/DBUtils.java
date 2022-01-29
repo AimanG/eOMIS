@@ -11,7 +11,6 @@ public class DBUtils {
     public static ResultSet resultSet;
 
 
-
     public static void setQuery(String query) {
         try {
             connection = DriverManager.getConnection(ConfigurationReader.getProperties("dburl"), ConfigurationReader.getProperties("db.username"),

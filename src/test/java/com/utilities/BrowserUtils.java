@@ -1,9 +1,11 @@
 package com.utilities;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -14,13 +16,24 @@ import java.util.*;
 import java.util.List;
 import java.util.function.Function;
 
-public class BrowserUtils extends DBUtils  {
+public class BrowserUtils extends DBUtils {
+
     public static void wait(int secs) {
         try {
             Thread.sleep(1000 * secs);
         } catch (InterruptedException e) {
         }
     }
+
+    public static void switchToIFrameByWebElement(WebElement element){
+        Driver.getDriver().switchTo().frame(element);
+    };
+
+    public static void switchToIFrameByID(String iFrameID){
+        Driver.getDriver().switchTo().frame(iFrameID);
+    };
+
+
     /**
      * Generates the String path to the screenshot taken.
      * Within the method, the screenshot is taken and is saved into FileUtils.
@@ -45,6 +58,7 @@ public class BrowserUtils extends DBUtils  {
         }
         return target;
     }
+
     /*
      * switches to new window by the exact title
      * returns to original window if windows with given title not found
@@ -169,6 +183,7 @@ public class BrowserUtils extends DBUtils  {
 //
 //        }
 //    }element
+
     /**
      * Waits for element to be not stale
      *
@@ -198,6 +213,7 @@ public class BrowserUtils extends DBUtils  {
                 }
         }
     }
+
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
      *
@@ -239,6 +255,7 @@ public class BrowserUtils extends DBUtils  {
     public void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
+
     /**
      * Changes the HTML attribute of a Web Element to the given value using JavaScript
      *
@@ -249,6 +266,7 @@ public class BrowserUtils extends DBUtils  {
     public void setAttribute(WebElement element, String attributeName, String attributeValue) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
     }
+
     /**
      * @param element
      * @param check
@@ -275,6 +293,7 @@ public class BrowserUtils extends DBUtils  {
         Arrays.sort(trans);
         return trans;
     }
+
     public static void grabHold(WebDriver driver, String parentHandle) {
         /* /NOTE: Be sure to set -> String parentHandle=driver.getWindowHandle(); prior to the action preceding method deployment */
         Set<String> windows = driver.getWindowHandles();
@@ -339,7 +358,7 @@ public class BrowserUtils extends DBUtils  {
         return elementVisible;
     }
 
-    public static void highLightingElement(WebDriver driver, WebElement target){
-        ((JavascriptExecutor)driver).executeScript ("arguments[0].style.border='3px solid red'", target );
+    public static void highLightingElement(WebDriver driver, WebElement target) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", target);
     }
 }

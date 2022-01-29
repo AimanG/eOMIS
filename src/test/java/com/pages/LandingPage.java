@@ -18,13 +18,23 @@ public class LandingPage {
     public WebElement DOC177618;
 
     @FindBy(xpath = "//ul/li/small/a/i[@class='fa fa-bars']")
-    public WebElement hamburger;
+    public WebElement hamburgerMenu;
+
+    @FindBy(xpath = "//a[text()='Offender']")
+    public WebElement offenderFunctionalAreaButton;
 
     @FindBy(xpath = "//nav/ul/li[4]/a[@role='menuitem']")
     public WebElement offenderAssessments;
 
-    @FindBy(xpath = "//li/a[@id='link-8474']")
+    @FindBy(xpath = "//*[contains(text(), 'LSI Assessments')]")
     public WebElement lsiAssessments;
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement offenderDOCLookupSearch;
+
+
+
+
 
 
 

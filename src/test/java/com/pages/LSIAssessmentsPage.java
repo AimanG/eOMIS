@@ -11,8 +11,18 @@ public class LSIAssessmentsPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//div/input[@value='New']")
+    @FindBy(xpath = "//input[@type='submit']")
     public WebElement newButton;
+
+    @FindBy(xpath = "//div[@id='divHeaderContainer']/div/div/div/h4/small/code[3]/span")
+    public WebElement DOCNumber;
+
+    @FindBy(xpath = "//iframe[@id='iframeMain']")
+    public WebElement iframe;
+
+    @FindBy(xpath = "//div/table/tbody/tr/td/div/span/input[@id='lsiAssessmentStaff']")
+    public WebElement staffName;
+
 
 
 }
