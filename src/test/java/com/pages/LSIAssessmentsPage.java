@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LSIAssessmentsPage {
 
-    public LSIAssessmentsPage(){
+    public LSIAssessmentsPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -44,43 +44,50 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//li[text()='Work']")
     public WebElement workEmploymentType;
 
-    @FindBy(xpath = "//span/span[@id='select2-participationPerformanceRate-container']")
-    public WebElement participationPerformance2;
-
     @FindBy(xpath = "//select[@id='participationPerformanceRate']")
-    public WebElement participationPerformance;
+    public WebElement participationPerformanceRate;
 
     @FindBy(xpath = "//select[@id='financialProblemsRate']")
-    public WebElement problemsSY;
+    public WebElement problemsRate;
 
     @FindBy(xpath = "//select[@id='familyDissatisfiedRate']")
-    public WebElement dissatisfactionWithMaritalOrEquivalentSituation;
+    public WebElement dissatisfactionWithMaritalOrEquivalentSituationRate;
 
     @FindBy(xpath = "//select[@id='familyNonrewardParentalRate']")
-    public WebElement nonrewardingParental;
+    public WebElement nonrewardingParentalRate;
 
     @FindBy(xpath = "//select[@id='familyNonrewardOtherRate']")
-    public WebElement nonrewardingOther;
+    public WebElement nonrewardingOtherRate;
 
-    ///
+    @FindBy(xpath = "//select[@id='accomUnsatisRate']")
+    public WebElement unsatisfactoryRate;
 
+    @FindBy(xpath = "//input[@id='accomAddressChgYearCount']")
+    public WebElement numberOfAddressChanges;
 
+    @FindBy(xpath = "//select[@id='leisureUseOfTimeRate']")
+    public WebElement couldMakeBetterUseOfTimeRate;
 
+    @FindBy(xpath = "//select[@id='alcoholProbCurrentRate']")
+    public WebElement alcoholProblemCurrentlyRate;
 
+    @FindBy(xpath = "//select[@id='drugProbCurrentRate']")
+    public WebElement drugProblemCurrentlyRate;
 
+    @FindBy(xpath = "//span[text()='41. Law violation (SY, IN-2) ']")
+    public WebElement lawViolation;
 
+    @FindBy(xpath = "//select[@id='attiSupportCrimeRate']")
+    public WebElement supportiveOfCrime;
 
+    @FindBy(xpath = "//select[@id='attiUnfavorConventionRate']")
+    public WebElement unfavorableAttitudeTowardConvention;
 
+    @FindBy(xpath = "//button[@id='btnCONTINUE']")
+    public WebElement continueButton;
 
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//button[@id='btnSAVE']")
+    public WebElement saveButton;
 
 
 }

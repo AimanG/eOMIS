@@ -6,7 +6,7 @@ Feature: eOMIS
     When Click Logon button
     Then Select the Offender
     And Go to Offender -> Offender Assessments -> LSI Assessments
- #    Then Make sure DOC "190456" is displayed correctly
+    Then Make sure DOC "190456" is displayed correctly
     And Click on New button
     Then Choose Staff Name from the dropdown
     And  Choose Test Source from the dropdown
@@ -21,4 +21,13 @@ Feature: eOMIS
     Then Enter "2" for 25. Nonrewarding, other (CY)
     And Enter "1" for 27. Unsatisfactory (C)
     Then Enter "1" for Number of address changes
+    And Enter "0" for 31. Could make better use of time (CY)
+    Then Enter "1" for 39. Alcohol problem, currently (SY, IN-2)
+    And Enter "2" for 40. Drug problem, currently (SY, IN-2)
+    Then Select 41. Law violation (SY, IN-2) checkbox
+    And Enter "0" for 51. Supportive of crime (C)
+    Then Enter "1" for 52. Unfavorable attitude toward convention (C)
+    And Click Continue button
+    Then Click Save button
+
 
