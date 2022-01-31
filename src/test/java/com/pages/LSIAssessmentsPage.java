@@ -23,6 +23,18 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//div/table/tbody/tr/td/div/span/input[@id='lsiAssessmentStaff']")
     public WebElement staffName;
 
+    @FindBy(xpath = "//span[@id='select2-lsiTestSource-container']")
+    public WebElement testSource;
+
+    @FindBy(xpath = "//li[text()='DOC (Prisons)']")
+    public WebElement docPrisons;
+
+
+
+
+
+
+
 
 
 }

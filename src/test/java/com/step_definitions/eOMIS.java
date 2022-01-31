@@ -7,8 +7,12 @@ import com.utilities.Pages;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class eOMIS extends BrowserUtils {
     Pages pages = new Pages();
@@ -71,22 +75,46 @@ public class eOMIS extends BrowserUtils {
     }
     @Then("Choose Staff Name from the dropdown")
     public void choose_staff_name_from_the_dropdown() {
-        wait(3);
-        pages.getLsiAssessmentsPage().staffName.sendKeys("a");
-        pages.getLsiAssessmentsPage().staffName.clear();
-        pages.getLsiAssessmentsPage().staffName.sendKeys("ana");
-        System.out.println("unk" +        pages.getLsiAssessmentsPage().staffName.getAttribute("value"));
-       // System.out.println("unk" +        pages.getLsiAssessmentsPage().staffName.getAttribute("placeholder"));
 
-    //       pages.getLsiAssessmentsPage().staffName.getAttribute("value");
+        WebElement staffNameAnaya = pages.getLsiAssessmentsPage().staffName;
+
+        staffNameAnaya.sendKeys("a");
+        staffNameAnaya.clear();
+        staffNameAnaya.sendKeys("anaya");
+        wait(1);
+        staffNameAnaya.sendKeys(Keys.DOWN);
+        staffNameAnaya.sendKeys(Keys.ENTER);
+
     }
     @Then("Choose Test Source from the dropdown")
     public void choose_test_source_from_the_dropdown() {
-
+        WebElement testSourceDOC = pages.getLsiAssessmentsPage().testSource;
+        testSourceDOC.click();
+        pages.getLsiAssessmentsPage().docPrisons.click();
 
     }
 
+    @Then("Enter {int} for Number of adult prior convictions:")
+    public void enter_for_number_of_adult_prior_convictions(Integer int1) {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,250)", "");
     }
+
+    @Then("Enter {int} for Number of present offenses:")
+    public void enter_for_number_of_present_offenses(Integer int1) {
+
+    }
+
+    @Then("Enter {int} for Number of times punished for institutional misconduct:")
+    public void enter_for_number_of_times_punished_for_institutional_misconduct(Integer int1) {
+
+    }
+
+
+
+
+}
 //Ctrl+Alt+L
 
 
