@@ -29,6 +29,52 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//li[text()='DOC (Prisons)']")
     public WebElement docPrisons;
 
+    @FindBy(xpath = "//input[@id='priorConvictionAdultCount']")
+    public WebElement numberOfAdultPriorConvictions;
+
+    @FindBy(xpath = "//input[@id='presentOffenseCount']")
+    public WebElement numberOfPresentOffenses;
+
+    @FindBy(xpath = "//input[@id='instMisconductPunishedCount']")
+    public WebElement numberOfTimesPunishedForInstitutionalMisconduct;
+
+    @FindBy(xpath = "//span[@id='select2-lsiEmploymentEducationType-container']")
+    public WebElement employmentEducationType;
+
+    @FindBy(xpath = "//li[text()='Work']")
+    public WebElement workEmploymentType;
+
+    @FindBy(xpath = "//span/span[@id='select2-participationPerformanceRate-container']")
+    public WebElement participationPerformance2;
+
+    @FindBy(xpath = "//select[@id='participationPerformanceRate']")
+    public WebElement participationPerformance;
+
+    @FindBy(xpath = "//select[@id='financialProblemsRate']")
+    public WebElement problemsSY;
+
+    @FindBy(xpath = "//select[@id='familyDissatisfiedRate']")
+    public WebElement dissatisfactionWithMaritalOrEquivalentSituation;
+
+    @FindBy(xpath = "//select[@id='familyNonrewardParentalRate']")
+    public WebElement nonrewardingParental;
+
+    @FindBy(xpath = "//select[@id='familyNonrewardOtherRate']")
+    public WebElement nonrewardingOther;
+
+    ///
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
