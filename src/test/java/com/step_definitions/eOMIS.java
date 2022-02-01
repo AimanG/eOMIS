@@ -37,17 +37,29 @@ public class eOMIS extends BrowserUtils {
         pages.getLoginPage().logon.click();
     }
 
-    @Then("Select the Offender")
-    public void select_the_offender() {
+    @Then("Select the Offender {string}")
+    public void select_the_offender(String DOCNumber) {
 
-        logger.info("Select the Offender");
+        logger.info("Select the Offender " + DOCNumber);
 
         Driver.getDriver().manage().window().maximize();
         waitForClickability(pages.getLandingPage().offenderDOCLookup, 10);
         pages.getLandingPage().offenderDOCLookup.click();
-        pages.getLandingPage().offenderDOCLookupSearch.sendKeys("190456");
-        pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
 
+        switch (DOCNumber) {
+
+            case "190456":
+
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("190456");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
+            case "187437":
+
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("187437");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
+
+        }
     }
 
     @Then("Go to Offender -> Offender Assessments -> LSI Assessments")
@@ -68,13 +80,23 @@ public class eOMIS extends BrowserUtils {
     @Then("Make sure DOC {string} is displayed correctly")
     public void make_sure_doc_is_displayed_correctly(String DOCNumber) {
 
-        logger.info("Make sure DOC {string} is displayed correctly");
+        logger.info("Make sure DOC " + DOCNumber + " is displayed correctly");
 //        switchToIFrameByID("iframeMain");
         wait(1);
         switchToIFrameByWebElement(pages.getLsiAssessmentsPage().iframe);
         String DOCNumberOnThePage = pages.getLsiAssessmentsPage().DOCNumber.getText();
-        System.out.println(DOCNumberOnThePage);
-        Assert.assertEquals(DOCNumber, DOCNumberOnThePage);
+
+        switch (DOCNumber) {
+            case "190456":
+                Assert.assertEquals("190456", DOCNumberOnThePage);
+                System.out.println(DOCNumberOnThePage);
+                break;
+
+            case "187437":
+                Assert.assertEquals("187437", DOCNumberOnThePage);
+                System.out.println(DOCNumberOnThePage);
+                break;
+        }
     }
 
     @Then("Click on New button")
@@ -282,6 +304,96 @@ public class eOMIS extends BrowserUtils {
         logger.info("Click Save button");
         pages.getLsiAssessmentsPage().saveButton.click();
         Driver.getDriver().switchTo().alert().accept();
+    }
+
+
+    @Given("Enter Nurse User ID and Password at DeCORuM login screen")
+    public void enter_nurse_user_id_and_password_at_de_co_ru_m_login_screen() {
+
+        logger.info("Enter Nurse User ID and Password at DeCORuM login screen");
+        Driver.getDriver().get(ConfigurationReader.getProperties("url"));
+        pages.getLoginPage().userId.sendKeys("NTESTR");
+        pages.getLoginPage().password.sendKeys("pepsi123");
+    }
+
+
+    @Then("Go to Health -> Nursing -> Nursing Encounters")
+    public void go_to_health_nursing_nursing_encounters() {
+        logger.info("Go to Health -> Nursing -> Nursing Encounters");
+        Driver.getDriver().manage().window().maximize();
+
+        pages.getLandingPage().nursing.click();
+        pages.getLandingPage().nursingEncounters.click();
+
+    }
+
+    @Then("Click on a New button in Health Services Encounters")
+    public void click_on_a_new_button_in_health_services_encounters() {
+
+        logger.info("Click on a New button in Health Services Encounters");
+        pages.getNursingEncountersPage().newButton.click();
+    }
+
+    @Then("Select the Complex - Bent County Correctional Facility")
+    public void select_the_complex() {
+
+        logger.info("Select the Complex");
+        Select select = new Select(pages.getNursingEncountersPage().complex);
+        select.selectByValue("100000009");
+    }
+
+    @Then("Select the Type - Administrative - Nursing")
+    public void select_the_type() {
+
+        logger.info("Select the Type");
+        Select select = new Select(pages.getNursingEncountersPage().type);
+        select.selectByValue("HT04");
+
+    }
+
+    @Then("Click Next button")
+    public void click_next_button() {
+
+        logger.info("Click Next button");
+        pages.getNursingEncountersPage().nextButton.click();
+
+    }
+
+    @Then("Select Related Health Service Requests")
+    public void select_related_health_service_requests() {
+
+        logger.info("Select Related Health Service Requests");
+    }
+
+    @Then("Add Timestamp to Subjective Notes")
+    public void add_timestamp_to_subjective_notes() {
+
+        logger.info("Add Timestamp to Subjective Notes");
+        pages.getNursingEncountersPage().timestamp.click();
+    }
+
+    @Then("Verify Medical Health Score displayed correctly in Header")
+    public void verify_medical_health_score_displayed_correctly_in_header() {
+
+    }
+
+    @Then("Verify Dental Health Score displayed correctly in Header")
+    public void verify_dental_health_score_displayed_correctly_in_header() {
+
+    }
+
+    @Then("Verify Psychological Health Score displayed correctly in Header")
+    public void verify_psychological_health_score_displayed_correctly_in_header() {
+    }
+
+    @Then("Verify ID Health Score displayed correctly in Header")
+    public void verify_id_health_score_displayed_correctly_in_header() {
+
+    }
+
+    @Then("Verify Sex Offender Health Score displayed correctly in Header")
+    public void verify_sex_offender_health_score_displayed_correctly_in_header() {
+
     }
 
 

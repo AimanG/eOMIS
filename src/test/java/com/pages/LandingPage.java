@@ -14,9 +14,6 @@ public class LandingPage {
     @FindBy(xpath = "//form[@name='OffenderLookupForm']/div/div[2]/div/span/span[1]/span/span[1]")
     public WebElement offenderDOCLookup;
 
-    @FindBy(xpath = "//ul/li[@class='select2-results__option'][1]")
-    public WebElement DOC177618;
-
     @FindBy(xpath = "//ul/li/small/a/i[@class='fa fa-bars']")
     public WebElement hamburgerMenu;
 
@@ -31,6 +28,14 @@ public class LandingPage {
 
     @FindBy(xpath = "//input[@type='search']")
     public WebElement offenderDOCLookupSearch;
+
+    @FindBy(xpath = "//a[text()='Nursing']")
+    public WebElement nursing;
+
+    @FindBy(xpath = "//a[text()='Nursing Encounters']")
+    public WebElement nursingEncounters;
+
+
 
 
 
