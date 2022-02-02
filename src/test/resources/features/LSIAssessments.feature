@@ -1,7 +1,7 @@
-Feature: eOMIS
+Feature: LSI Assessments
 
-
-  Scenario: LSI Assessments
+@lsi
+  Scenario: Create LSI Assessment
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "190456"
@@ -30,26 +30,6 @@ Feature: eOMIS
     And Click Continue button
     Then Click Save button
 
-
-  @smoke
-  Scenario: Nursing Encounters
-    Given Enter Nurse User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "187437"
-    And Go to Health -> Nursing -> Nursing Encounters
-    Then Make sure DOC "187437" is displayed correctly
-    And Click on a New button in Health Services Encounters
-    Then Select the Complex - Bent County Correctional Facility
-    And Select the Type - Administrative - Nursing
-    Then Click Next button
-    And Select Related Health Service Requests
-    Then Add Timestamp to Subjective Notes
-#    And Click Save button
-#    Then Verify Medical Health Score displayed correctly in Header
-#    And Verify Dental Health Score displayed correctly in Header
-#    Then Verify Psychological Health Score displayed correctly in Header
-#    And Verify ID Health Score displayed correctly in Header
-#    Then Verify Sex Offender Health Score displayed correctly in Header
 
 
 
