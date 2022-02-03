@@ -44,8 +44,23 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//li[text()='Work']")
     public WebElement workEmploymentType;
 
+    @FindBy(xpath = "//li[text()='Homemaker']")
+    public WebElement homemakerEmploymentType;
+
+    @FindBy(xpath = "//li[text()='Pensioner']")
+    public WebElement pensionerEmploymentType;
+
+    @FindBy(xpath = "//li[text()='School']")
+    public WebElement schoolEmploymentType;
+
     @FindBy(xpath = "//select[@id='participationPerformanceRate']")
     public WebElement participationPerformanceRate;
+
+    @FindBy(xpath = "//select[@id='peerInteractionRate']")
+    public WebElement peerInteractionsRate;
+
+    @FindBy(xpath = "//select[@id='authorityInteractionRate']")
+    public WebElement authorityInteractionsRate;
 
     @FindBy(xpath = "//select[@id='financialProblemsRate']")
     public WebElement problemsRate;
@@ -125,7 +140,7 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[9]/td/label")
     public WebElement suspendedOrExpelledAtLeastOnceCheckbox;
 
-    @FindBy(xpath = "//div[@id='financial']//tbody/tr[1]/td/label")
+    @FindBy(xpath = "//div[@id='financial']//tbody/tr[2]/td/label")
     public WebElement relianceUponSocialAssistanceCheckbox;
 
     @FindBy(xpath = "//div[@id='familyMarital']//tbody/tr[4]/td/label")
@@ -140,8 +155,17 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//div[@id='companions']//tbody/tr[1]/td/label")
     public WebElement aSocialIsolateCheckbox;
 
+    @FindBy(xpath = "//div[@id='companions']//tbody/tr[2]/td/label")
+    public WebElement someCriminalAcquaintancesCheckbox;
+
+    @FindBy(xpath = "//div[@id='companions']//tbody/tr[3]/td/label")
+    public WebElement someCriminalFriendsCheckbox;
+
     @FindBy(xpath = "//div[@id='companions']//tbody/tr[4]/td/label")
     public WebElement veryFewPreSchoolAcquaintancesCheckbox;
+
+    @FindBy(xpath = "//div[@id='companions']//tbody/tr[5]/td/label")
+    public WebElement veryFewProSocialFriendsCheckbox;
 
     @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[1]/td/label")
     public WebElement alcoholProblemEverCheckbox;
@@ -233,8 +257,17 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//input[@name='companionIsolate']")
     public WebElement aSocialIsolateCheckboxValue;
 
+    @FindBy(xpath = "//input[@name='companionCrimAcquaintSome']")
+    public WebElement someCriminalAcquaintancesCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='companionCrimFriendSome']")
+    public WebElement someCriminalFriendsCheckboxValue;
+
     @FindBy(xpath = "//input[@name='companionAntiCrimAcquaintFew']")
     public WebElement veryFewPreSchoolAcquaintancesCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='companionAntiCrimFriendFew']")
+    public WebElement veryFewProSocialFriendsCheckboxValue;
 
     @FindBy(xpath = "//input[@name='alcoholProbEver']")
     public WebElement alcoholProblemEverCheckboxValue;

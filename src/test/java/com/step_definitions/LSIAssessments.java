@@ -75,7 +75,7 @@ public class LSIAssessments extends BrowserUtils {
     public void enter_for_number_of_adult_prior_convictions_field(String rating) {
 
         logger.info("Enter " + rating + " for Number of adult prior convictions");
-        scrollDown(250, 500);
+        scrollDown(0, 250);
 
         pages.getLsiAssessmentsPage().numberOfAdultPriorConvictions.sendKeys(rating);
     }
@@ -96,16 +96,6 @@ public class LSIAssessments extends BrowserUtils {
 
     }
 
-    @Then("Choose Work for Employment or Education Type")
-    public void choose_work_for_employment_education_type() {
-
-        logger.info("Choose Work for Employment or Education Type");
-        scrollDown(500, 700);
-
-        pages.getLsiAssessmentsPage().employmentEducationType.click();
-        pages.getLsiAssessmentsPage().workEmploymentType.click();
-
-    }
 
     @Then("Enter {string} for 18.Participation or Performance \\(C) Rating")
     public void enter_for_participation_performance_c_rating(String rating) {
@@ -159,7 +149,7 @@ public class LSIAssessments extends BrowserUtils {
     public void enter_for_unsatisfactory_c(String rating) {
 
         logger.info("Enter " + rating + " for 27. Unsatisfactory \\(C)");
-        scrollDown(80, 850);
+        scrollDown(800, 850);
 
         Select select = new Select(pages.getLsiAssessmentsPage().unsatisfactoryRate);
         select.selectByValue(rating);
@@ -240,7 +230,6 @@ public class LSIAssessments extends BrowserUtils {
 
         switch (checkbox) {
             case "5. Arrested under age 16 (L)":
-                scrollDown(250, 500);
                 System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().arrestedUnderAge16CheckboxValue));
                 Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().arrestedUnderAge16CheckboxValue));
                 break;
@@ -261,8 +250,7 @@ public class LSIAssessments extends BrowserUtils {
                 break;
 
             case "11. Currently unemployed (C)":
-                wait(2);
-                scrollDown(600, 850);
+                scrollDown(800, 1100);
                 System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().currentlyUnemployedCheckboxValue));
                 Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().currentlyUnemployedCheckboxValue));
                 break;
@@ -318,8 +306,29 @@ public class LSIAssessments extends BrowserUtils {
                 break;
 
             case "32. A social isolate (CY)":
+                scrollDown(1000, 1250);
                 System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
                 Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
+                break;
+
+            case "33. Some criminal acquaintances (CY)":
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "34. Some criminal friends (CY)" :
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "35. Very few pro-social acquaintances (CY)":
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                break;
+
+            case "36. Very few pro-social friends (CY)":
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
                 break;
 
             case "37. Alcohol problem, ever (L)":
@@ -399,7 +408,6 @@ public class LSIAssessments extends BrowserUtils {
     @Then("Check the checkbox {string}")
     public void check_the_checkbox(String checkbox) {
         logger.info("Check the checkbox " + checkbox);
-        //  scrollDown(250, 500);
 
         switch (checkbox) {
             case "5. Arrested under age 16 (L)":
@@ -469,9 +477,9 @@ public class LSIAssessments extends BrowserUtils {
                 break;
 
             case "22. Reliance upon social assistance (SY)":
-                pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckbox.click();
-                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckboxValue));
-                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckboxValue));
+                pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckboxValue));
+                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckboxValue));
                 break;
 
             case "26. Criminal family/spouse (L)":
@@ -496,6 +504,30 @@ public class LSIAssessments extends BrowserUtils {
                 pages.getLsiAssessmentsPage().aSocialIsolateCheckbox.click();
                 System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
                 Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
+                break;
+
+            case "33. Some criminal acquaintances (CY)":
+                pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "34. Some criminal friends (CY)" :
+                pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "35. Very few pro-social acquaintances (CY)":
+                pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                break;
+
+            case "36. Very few pro-social friends (CY)":
+                pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
+                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
                 break;
 
             case "37. Alcohol problem, ever (L)":
@@ -657,9 +689,9 @@ public class LSIAssessments extends BrowserUtils {
                 break;
 
             case "22. Reliance upon social assistance (SY)":
-                pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckbox.click();
-                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckboxValue));
-                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().recordOfAssaultViolenceCheckboxValue));
+                pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().relianceUponSocialAssistanceCheckboxValue));
                 break;
 
             case "26. Criminal family/spouse (L)":
@@ -684,6 +716,30 @@ public class LSIAssessments extends BrowserUtils {
                 pages.getLsiAssessmentsPage().aSocialIsolateCheckbox.click();
                 System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
                 Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().aSocialIsolateCheckboxValue));
+                break;
+
+            case "33. Some criminal acquaintances (CY)":
+                pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "34. Some criminal friends (CY)" :
+                pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().someCriminalAcquaintancesCheckboxValue));
+                break;
+
+            case "35. Very few pro-social acquaintances (CY)":
+                pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().veryFewPreSchoolAcquaintancesCheckboxValue));
+                break;
+
+            case "36. Very few pro-social friends (CY)":
+                pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckbox.click();
+                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
+                Assert.assertFalse(validateCheckBox(pages.getLsiAssessmentsPage().veryFewProSocialFriendsCheckboxValue));
                 break;
 
             case "37. Alcohol problem, ever (L)":
@@ -775,18 +831,51 @@ public class LSIAssessments extends BrowserUtils {
 
     }
 
-    @Then("Select {string} for {string}")
-    public void select_for(String string, String string2) {
+    @Then("Select {string} for Employment or Education Type")
+    public void select_for(String employmentEducationType) {
+        logger.info("Select " + employmentEducationType + " for Employment or Education Type");
 
+
+        switch (employmentEducationType) {
+            case "Homemaker":
+                pages.getLsiAssessmentsPage().employmentEducationType.click();
+                pages.getLsiAssessmentsPage().homemakerEmploymentType.click();
+                break;
+            case "Pensioner":
+                pages.getLsiAssessmentsPage().employmentEducationType.click();
+                pages.getLsiAssessmentsPage().pensionerEmploymentType.click();
+                break;
+            case "School":
+                pages.getLsiAssessmentsPage().employmentEducationType.click();
+                pages.getLsiAssessmentsPage().schoolEmploymentType.click();
+                break;
+            case "Work":
+                pages.getLsiAssessmentsPage().employmentEducationType.click();
+                pages.getLsiAssessmentsPage().workEmploymentType.click();
+                break;
+        }
     }
 
-    @Then("Check if you can select a rating for question {int} only")
-    public void check_if_you_can_select_a_rating_for_question_only(Integer int1) {
-
+    @Then("Check if you can select a rating for question 18 only")
+    public void check_if_you_can_select_a_rating_for_question_only() {
+        logger.info("Check if you can select a rating for question 18 only");
+        Select participationPerformanceRate = new Select(pages.getLsiAssessmentsPage().participationPerformanceRate);
+        participationPerformanceRate.selectByValue("1");
     }
 
-    @Then("Check if you can select a rating for questions {int}, {int}, and {int}")
-    public void check_if_you_can_select_a_rating_for_questions_and(Integer int1, Integer int2, Integer int3) {
+    @Then("Check if you can select a rating for questions 18, 19, and 20")
+    public void check_if_you_can_select_a_rating_for_questions_and() {
+        logger.info("Check if you can select a rating for questions 18, 19, and 20");
+
+        Select participationPerformanceRate = new Select(pages.getLsiAssessmentsPage().participationPerformanceRate);
+        participationPerformanceRate.selectByValue("1");
+
+        Select peerInteractionsRate = new Select(pages.getLsiAssessmentsPage().peerInteractionsRate);
+        peerInteractionsRate.selectByValue("2");
+
+        Select authorityInteractionsRate = new Select(pages.getLsiAssessmentsPage().authorityInteractionsRate);
+        authorityInteractionsRate.selectByValue("3");
+
 
     }
 

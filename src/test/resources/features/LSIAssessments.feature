@@ -1,13 +1,13 @@
 Feature: LSI Assessments
 
 
-Scenario: Verify selected DOC number
-  Given Enter User ID and Password at DeCORuM login screen
-  When Click Logon button
-  Then Select the Offender "190456"
-  And Go to Offender -> Offender Assessments -> LSI Assessments
-  And Click on New button
-  Then Make sure DOC "190456" is displayed correctly
+  Scenario: Verify selected DOC number
+    Given Enter User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "190456"
+    And Go to Offender -> Offender Assessments -> LSI Assessments
+    And Click on New button
+    Then Make sure DOC "190456" is displayed correctly
   #
 
   Scenario: Verify Assessment Date
@@ -18,7 +18,6 @@ Scenario: Verify selected DOC number
     And Click on New button
     Then Make sure the Assessment date is the same as today
 #
-
   Scenario: CRIMINAL HISTORY
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -42,7 +41,6 @@ Scenario: Verify selected DOC number
     And Uncheck the checkbox "10. Record of assault/violence (L)"
 #
 
-  @lsi
   Scenario: EDUCATION/EMPLOYMENT
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -64,71 +62,99 @@ Scenario: Verify selected DOC number
     And Verify if checkbox "15. Less than regular grade 10 (L)" is unchecked by default
     Then Check the checkbox "15. Less than regular grade 10 (L)"
     And Uncheck the checkbox "15. Less than regular grade 10 (L)"
-#    And Verify if checkbox "16. Less than regular grade 12 (L)" is unchecked by default
-#    Then Check the checkbox "16. Less than regular grade 12 (L)"
-#    And Uncheck the checkbox "16. Less than regular grade 12 (L)"
+    And Verify if checkbox "16. Less than regular grade 12 (L)" is unchecked by default
+    Then Check the checkbox "16. Less than regular grade 12 (L)"
+    And Uncheck the checkbox "16. Less than regular grade 12 (L)"
     And Verify if checkbox "17. Suspended or expelled at least once (L)" is unchecked by default
     Then Check the checkbox "17. Suspended or expelled at least once (L)"
     And Uncheck the checkbox "17. Suspended or expelled at least once (L)"
-    And Select "Homemaker" for "Employment or Education Type"
+    And Select "Homemaker" for Employment or Education Type
     Then Check if you can select a rating for question 18 only
-    And Select "Pensioner" for "Employment or Education Type"
+    And Select "Pensioner" for Employment or Education Type
     Then Check if you can select a rating for question 18 only
-    And Select "School" for "Employment or Education Type"
+    And Select "School" for Employment or Education Type
     Then Check if you can select a rating for questions 18, 19, and 20
-    And Select "Work" for "Employment or Education Type"
-#    Then Check if you can select a rating for questions 18, 19, and 20
+    And Select "Work" for Employment or Education Type
+    Then Check if you can select a rating for questions 18, 19, and 20
+#
 
 
   Scenario: FINANCIAL
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
+    And Enter "1" for 21.Problems (SY) Rating
     And Verify if checkbox "22. Reliance upon social assistance (SY)" is unchecked by default
     Then Check the checkbox "22. Reliance upon social assistance (SY)"
     And Uncheck the checkbox "22. Reliance upon social assistance (SY)"
+    #
+
 
   Scenario: FAMILY/MARITAL
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
+    Then Enter "1" for 23. Dissatisfaction with marital or equivalent situation (C)
+    And Enter "2" for 24. Nonrewarding, parental (CY)
+    Then Enter "3" for 25. Nonrewarding, other (CY)
     And Verify if checkbox "26. Criminal family/spouse (L)" is unchecked by default
     Then Check the checkbox "26. Criminal family/spouse (L)"
     And Uncheck the checkbox "26. Criminal family/spouse (L)"
+        #
+
 
   Scenario: ACCOMMODATION
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
+    And Enter "1" for 27. Unsatisfactory (C)
+    Then Enter "2" for Number of address changes
     And Verify if checkbox "29. High crime neighborhood (C)" is unchecked by default
     Then Check the checkbox "29. High crime neighborhood (C)"
     And Uncheck the checkbox "29. High crime neighborhood (C)"
+#
+
 
   Scenario: LEISURE/RECREATION
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
     And Verify if checkbox "30. No recent participation in organized activity (SY, IN-2)" is unchecked by default
     Then Check the checkbox "30. No recent participation in organized activity (SY, IN-2)"
     And Uncheck the checkbox "30. No recent participation in organized activity (SY, IN-2)"
+    And Enter "0" for 31. Could make better use of time (CY)
+#
 
+  @lsi
   Scenario: COMPANIONS
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
     And Verify if checkbox "32. A social isolate (CY)" is unchecked by default
     Then Check the checkbox "32. A social isolate (CY)"
     And Uncheck the checkbox "32. A social isolate (CY)"
+    And Verify if checkbox "33. Some criminal acquaintances (CY)" is unchecked by default
+    Then Check the checkbox "33. Some criminal acquaintances (CY)"
+    And Uncheck the checkbox "33. Some criminal acquaintances (CY)"
+    And Verify if checkbox "34. Some criminal friends (CY)" is unchecked by default
+    Then Check the checkbox "34. Some criminal friends (CY)"
+    And Uncheck the checkbox "34. Some criminal friends (CY)"
+    And Verify if checkbox "35. Very few pro-social acquaintances (CY)" is unchecked by default
+    Then Check the checkbox "35. Very few pro-social acquaintances (CY)"
+    And Uncheck the checkbox "35. Very few pro-social acquaintances (CY)"
+    And Verify if checkbox "36. Very few pro-social friends (CY)" is unchecked by default
+    Then Check the checkbox "36. Very few pro-social friends (CY)"
+    And Uncheck the checkbox "36. Very few pro-social friends (CY)"
 
   Scenario: ALCOHOL/DRUG PROBLEMS
     Given Enter User ID and Password at DeCORuM login screen
@@ -205,7 +231,7 @@ Scenario: Verify selected DOC number
     Then Enter "1" in the Number of adult prior convictions field
     And Enter "2" in the Number of present offenses field
     Then Enter "1" in the Number of times punished for institutional misconduct field
-    And Choose Work for Employment or Education Type
+    And Select "Work" for Employment or Education Type
     Then Enter "0" for 18.Participation or Performance (C) Rating
     And Enter "1" for 21.Problems (SY) Rating
     Then Enter "1" for 23. Dissatisfaction with marital or equivalent situation (C)
