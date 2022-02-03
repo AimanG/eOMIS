@@ -51,7 +51,6 @@ public class eOMIS extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("187437");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
-
         }
     }
 
@@ -79,27 +78,7 @@ public class eOMIS extends BrowserUtils {
         pages.getLandingPage().nursingEncounters.click();
 
     }
-    @Then("Make sure DOC {string} is displayed correctly")
-    public void make_sure_doc_is_displayed_correctly(String DOCNumber) {
 
-        logger.info("Make sure DOC " + DOCNumber + " is displayed correctly");
-//        switchToIFrameByID("iframeMain");
-        wait(1);
-        switchToIFrameByWebElement(pages.getLsiAssessmentsPage().iframe);
-        String DOCNumberOnThePage = pages.getLsiAssessmentsPage().DOCNumber.getText();
-
-        switch (DOCNumber) {
-            case "190456":
-                Assert.assertEquals("190456", DOCNumberOnThePage);
-                System.out.println(DOCNumberOnThePage);
-                break;
-
-            case "187437":
-                Assert.assertEquals("187437", DOCNumberOnThePage);
-                System.out.println(DOCNumberOnThePage);
-                break;
-        }
-    }
 
     @Then("Click Continue button")
     public void click_continue_button() {

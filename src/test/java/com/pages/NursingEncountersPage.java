@@ -36,7 +36,7 @@ public class NursingEncountersPage {
     public WebElement objectiveButton;
 
     @FindBy(xpath = "//a[@data-title='Jump to Assessment']/span")
-    public WebElement AssessmentButton;
+    public WebElement assessmentButton;
 
     @FindBy(xpath = "//a[@data-title='Jump to Plan']/span']")
     public WebElement planButton;
@@ -47,8 +47,21 @@ public class NursingEncountersPage {
     @FindBy(xpath = "//a[@data-title='Jump to Health Code/Level Scores']/span']")
     public WebElement healthCodeLevelScoresButton;
 
-    @FindBy(xpath = " //div[@id='divHeaderContainer']//tr[2]/td[2]/p")
+    @FindBy(xpath = "//a[@data-title='Jump to Standard Forms']/span']")
+    public WebElement standardFormsButton;
+
+    @FindBy(xpath = "//a[@data-title='Jump to Scanned Documents/Photos']/span']")
+    public WebElement scannedDocumentsPhotosButton;
+
+    @FindBy(xpath = "//div[@id='divHeaderContainer']//tr[2]/td[2]/p")
     public WebElement healthScoresHeader;
+
+    @FindBy(xpath = "//h3[text()='Subjective']")
+    public WebElement subjectiveSection;
+
+//    @FindBy(xpath = "//a[@data-title='Jump to Objective']/span']")
+//    public WebElement objectiveButton;
+
 
 
 

@@ -19,7 +19,7 @@ public class LSIAssessmentsPage {
 
     @FindBy(xpath = "//iframe[@id='iframeMain']")
     public WebElement iframe;
-//td
+
     @FindBy(xpath = "//div/table/tbody/tr/td/div/span/input[@id='lsiAssessmentStaff']")
     public WebElement staffName;
 
@@ -89,5 +89,193 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//button[@id='btnSAVE']")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//input[@id='lsiAssessmentDate']")
+    public WebElement assessmentDate;
+
+    @FindBy(xpath = "//div[@id='criminalHistory']//tbody/tr[7]/td/label")
+    public WebElement arrestedUnderAge16Checkbox;
+
+    @FindBy(xpath = "//div[@id='criminalHistory']//tbody/tr[9]/td/label")
+    public WebElement escapeHistoryInstitutionCheckbox;
+
+    @FindBy(xpath = "//div[@id='criminalHistory']//tbody/tr[12]/td/label")
+    public WebElement chargeLaidOrProbationParoleCheckbox;
+
+    @FindBy(xpath = "//div[@id='criminalHistory']//tbody/tr[13]/td/label")
+    public WebElement recordOfAssaultViolenceCheckbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[2]/td/label")
+    public WebElement currentlyUnemployedCheckbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[3]/td/label")
+    public WebElement frequentlyUnemployedCheckbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[4]/td/label")
+    public WebElement neverEmployedForAFullYearCheckbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[5]/td/label")
+    public WebElement everFiredCheckbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[7]/td/label")
+    public WebElement lessThanRegularGrade10Checkbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[8]/td/label")
+    public WebElement lessThanRegularGrade12Checkbox;
+
+    @FindBy(xpath = "//div[@id='educationEmployment']//tbody/tr[9]/td/label")
+    public WebElement suspendedOrExpelledAtLeastOnceCheckbox;
+
+    @FindBy(xpath = "//div[@id='financial']//tbody/tr[1]/td/label")
+    public WebElement relianceUponSocialAssistanceCheckbox;
+
+    @FindBy(xpath = "//div[@id='familyMarital']//tbody/tr[4]/td/label")
+    public WebElement criminalFamilySpouseCheckbox;
+
+    @FindBy(xpath = "//div[@id='accommodation']//tbody/tr[4]/td/label")
+    public WebElement highCrimeNeighborhoodCheckbox;
+
+    @FindBy(xpath = "//div[@id='leisureRecreation']//tbody/tr[1]/td/label")
+    public WebElement noRecentParticipationInOrganizedActivityCheckbox;
+
+    @FindBy(xpath = "//div[@id='companions']//tbody/tr[1]/td/label")
+    public WebElement aSocialIsolateCheckbox;
+
+    @FindBy(xpath = "//div[@id='companions']//tbody/tr[4]/td/label")
+    public WebElement veryFewPreSchoolAcquaintancesCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[1]/td/label")
+    public WebElement alcoholProblemEverCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[2]/td/label")
+    public WebElement drugProblemEverCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[7]/td/label")
+    public WebElement lawViolationCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[8]/td/label")
+    public WebElement maritalFamilyCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[9]/td/label")
+    public WebElement schoolWorkCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[10]/td/label")
+    public WebElement medicalCheckbox;
+
+    @FindBy(xpath = "//div[@id='alcoholDrugs']//tbody/tr[11]/td/label")
+    public WebElement otherClinicalIndicatorsCheckbox;
+
+    @FindBy(xpath = "//div[@id='emotionalPersonal']//tbody/tr[1]/td/label")
+    public WebElement moderateInterferenceCheckbox;
+
+    @FindBy(xpath = "//div[@id='emotionalPersonal']//tbody/tr[2]/td/label")
+    public WebElement severeInterferenceCheckbox;
+
+    @FindBy(xpath = "//div[@id='emotionalPersonal']//tbody/tr[3]/td/label")
+    public WebElement mentalHealthTreatmentPastCheckbox;
+
+    @FindBy(xpath = "//div[@id='emotionalPersonal']//tbody/tr[4]/td/label")
+    public WebElement mentalHealthTreatmentCurrentCheckbox;
+
+    @FindBy(xpath = "//div[@id='emotionalPersonal']//tbody/tr[5]/td/label")
+    public WebElement psychologicalAssessmentIndicatedCheckbox;
+
+    @FindBy(xpath = "//div[@id='attitudeOrienation']//tbody/tr[3]/td/label")
+    public WebElement poorAttitudeTowardSentenceConvictionCheckbox;
+
+    @FindBy(xpath = "//div[@id='attitudeOrienation']//tbody/tr[4]/td/label")
+    public WebElement poorAttitudeTowardSupervisionCheckbox;
+
+    @FindBy(xpath = "//input[@name='priorArrestUnder16']")
+    public WebElement arrestedUnderAge16CheckboxValue;
+
+    @FindBy(xpath = "//input[@name='instEscape']")
+    public WebElement escapeHistoryInstitutionCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='priorSupervisionSuspended']")
+    public WebElement chargeLaidOrProbationParoleCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='recordOfAssaultViolence']")
+    public WebElement recordOfAssaultViolenceCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='unemployedCurrent']")
+    public WebElement currentlyUnemployedCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='unemployedFrequent']")
+    public WebElement frequentlyUnemployedCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='employedFullYearNever']")
+    public WebElement neverEmployedForAFullYearCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='employedFiredEver']")
+    public WebElement everFiredCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='educUnderGrade10']")
+    public WebElement lessThanRegularGrade10CheckboxValue;
+
+    @FindBy(xpath = "//input[@name='educUnderGrade12']")
+    public WebElement lessThanRegularGrade12CheckboxValue;
+
+    @FindBy(xpath = "//input[@name='educSuspendExpelEver']")
+    public WebElement suspendedOrExpelledAtLeastOnceCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='financialSocialAssist']")
+    public WebElement relianceUponSocialAssistanceCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='familyCriminal']")
+    public WebElement criminalFamilySpouseCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='accomHighCrime']")
+    public WebElement highCrimeNeighborhoodCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='leisureNoOrganizedActivity']")
+    public WebElement noRecentParticipationInOrganizedActivityCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='companionIsolate']")
+    public WebElement aSocialIsolateCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='companionAntiCrimAcquaintFew']")
+    public WebElement veryFewPreSchoolAcquaintancesCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholProbEver']")
+    public WebElement alcoholProblemEverCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholProbEver']")
+    public WebElement drugProblemEverCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholDrugViolation']")
+    public WebElement lawViolationCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholDrugFamily']")
+    public WebElement maritalFamilyCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholDrugOccupation']")
+    public WebElement schoolWorkCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholDrugMedical']")
+    public WebElement medicalCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='alcoholDrugIndicator']")
+    public WebElement otherClinicalIndicatorsCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='emotionalInterfereModerate']")
+    public WebElement moderateInterferenceCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='emotionalInterfereSevere']")
+    public WebElement severeInterferenceCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='psychiatricTrmtPast']")
+    public WebElement mentalHealthTreatmentPastCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='psychiatricTrmtCurrent']")
+    public WebElement mentalHealthTreatmentCurrentCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='psychiatricAsmtInd']")
+    public WebElement psychologicalAssessmentIndicatedCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='attiPoorConviction']")
+    public WebElement poorAttitudeTowardSentenceConvictionCheckboxValue;
+
+    @FindBy(xpath = "//input[@name='attiPoorSupervision']")
+    public WebElement poorAttitudeTowardSupervisionCheckboxValue;
 
 }

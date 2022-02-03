@@ -5,6 +5,7 @@ import com.utilities.Driver;
 import com.utilities.Pages;
 import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
@@ -70,6 +71,92 @@ public class NursingEncounters extends BrowserUtils {
         System.out.println("Medical " + medical);
     }
 
+    @Then("Click {string} jump button")
+    public void click_jump_button(String buttonName) {
+
+        logger.info("Click " + buttonName + " jump button");
+
+        switch (buttonName) {
+            case "S":
+                pages.getNursingEncountersPage().subjectiveButton.click();
+                break;
+
+            case "O":
+
+                pages.getNursingEncountersPage().objectiveButton.click();
+                break;
+            case "A":
+
+                pages.getNursingEncountersPage().assessmentButton.click();
+                break;
+
+            case "P":
+
+                pages.getNursingEncountersPage().planButton.click();
+                break;
+            case "E":
+
+                pages.getNursingEncountersPage().educationButton.click();
+                break;
+
+            case "C":
+
+                pages.getNursingEncountersPage().healthCodeLevelScoresButton.click();
+                break;
+            case "File icon":
+
+                pages.getNursingEncountersPage().standardFormsButton.click();
+                break;
+
+            case "Photo icon":
+
+                pages.getNursingEncountersPage().scannedDocumentsPhotosButton.click();
+                break;
+
+        }
+
+    }
+
+    @Then("Verify {string} section")
+    public void verify_section(String sectionName) {
+
+        logger.info("Verify " + sectionName + " section");
+
+        switch (sectionName) {
+            case "Subjective":
+
+                break;
+
+            case "Objective":
+
+                break;
+            case "Assessment":
+
+                break;
+
+            case "Plan":
+
+                break;
+            case "Education":
+
+                break;
+
+            case "Health Code/Level Scores":
+
+                break;
+            case "Standard Forms":
+
+                break;
+
+            case "Scanned Documents/Photos":
+
+                break;
+
+        }
+
+
+    }
+
     @Then("Verify Dental Health Score displayed correctly in Header")
     public void verify_dental_health_score_displayed_correctly_in_header() {
 
@@ -89,15 +176,5 @@ public class NursingEncounters extends BrowserUtils {
 
     }
 
-    @Then("Click {string} jump button")
-    public void click_jump_button(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("Verify {string} section")
-    public void verify_section(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
 }

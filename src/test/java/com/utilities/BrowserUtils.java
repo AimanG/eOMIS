@@ -33,7 +33,21 @@ public class BrowserUtils extends DBUtils {
         Driver.getDriver().switchTo().frame(iFrameID);
     };
 
+    public static String getTodaysDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        return formatter.format(date);
+    }
 
+    public static boolean validateCheckBox(WebElement element){
+        return element.getAttribute("value").equals("Y");
+    }
+
+    public static void scrollDown(int num, int num2){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy("+num+","+num2+")", "");
+
+    }
     /**
      * Generates the String path to the screenshot taken.
      * Within the method, the screenshot is taken and is saved into FileUtils.
