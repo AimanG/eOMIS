@@ -1,5 +1,5 @@
+@regression
 Feature: LSI Assessments
-
 
   Scenario: Verify selected DOC number
     Given Enter User ID and Password at DeCORuM login screen
@@ -8,7 +8,6 @@ Feature: LSI Assessments
     And Go to Offender -> Offender Assessments -> LSI Assessments
     And Click on New button
     Then Make sure DOC "190456" is displayed correctly
-  #
 
   Scenario: Verify Assessment Date
     Given Enter User ID and Password at DeCORuM login screen
@@ -17,7 +16,7 @@ Feature: LSI Assessments
     And Go to Offender -> Offender Assessments -> LSI Assessments
     And Click on New button
     Then Make sure the Assessment date is the same as today
-#
+
   Scenario: CRIMINAL HISTORY
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -39,7 +38,6 @@ Feature: LSI Assessments
     And Verify if checkbox "10. Record of assault/violence (L)" is unchecked by default
     Then Check the checkbox "10. Record of assault/violence (L)"
     And Uncheck the checkbox "10. Record of assault/violence (L)"
-#
 
   Scenario: EDUCATION/EMPLOYMENT
     Given Enter User ID and Password at DeCORuM login screen
@@ -76,8 +74,6 @@ Feature: LSI Assessments
     Then Check if you can select a rating for questions 18, 19, and 20
     And Select "Work" for Employment or Education Type
     Then Check if you can select a rating for questions 18, 19, and 20
-#
-
 
   Scenario: FINANCIAL
     Given Enter User ID and Password at DeCORuM login screen
@@ -89,8 +85,6 @@ Feature: LSI Assessments
     And Verify if checkbox "22. Reliance upon social assistance (SY)" is unchecked by default
     Then Check the checkbox "22. Reliance upon social assistance (SY)"
     And Uncheck the checkbox "22. Reliance upon social assistance (SY)"
-    #
-
 
   Scenario: FAMILY/MARITAL
     Given Enter User ID and Password at DeCORuM login screen
@@ -104,8 +98,6 @@ Feature: LSI Assessments
     And Verify if checkbox "26. Criminal family/spouse (L)" is unchecked by default
     Then Check the checkbox "26. Criminal family/spouse (L)"
     And Uncheck the checkbox "26. Criminal family/spouse (L)"
-        #
-
 
   Scenario: ACCOMMODATION
     Given Enter User ID and Password at DeCORuM login screen
@@ -120,7 +112,6 @@ Feature: LSI Assessments
     And Uncheck the checkbox "29. High crime neighborhood (C)"
 #
 
-
   Scenario: LEISURE/RECREATION
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -131,9 +122,7 @@ Feature: LSI Assessments
     Then Check the checkbox "30. No recent participation in organized activity (SY, IN-2)"
     And Uncheck the checkbox "30. No recent participation in organized activity (SY, IN-2)"
     And Enter "0" for 31. Could make better use of time (CY)
-#
 
-  @lsi
   Scenario: COMPANIONS
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -159,15 +148,17 @@ Feature: LSI Assessments
   Scenario: ALCOHOL/DRUG PROBLEMS
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
     And Verify if checkbox "37. Alcohol problem, ever (L)" is unchecked by default
     Then Check the checkbox "37. Alcohol problem, ever (L)"
     And Uncheck the checkbox "37. Alcohol problem, ever (L)"
     And Verify if checkbox "38. Drug problem, ever (L)" is unchecked by default
     Then Check the checkbox "38. Drug problem, ever (L)"
     And Uncheck the checkbox "38. Drug problem, ever (L)"
+    Then Enter "0" for 39. Alcohol problem, currently (SY, IN-2)
+    And Enter "1" for 40. Drug problem, currently (SY, IN-2)
     And Verify if checkbox "41. Law violation (SY, IN-2)" is unchecked by default
     Then Check the checkbox "41. Law violation (SY, IN-2)"
     And Uncheck the checkbox "41. Law violation (SY, IN-2)"
@@ -187,9 +178,9 @@ Feature: LSI Assessments
   Scenario: EMOTIONAL/PERSONAL
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
     And Verify if checkbox "46. Moderate interference (CY)" is unchecked by default
     Then Check the checkbox "46. Moderate interference (CY)"
     And Uncheck the checkbox "46. Moderate interference (CY)"
@@ -206,19 +197,21 @@ Feature: LSI Assessments
     Then Check the checkbox "50. Psychological assessment indicated (C)"
     And Uncheck the checkbox "50. Psychological assessment indicated (C)"
 
+  @smoke
   Scenario: ATTITUDE/ORIENTATION
     Given Enter User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "180651"
+    Then Select the Offender "190456"
     And Go to Offender -> Offender Assessments -> LSI Assessments
-    And Click on New button
+    Then Click on New button
+    And Enter "0" for 51. Supportive of crime (C)
+    Then Enter "1" for 52. Unfavorable attitude toward convention (C)
     And Verify if checkbox "53. Poor attitude toward sentence/conviction (C)" is unchecked by default
     Then Check the checkbox "53. Poor attitude toward sentence/conviction (C)"
     And Uncheck the checkbox "53. Poor attitude toward sentence/conviction (C)"
     And Verify if checkbox "54. Poor attitude toward supervision (C)" is unchecked by default
     Then Check the checkbox "54. Poor attitude toward supervision (C)"
     And Uncheck the checkbox "54. Poor attitude toward supervision (C)"
-
 
   Scenario: Create LSI Assessment
     Given Enter User ID and Password at DeCORuM login screen

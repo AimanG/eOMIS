@@ -19,8 +19,7 @@ Feature:  Nursing Encounters
     And Select Related Health Service Requests
     Then Add Timestamp to Subjective Notes
     And Click Save button
-    Then Verify Complex location
-
+    Then Verify Complex location is "Bent County Correctional Facility"
 
   @smoke
   Scenario: Verify Jump to buttons
@@ -48,7 +47,7 @@ Feature:  Nursing Encounters
     Then Click "C" jump button
     And Verify "Health Code/Level Scores" section
     Then Click "File icon" jump button
-    And Verify "Standard Forms " section
+    And Verify "Standard Forms" section
     Then Click "Photo icon" jump button
     And Verify "Scanned Documents/Photos" section
 
@@ -58,7 +57,6 @@ Feature:  Nursing Encounters
     When Click Logon button
     Then Select the Offender "187437"
     And Go to Health -> Nursing -> Nursing Encounters
-    Then Make sure DOC "187437" is displayed correctly
     And Click on a New button in Health Services Encounters
     Then Select the Complex - Bent County Correctional Facility
     And Select the Type - Administrative - Nursing
@@ -66,9 +64,16 @@ Feature:  Nursing Encounters
     And Select Related Health Service Requests
     Then Add Timestamp to Subjective Notes
     And Click Save button
-    Then Verify Medical Health Score displayed correctly in Header
-#    And Verify Dental Health Score displayed correctly in Header
-#    Then Verify Psychological Health Score displayed correctly in Header
-#    And Verify ID Health Score displayed correctly in Header
-#    Then Verify Sex Offender Health Score displayed correctly in Header
+    Then Verify "Medical" Health Score displayed correctly in Header
+    And Verify "Dental" Health Score displayed correctly in Header
+    * Verify "Psychological" Health Score displayed correctly in Header
+    * Verify "ID" Health Score displayed correctly in Header
+    * Verify "Sex Offender" Health Score displayed correctly in Header
+    * Verify "Substance Abuse Rating" Health Score displayed correctly in Header
+    * Verify "SOA-R Level" Health Score displayed correctly in Header
+
+#
+#  banner
+#    view history
+
 

@@ -34,7 +34,7 @@ public class BrowserUtils extends DBUtils {
     };
 
     public static String getTodaysDate(){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date();
         return formatter.format(date);
     }

@@ -272,7 +272,7 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//input[@name='alcoholProbEver']")
     public WebElement alcoholProblemEverCheckboxValue;
 
-    @FindBy(xpath = "//input[@name='alcoholProbEver']")
+    @FindBy(xpath = "//input[@name='drugProbEver']")
     public WebElement drugProblemEverCheckboxValue;
 
     @FindBy(xpath = "//input[@name='alcoholDrugViolation']")

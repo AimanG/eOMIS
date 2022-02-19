@@ -8,13 +8,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class eOMIS extends BrowserUtils {
+public class eOMISSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMIS.class);
+    Logger logger = Logger.getLogger(eOMISSteps.class);
 
     @Given("Enter User ID and Password at DeCORuM login screen")
     public void enter_user_id_and_password_at_de_co_ru_m_login_screen() {
@@ -54,31 +53,18 @@ public class eOMIS extends BrowserUtils {
         }
     }
 
-    @Then("Go to Offender -> Offender Assessments -> LSI Assessments")
-    public void go_to_offender_offender_assessments_lsi_assessments() {
-
-        logger.info("Go to Offender -> Offender Assessments -> LSI Assessments");
-        waitForClickability(pages.getLandingPage().hamburgerMenu, 10);
-        hover(pages.getLandingPage().hamburgerMenu);
-        waitForClickability(pages.getLandingPage().offenderFunctionalAreaButton, 10);
-        pages.getLandingPage().offenderFunctionalAreaButton.click();
-        waitForClickability(pages.getLandingPage().offenderAssessments, 10);
-        pages.getLandingPage().offenderAssessments.click();
-        waitForClickability(pages.getLandingPage().lsiAssessments, 10);
-        pages.getLandingPage().lsiAssessments.click();
-
-    }
-
     @Then("Go to Health -> Nursing -> Nursing Encounters")
     public void go_to_health_nursing_nursing_encounters() {
-        logger.info("Go to Health -> Nursing -> Nursing Encounters");
-        Driver.getDriver().manage().window().maximize();
 
+        Driver.getDriver().manage().window().maximize();
+        logger.info("Go to Health -> Nursing -> Nursing Encounters");
+        wait(5);
         pages.getLandingPage().nursing.click();
+        waitForClickability(pages.getLandingPage().nursing, 10);
+        scrollToElement(pages.getLandingPage().nursingEncounters);
         pages.getLandingPage().nursingEncounters.click();
 
     }
-
 
     @Then("Click Continue button")
     public void click_continue_button() {

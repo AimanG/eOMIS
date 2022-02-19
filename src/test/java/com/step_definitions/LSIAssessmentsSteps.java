@@ -11,10 +11,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class LSIAssessments extends BrowserUtils {
+public class LSIAssessmentsSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMIS.class);
+    Logger logger = Logger.getLogger(eOMISSteps.class);
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Then("Click on New button")
@@ -39,14 +39,31 @@ public class LSIAssessments extends BrowserUtils {
 
     }
 
+    @Then("Go to Offender -> Offender Assessments -> LSI Assessments")
+    public void go_to_offender_offender_assessments_lsi_assessments() {
+
+        logger.info("Go to Offender -> Offender Assessments -> LSI Assessments");
+        waitForClickability(pages.getLandingPage().hamburgerMenu, 10);
+        hover(pages.getLandingPage().hamburgerMenu);
+        waitForClickability(pages.getLandingPage().offenderFunctionalAreaButton, 10);
+        pages.getLandingPage().offenderFunctionalAreaButton.click();
+        waitForClickability(pages.getLandingPage().offenderAssessments, 10);
+        pages.getLandingPage().offenderAssessments.click();
+        waitForClickability(pages.getLandingPage().lsiAssessments, 10);
+        pages.getLandingPage().lsiAssessments.click();
+
+    }
+
     @Then("Make sure DOC {string} is displayed correctly")
     public void make_sure_doc_is_displayed_correctly(String DOCNumber) {
 
         logger.info("Make sure DOC " + DOCNumber + " is displayed correctly");
-//        switchToIFrameByID("iframeMain");
-        wait(1);
+        wait(2);
+//        switchToIFrameByID("iframeSearch");
         switchToIFrameByWebElement(pages.getLsiAssessmentsPage().iframe);
+        wait(2);
         String DOCNumberOnThePage = pages.getLsiAssessmentsPage().DOCNumber.getText();
+        System.out.println(DOCNumberOnThePage);
 
         switch (DOCNumber) {
             case "190456":
