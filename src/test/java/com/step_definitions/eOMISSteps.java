@@ -50,6 +50,10 @@ public class eOMISSteps extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("187437");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
+            case "045632":
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("045632");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
         }
     }
 
@@ -66,19 +70,25 @@ public class eOMISSteps extends BrowserUtils {
 
     }
 
+    @Then("Go to Health -> Medical Provider -> Medical Encounters")
+    public void go_to_health_medical_medical_nursing_encounters() {
+
+        Driver.getDriver().manage().window().maximize();
+        logger.info("Go to Health -> Medical Provider -> Medical Encounters");
+        wait(5);
+        pages.getLandingPage().medicalProvider.click();
+        waitForClickability(pages.getLandingPage().medicalProvider, 10);
+        scrollToElement(pages.getLandingPage().medicalEncounters);
+        pages.getLandingPage().medicalEncounters.click();
+
+    }
+
+
     @Then("Click Continue button")
     public void click_continue_button() {
 
         logger.info("Click Continue button");
         pages.getLsiAssessmentsPage().continueButton.click();
-    }
-
-    @Then("Click Save button")
-    public void click_save_button() {
-
-        logger.info("Click Save button");
-        pages.getLsiAssessmentsPage().saveButton.click();
-        Driver.getDriver().switchTo().alert().accept();
     }
 
 
@@ -89,6 +99,16 @@ public class eOMISSteps extends BrowserUtils {
         Driver.getDriver().get(ConfigurationReader.getProperties("url"));
         pages.getLoginPage().userId.sendKeys("NTESTR");
         pages.getLoginPage().password.sendKeys("pepsi123");
+    }
+
+    @Given("Enter Provider User ID and Password at DeCORuM login screen")
+    public void enter_provider_user_id_and_password_at_de_co_ru_m_login_screen() {
+
+        logger.info("Enter Provider User ID and Password at DeCORuM login screen");
+        Driver.getDriver().get(ConfigurationReader.getProperties("url"));
+        pages.getLoginPage().userId.sendKeys("TSTPRV");
+        pages.getLoginPage().password.sendKeys("pepsi123");
+
     }
 
 }

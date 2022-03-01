@@ -1,9 +1,6 @@
 package com.utilities;
 
-import com.pages.LSIAssessmentsPage;
-import com.pages.LandingPage;
-import com.pages.LoginPage;
-import com.pages.NursingEncountersPage;
+import com.pages.*;
 
 public class Pages {
 
@@ -11,6 +8,7 @@ public class Pages {
     private LandingPage landingPage;
     private LSIAssessmentsPage lsiAssessmentsPage;
     private NursingEncountersPage nursingEncountersPage;
+    private MedicalEncountersPage medicalEncountersPage;
 
     public LoginPage getLoginPage(){
         return (loginPage == null) ? loginPage = new LoginPage() : loginPage;
@@ -26,5 +24,9 @@ public class Pages {
 
     public NursingEncountersPage getNursingEncountersPage(){
         return (nursingEncountersPage == null) ? nursingEncountersPage = new NursingEncountersPage() : nursingEncountersPage;
+    }
+
+    public MedicalEncountersPage getMedicalEncountersPage(){
+        return (medicalEncountersPage == null) ? medicalEncountersPage = new MedicalEncountersPage() : medicalEncountersPage;
     }
 }

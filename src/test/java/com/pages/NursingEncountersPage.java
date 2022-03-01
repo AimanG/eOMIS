@@ -23,6 +23,12 @@ public class NursingEncountersPage {
     @FindBy(xpath = "//button[@id='nextstep_encounter']")
     public WebElement nextButton;
 
+    @FindBy(xpath = "//button[@id='btnSAVE']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//button[@id='btnSAVE2']")
+    public WebElement saveAndCloseButton;
+
     @FindBy(xpath = "//div/button[@data-original-title='Timestamp']")
     public WebElement timestamp;
 
@@ -51,7 +57,7 @@ public class NursingEncountersPage {
     public WebElement scannedDocumentsPhotosButton;
 
     @FindBy(xpath = "//div[@id='divHeaderContainer']//tr[2]/td[2]/p")
-    public WebElement healthScoresHeader;
+    public WebElement healthScoresBanner;
 
     @FindBy(xpath = "//tr/td/div/input[@id='EncOccurredUnitReadOnly']")
     public WebElement encounterHeaderComplex;
@@ -98,8 +104,11 @@ public class NursingEncountersPage {
     @FindBy(xpath = "//div/input[@id='SubstanceAbuseRatingReadOnly']")
     public WebElement substanceAbuseRatingLevel;
 
-    @FindBy(xpath = "//div/input[@id='soarLevelReadOnly']")
+    @FindBy(xpath = "//*[@id='soarLevelReadOnly']")
     public WebElement sOARLevel;
+
+    @FindBy(xpath = "//input[@value='View History']")
+    public WebElement viewHistory;
 
 
 //    @FindBy(xpath = "//a[@data-title='Jump to Objective']/span']")
