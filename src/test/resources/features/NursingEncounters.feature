@@ -16,7 +16,6 @@ Feature:  Nursing Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Nursing"
     Then Click Next button
-    And Select Related Health Service Requests
     Then Add Timestamp to Subjective Notes
     And Click Save button
     Then Verify "Medical" Health Score displayed correctly in Banner

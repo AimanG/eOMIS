@@ -3,6 +3,7 @@ package com.step_definitions;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import com.utilities.Pages;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -13,7 +14,6 @@ public class NursingEncountersSteps extends BrowserUtils {
 
     Pages pages = new Pages();
     Logger logger = Logger.getLogger(eOMISSteps.class);
-    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Then("Click on a New button in Health Services Encounters")
     public void click_on_a_new_button_in_health_services_encounters() {
@@ -117,9 +117,6 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "Administrative - Nursing":
                 select.selectByValue("HA10");
                 break;
-            case "Administrative - Provider":
-                select.selectByValue("BB01");
-                break;
             case "Appointment No-show - Nursing":
                 select.selectByValue("HA08");
                 break;
@@ -213,6 +210,63 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "Work Related Injury":
                 select.selectByValue("HF21");
                 break;
+            case "Administrative - Provider":
+                select.selectByValue("BB01");
+                break;
+            case "Appointment No-show - Provider":
+                select.selectByValue("BC03");
+                break;
+            case "Appointment Refusal - Provider":
+                select.selectByValue("BC04");
+                break;
+            case "Chart Review - Provider":
+                select.selectByValue("BB06");
+                break;
+            case "Chronic Care Visit":
+                select.selectByValue("BJ06");
+                break;
+            case "CTCF Infirmary Admission/Hospice":
+                select.selectByValue("BB12");
+                break;
+            case "Diet Consult Request - Provider":
+                select.selectByValue("BD01");
+                break;
+            case "DRDC Infirmary Admission OBS":
+                select.selectByValue("BB14");
+                break;
+            case "Emergency - Provider (w/ transport)":
+                select.selectByValue("BI08");
+                break;
+            case "Emergency - Provider (w/o transport)":
+                select.selectByValue("BI07");
+                break;
+            case "Follow-up - Provider":
+                select.selectByValue("BB05");
+                break;
+            case "IBAAP - Provider":
+                select.selectByValue("BI04");
+                break;
+            case "Infectious Disease - Provider":
+                select.selectByValue("BB15");
+                break;
+            case "Infirmary Admission - Provider":
+                select.selectByValue("BB09");
+                break;
+            case "Infirmary Discharge - Provider":
+                select.selectByValue("BB07");
+                break;
+            case "Infirmary Note - Provider":
+                select.selectByValue("BB08");
+                break;
+            case "Intake Physical Exam - Provider":
+                select.selectByValue("BB02");
+                break;
+            case "Routine Physical Exam Self Referral":
+                select.selectByValue("BI05");
+                break;
+            case "Sick Call - Provider":
+                select.selectByValue("BC05");
+                break;
         }
     }
 
@@ -225,23 +279,22 @@ public class NursingEncountersSteps extends BrowserUtils {
 
     @Then("Click Save button")
     public void click_save_button() {
+        logger.info("Click Save button");
+        pages.getNursingEncountersPage().saveButton.click();
+    }
 
-        logger.info("Click Next button");
+    @And("Click Save button and Accept alert")
+    public void clickSaveButtonAndAcceptAlert() {
+        logger.info("Click Save button");
         pages.getNursingEncountersPage().saveButton.click();
         Driver.getDriver().switchTo().alert().accept();
     }
 
+
     @Then("Click Save and Close button")
     public void click_save_and_close_button() {
-
         logger.info("Click Save and Close button");
         pages.getNursingEncountersPage().saveAndCloseButton.click();
-    }
-
-    @Then("Select Related Health Service Requests")
-    public void select_related_health_service_requests() {
-
-        logger.info("Select Related Health Service Requests");
     }
 
     @Then("Add Timestamp to Subjective Notes")
@@ -282,9 +335,7 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "Photo icon":
                 pages.getNursingEncountersPage().scannedDocumentsPhotosButton.click();
                 break;
-
         }
-
     }
 
     @Then("Verify {string} section")
@@ -334,10 +385,7 @@ public class NursingEncountersSteps extends BrowserUtils {
                 System.out.println("this is section " + section);
                 Assert.assertEquals(section, sectionName);
                 break;
-
         }
-
-
     }
 
     @Then("Verify Complex location is {string}")
@@ -393,7 +441,7 @@ public class NursingEncountersSteps extends BrowserUtils {
 ////                Assert.assertEquals(healthScores,healthCode);
 //                break;
         }
-
-
     }
+
+
 }
