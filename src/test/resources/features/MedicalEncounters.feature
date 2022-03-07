@@ -87,7 +87,7 @@ Feature:  Medical Encounters
     And Click Save button
     Then Click Save and Close button
 
-  Scenario: Create New Lab Test Orders
+  Scenario Outline: Create New Lab Test Orders
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "045632"
@@ -97,19 +97,51 @@ Feature:  Medical Encounters
     And Select the Type - "Administrative - Provider"
     Then Click Next button
     Then Add Timestamp to Subjective Notes
-    And Click Save button
+    And Click Save button and Accept alert
     Then Scroll down to "Lab Test Orders" section
     And Click on New button of Lab Test Orders section
     Then Verify Complex location is "Bent County Correctional Facility"
-    * Enter the Diagnosis Code
+    * Select the "<Diagnosis Code>"
     * Select the Formulary
     * Select the Lab Test Ordered
     * Select the Priority
-    * Select the today's date for Lab Schedule Date
     * Select the Fasting
-    * Select the Verbal/Telephone Order Read Back
-#    And Click Save button
-#    Then Click Save and Close button
+    * Select the Verbal or Telephone Order Read Back
+    And Click Save button
+    Then Click Save and Close button
+    Examples:
+      | Diagnosis Code                                              |
+      | Abnormality of plasma protein, unspecified [R77.9]          |
+      | Anemia, unspecified [D64.9]                                 |
+      | Cardiac arrhythmia, unspecified [I49.9]                     |
+      | Cardiomyopathy, unspecified [I42.9]                         |
+      | Chronic kidney disease, unspecified [N18.9]                 |
+      | Decreased white blood cell count, unspecified [D72.819]     |
+      | Deficiency of nutrient element, unspecified [E61.9]         |
+      | Diarrhea, unspecified [R19.7]                               |
+      | Dilated cardiomyopathy [I42.0]                              |
+      | Dysphagia, unspecified [R13.10]                             |
+      | Edema, unspecified [R60.9]                                  |
+      | Enlarged prostate with lower urinary tract symptoms [N40.1] |
+      | Essential (primary) hypertension [I10]                      |
+      | Gastritis, unspecified, with bleeding [K29.71]              |
+      | Heart failure, unspecified [I50.9]                          |
+      | HELICOBACTER PYLORI [H. PYLORI] [B96.81]                    |
+      | Hemorrhage, not elsewhere classified [R58]                  |
+      | Hydrocele, unspecified [N43.3]                              |
+      | Hypertrophy of breast [N62]                                 |
+      | Impacted cerumen, unspecified ear [H61.20]                  |
+      | Impaired glucose tolerance (oral) [R73.02]                  |
+      | Long term (current) use of anticoagulants [Z79.01]          |
+      | Nonrheumatic aortic valve disorder, unspecified [I35.9]     |
+      | Nonrheumatic mitral valve disorder, unspecified [I34.9]     |
+      | Other Specified Depressive Episodes [F32.89]                |
+      | Pain in unspecified joint [M25.50]                          |
+      | Rheumatic aortic valve disease, unspecified [I06.9]         |
+      | Rheumatic heart disease, unspecified [I09.9]                |
+      | Thrombocytopenia, unspecified [D69.6]                       |
+      | Unspecified atrial fibrillation [I48.91]                    |
+      | Unspecified lump in breast [N63]                            |
 
   Scenario: Create X-Ray Orders
     Given Enter Provider User ID and Password at DeCORuM login screen
@@ -121,7 +153,7 @@ Feature:  Medical Encounters
     And Select the Type - "Administrative - Provider"
     Then Click Next button
     Then Add Timestamp to Subjective Notes
-    And Click Save button
+    And Click Save button and Accept alert
     Then Scroll down to "X-Ray Orders" section
     And Click on New button of Lab Test Orders section
     Then Verify Complex location is "Bent County Correctional Facility"
@@ -129,7 +161,7 @@ Feature:  Medical Encounters
     * Select the Diagnosis Code
     * Select the Priority
     * Select the today's date for X-Ray Schedule Date
-    * Select the Verbal/Telephone Order Read Back
+    * Select the Verbal or Telephone Order Read Back
     And Click Save button
     #Then Click Save and Close button
 

@@ -230,41 +230,144 @@ public class MedicalEncountersSteps extends BrowserUtils {
         pages.getMedicalEncountersPage().newButtonLabTestOrders.click();
     }
 
-    @Then("Enter the Diagnosis Code")
-    public void enter_the_diagnosis_code() {
-        logger.info("Enter the Diagnosis Code");
+    @Then("Select the {string}")
+    public void select_the_diagnosis_code(String diagnosisCode) {
+        logger.info("Select the " + diagnosisCode);
+        Select select = new Select(pages.getMedicalEncountersPage().diagnosisCode);
 
+        switch (diagnosisCode) {
+            case "Abnormality of plasma protein, unspecified [R77.9]":
+                select.selectByValue("R77.9");
+                break;
+            case "Anemia, unspecified [D64.9]":
+                select.selectByValue("");
+                break;
+            case "Cardiac arrhythmia, unspecified [I49.9]":
+                select.selectByValue("D64.9");
+                break;
+            case "Cardiomyopathy, unspecified [I42.9]":
+                select.selectByValue("I42.9");
+                break;
+            case "Chronic kidney disease, unspecified [N18.9]":
+                select.selectByValue("N18.9");
+                break;
+            case "Decreased white blood cell count, unspecified [D72.819]":
+                select.selectByValue("D72.819");
+                break;
+            case "Deficiency of nutrient element, unspecified [E61.9]":
+                select.selectByValue("E61.9");
+                break;
+            case "Diarrhea, unspecified [R19.7]":
+                select.selectByValue("R19.7");
+                break;
+            case "Dilated cardiomyopathy [I42.0]":
+                select.selectByValue("I42.0");
+                break;
+            case "Dysphagia, unspecified [R13.10]":
+                select.selectByValue("R13.10");
+                break;
+            case "Edema, unspecified [R60.9]":
+                select.selectByValue("R60.9");
+                break;
+            case "Enlarged prostate with lower urinary tract symptoms [N40.1]":
+                select.selectByValue("N40.1");
+                break;
+            case "Essential (primary) hypertension [I10]":
+                select.selectByValue("I10");
+                break;
+            case "Gastritis, unspecified, with bleeding [K29.71]":
+                select.selectByValue("K29.71");
+                break;
+            case "Heart failure, unspecified [I50.9]":
+                select.selectByValue("I50.9");
+                break;
+            case "HELICOBACTER PYLORI [H. PYLORI] [B96.81]":
+                select.selectByValue("B96.81");
+                break;
+            case "Hemorrhage, not elsewhere classified [R58]":
+                select.selectByValue("R58");
+                break;
+            case "Hydrocele, unspecified [N43.3]":
+                select.selectByValue("N43.3");
+                break;
+            case "Hypertrophy of breast [N62]":
+                select.selectByValue("N62");
+                break;
+            case "Impacted cerumen, unspecified ear [H61.20]":
+                select.selectByValue("H61.20");
+                break;
+            case "Impaired glucose tolerance (oral) [R73.02]":
+                select.selectByValue("R73.02");
+                break;
+            case "Long term (current) use of anticoagulants [Z79.01]":
+                select.selectByValue("Z79.01");
+                break;
+            case "Nonrheumatic aortic valve disorder, unspecified [I35.9]":
+                select.selectByValue("I35.9");
+                break;
+            case "Nonrheumatic mitral valve disorder, unspecified [I34.9]":
+                select.selectByValue("I34.9");
+                break;
+            case "Nonspecific reaction to tuberculin skin test without active tuberculosis [R76.11]":
+                select.selectByValue("R76.11");
+                break;
+            case "Other Specified Depressive Episodes [F32.89]":
+                select.selectByValue("F32.89");
+                break;
+            case "Pain in unspecified joint [M25.50]":
+                select.selectByValue("M25.50");
+                break;
+            case "Rheumatic aortic valve disease, unspecified [I06.9]":
+                select.selectByValue("I06.9");
+                break;
+            case "Rheumatic heart disease, unspecified [I09.9]":
+                select.selectByValue("I09.9");
+                break;
+            case "Thrombocytopenia, unspecified [D69.6]":
+                select.selectByValue("D69.6");
+                break;
+            case "Unspecified atrial fibrillation [I48.91]":
+                select.selectByValue("I48.91");
+                break;
+            case "Unspecified lump in breast [N63]":
+                select.selectByValue("N63");
+                break;
+        }
     }
 
     @Then("Select the Formulary")
     public void select_the_formulary() {
         logger.info("Select the Formulary");
+
     }
 
     @Then("Select the Lab Test Ordered")
     public void select_the_lab_test_ordered() {
         logger.info("Select the Lab Test Ordered");
+        Select select = new Select(pages.getMedicalEncountersPage().labTestOrdered);
+        select.selectByValue("LC-070085");
     }
 
     @Then("Select the Priority")
     public void select_the_priority() {
         logger.info("Select the Priority");
+        Select select = new Select(pages.getMedicalEncountersPage().priority);
+        select.selectByValue("1");
 
-    }
-
-    @Then("Select the today's date for Lab Schedule Date")
-    public void select_the_today_s_date_for_lab_schedule_date() {
-        logger.info("Select the today's date for Lab Schedule Date");
     }
 
     @Then("Select the Fasting")
     public void select_the_fasting() {
         logger.info("Select the Fasting");
+        Select select = new Select(pages.getMedicalEncountersPage().fasting);
+        select.selectByValue("Y");
     }
 
-    @Then("Select the Verbal\\/Telephone Order Read Back")
+    @Then("Select the Verbal or Telephone Order Read Back")
     public void select_the_verbal_telephone_order_read_back() {
         logger.info("Select the Verbal/Telephone Order Read Back");
+        Select select = new Select(pages.getMedicalEncountersPage().verbalTelephoneOrderReadBack);
+        select.selectByValue("B");
     }
 
     @Then("Select the X-Ray Ordered")

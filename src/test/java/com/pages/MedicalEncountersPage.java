@@ -116,4 +116,30 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "//button[@data-original-title='Timestamp']")
     public WebElement commentsTimestamp;
 
+    @FindBy(xpath = "//select[@id='diagnosisCode']")
+    public WebElement diagnosisCode;
+
+    @FindBy(xpath = "//select[@id='LabTestTypeFormulary']")
+    public WebElement formulary;
+
+    @FindBy(xpath = "//select[@id='LabTestTypeFormulary']")
+    public WebElement labTestOrdered;
+
+    @FindBy(xpath = "//select[@id='LabPriority']")
+    public WebElement priority;
+
+    @FindBy(xpath = "//select[@id='LabFastingReq']")
+    public WebElement fasting;
+
+    @FindBy(xpath = "//select[@id='VerbalOrderReadBack']")
+    public WebElement verbalTelephoneOrderReadBack;
+
+//    @FindBy(xpath = "")
+//    public WebElement commentsTimestamp;
+//
+//    @FindBy(xpath = "")
+//    public WebElement commentsTimestamp;
+
+
+
 }
