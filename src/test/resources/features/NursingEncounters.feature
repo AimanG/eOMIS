@@ -123,7 +123,6 @@ Feature:  Nursing Encounters
     Then Select the Complex - "Arrowhead Correctional Center"
     And Select the Type - "<Type>"
     Then Click Next button
-    And Select Related Health Service Requests
     Then Add Timestamp to Subjective Notes
     And Click Save button
     Then Verify Complex location is "Arrowhead Correctional Center"

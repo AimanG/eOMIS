@@ -281,6 +281,7 @@ public class NursingEncountersSteps extends BrowserUtils {
     public void click_save_button() {
         logger.info("Click Save button");
         pages.getNursingEncountersPage().saveButton.click();
+        wait(1);
     }
 
     @And("Click Save button and Accept alert")

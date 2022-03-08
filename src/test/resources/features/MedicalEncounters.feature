@@ -17,7 +17,7 @@ Feature:  Medical Encounters
     And Select the Type - "Administrative - Provider"
     Then Click Next button
     Then Add Timestamp to Subjective Notes
-    And Click Save button
+    And Click Save button and Accept alert
     Then Click "S" jump button
     And Verify "Subjective" section
     Then Click "O" jump button
@@ -87,6 +87,50 @@ Feature:  Medical Encounters
     And Click Save button
     Then Click Save and Close button
 
+  Scenario: Create New Assessment
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Assessment" section
+    * Enter the Diagnosis Code
+    * Click Next button on Assessment
+    * Select the Current associated SNOMED
+    * Click the Add Diagnosis
+    And Verify the added Diagnosis
+    Then Click Save and Close button
+
+  Scenario: Create New Related Health Problems/Conditions/Allergies
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Related Health Problems/Conditions/Allergies" section
+    And Click on New button of New Related Health Problems, Conditions, Allergies section
+    * Select the Category
+    * Select the Type
+    * Enter the SNOMED Code
+    * Select the Onset Date
+    * Add Timestamp to Comments
+    * Add Timestamp to Baseline History - Assessment
+    * Add Timestamp to Baseline Procedures
+    * Add Timestamp to Patient Education
+    * Add Timestamp to Findings to be documented per Encounter
+    And Click Save button
+    Then Click Save and Close button
+
   Scenario Outline: Create New Lab Test Orders
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -102,7 +146,6 @@ Feature:  Medical Encounters
     And Click on New button of Lab Test Orders section
     Then Verify Complex location is "Bent County Correctional Facility"
     * Select the "<Diagnosis Code>"
-    * Select the Formulary
     * Select the Lab Test Ordered
     * Select the Priority
     * Select the Fasting
@@ -112,7 +155,7 @@ Feature:  Medical Encounters
     Examples:
       | Diagnosis Code                                              |
       | Abnormality of plasma protein, unspecified [R77.9]          |
-      | Anemia, unspecified [D64.9]                                 |
+     # | Anemia, unspecified [D64.9]                                 |
       | Cardiac arrhythmia, unspecified [I49.9]                     |
       | Cardiomyopathy, unspecified [I42.9]                         |
       | Chronic kidney disease, unspecified [N18.9]                 |
@@ -143,7 +186,7 @@ Feature:  Medical Encounters
       | Unspecified atrial fibrillation [I48.91]                    |
       | Unspecified lump in breast [N63]                            |
 
-  Scenario: Create X-Ray Orders
+  Scenario Outline: Create X-Ray Orders
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "045632"
@@ -155,15 +198,50 @@ Feature:  Medical Encounters
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "X-Ray Orders" section
-    And Click on New button of Lab Test Orders section
-    Then Verify Complex location is "Bent County Correctional Facility"
+    And Click on New button of X-Ray Orders section
     * Select the X-Ray Ordered
-    * Select the Diagnosis Code
-    * Select the Priority
-    * Select the today's date for X-Ray Schedule Date
+    * Select the "<Diagnosis Code>"
+    * Select the X-Ray Priority
     * Select the Verbal or Telephone Order Read Back
+    * Select the X-Ray Taken Date
+    * Select the Time
+    * Enter the Stuff
+    * Select the Shipped Date
+    * Select the X-Ray Site
+    * Add TimeStamp to X-Ray Taken Comments
+    * Add TimeStamp to Results Comments
     And Click Save button
-    #Then Click Save and Close button
+    Then Click Save and Close button
+    Examples:
+      | Diagnosis Code                                              |
+      | Abnormality of plasma protein, unspecified [R77.9]          |
+      | Anemia, unspecified [D64.9]                                 |
+      | Chronic kidney disease, unspecified [N18.9]                 |
+      | Decreased white blood cell count, unspecified [D72.819]     |
+      | Deficiency of nutrient element, unspecified [E61.9]         |
+      | Diarrhea, unspecified [R19.7]                               |
+      | Dysphagia, unspecified [R13.10]                             |
+      | Edema, unspecified [R60.9]                                  |
+      | Enlarged prostate with lower urinary tract symptoms [N40.1] |
+      | Essential (primary) hypertension [I10]                      |
+      | Gastritis, unspecified, with bleeding [K29.71]              |
+      | Heart failure, unspecified [I50.9]                          |
+      | HELICOBACTER PYLORI [H. PYLORI] [B96.81]                    |
+      | Hemorrhage, not elsewhere classified [R58]                  |
+      | Hydrocele, unspecified [N43.3]                              |
+      | Hypertrophy of breast [N62]                                 |
+      | Impacted cerumen, unspecified ear [H61.20]                  |
+      | Impaired glucose tolerance (oral) [R73.02]                  |
+      | Long term (current) use of anticoagulants [Z79.01]          |
+      | Nonrheumatic aortic valve disorder, unspecified [I35.9]     |
+      | Nonrheumatic mitral valve disorder, unspecified [I34.9]     |
+      | Other Specified Depressive Episodes [F32.89]                |
+      | Pain in unspecified joint [M25.50]                          |
+      | Rheumatic aortic valve disease, unspecified [I06.9]         |
+      | Rheumatic heart disease, unspecified [I09.9]                |
+      | Thrombocytopenia, unspecified [D69.6]                       |
+      | Unspecified atrial fibrillation [I48.91]                    |
+      | Unspecified lump in breast [N63]                            |
 
   Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
     Given Enter Provider User ID and Password at DeCORuM login screen

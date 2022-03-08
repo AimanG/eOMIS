@@ -14,8 +14,14 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "(//input[@value='New'])[1]")
     public WebElement newButtonObjective;
 
+    @FindBy(xpath = "(//input[@value='New'])[2]")
+    public WebElement newButtonRelatedHealthProblems;
+
     @FindBy(xpath = "(//input[@value='New'])[3]")
     public WebElement newButtonLabTestOrders;
+
+    @FindBy(xpath = "(//input[@value='New'])[4]")
+    public WebElement newButtonXRayOrders;
 
     @FindBy(xpath = "//strong[text()='MSSS032B - Vital Signs']")
     public WebElement title;
@@ -23,7 +29,7 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "//h3[text()='Objective']")
     public WebElement labTestOrdersSection;
 
-    @FindBy(xpath = "//h3[text()='Objective']")
+    @FindBy(xpath = "//span[text()='X-Ray Orders']")
     public WebElement xRayOrdersSection;
 
     @FindBy(xpath = "//input[@id='Weight']")
@@ -134,11 +140,79 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "//select[@id='VerbalOrderReadBack']")
     public WebElement verbalTelephoneOrderReadBack;
 
-//    @FindBy(xpath = "")
-//    public WebElement commentsTimestamp;
-//
-//    @FindBy(xpath = "")
-//    public WebElement commentsTimestamp;
+    @FindBy(xpath = "//select[@id='xRayCode']")
+    public WebElement xRayOrdered;
+
+    @FindBy(xpath = "//select[@id='xRayPriority']")
+    public WebElement xRayPriority;
+
+    @FindBy(xpath = "(//td/div/span)[8]")
+    public WebElement xRayTakenDate;
+
+    @FindBy(xpath = "(//td/div/span)[10]")
+    public WebElement time;
+
+    @FindBy(xpath = "//input[@id='xRayTakenByStaff']")
+    public WebElement staff;
+
+    @FindBy(xpath = "(//td/div/span)[13]")
+    public WebElement shippedDate;
+
+    @FindBy(xpath = "//select[@id='xRayTestingSite']")
+    public WebElement xRaySite;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[2]")
+    public WebElement xRayTakenComments;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[3]")
+    public WebElement resultsComments;
+
+    @FindBy(xpath = "//input[@id='SelectDiagnosisCode']")
+    public WebElement diagnosisCodeAssessment;
+
+    @FindBy(xpath = "//button[@onclick='associateDiagnosis()']")
+    public WebElement nextButton;
+
+    @FindBy(xpath = "//select[@id='mappedSnomed']")
+    public WebElement currentAssociatedSnomed;
+
+    @FindBy(xpath = "//input[@id='addDiagBtn']")
+    public WebElement addDiagnosis;
+
+    @FindBy(xpath = "//select[@id='HealthProblemCategory']")
+    public WebElement category;
+
+    @FindBy(xpath = "//select[@id='HealthProblemCode']")
+    public WebElement type;
+
+    @FindBy(xpath = "//input[@id='SnomedCode']")
+    public WebElement SNOMEDCode;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[1]")
+    public WebElement commentsTimestampRelatedHealth;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[2]")
+    public WebElement baselineHistoryAssessmentTimestamp;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[3]")
+    public WebElement baselineProceduresTimestamp;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[4]")
+    public WebElement patientEducationTimestamp;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[5]")
+    public WebElement findingsToBeDocumentedPerEncounterTimestamp;
+
+    @FindBy(xpath = "//*[@data-value='Headache']")
+    public WebElement diagnosis;
+
+    @FindBy(xpath = "(//div/span/span[@class='fa fa-crosshairs'])[1]")
+    public WebElement onsetDate;
+
+
+
+
+
 
 
 

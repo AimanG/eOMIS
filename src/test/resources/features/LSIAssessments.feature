@@ -110,7 +110,6 @@ Feature: LSI Assessments
     And Verify if checkbox "29. High crime neighborhood (C)" is unchecked by default
     Then Check the checkbox "29. High crime neighborhood (C)"
     And Uncheck the checkbox "29. High crime neighborhood (C)"
-#
 
   Scenario: LEISURE/RECREATION
     Given Enter User ID and Password at DeCORuM login screen

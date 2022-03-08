@@ -8,6 +8,8 @@ import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class MedicalEncountersSteps extends BrowserUtils {
@@ -28,11 +30,11 @@ public class MedicalEncountersSteps extends BrowserUtils {
             case "Objective":
                 pages.getNursingEncountersPage().objectiveSection.click();
                 break;
-            case "X-Ray Orders":
-
+            case "Assessment":
+                pages.getNursingEncountersPage().assessmentSection.click();
                 break;
-            case "Consultation Request":
-
+            case "Related Health Problems/Conditions/Allergies":
+                scrollDown(2250, 2750);
                 break;
             case "Patient Transfer Holds":
 
@@ -49,6 +51,12 @@ public class MedicalEncountersSteps extends BrowserUtils {
         logger.info("Click on New button of Objective section");
         pages.getMedicalEncountersPage().newButtonObjective.click();
 
+    }
+
+    @Then("Click on New button of X-Ray Orders section")
+    public void click_on_new_button_of_x_ray_orders_section() {
+        logger.info("Click on New button of X-Ray Orders section");
+        pages.getMedicalEncountersPage().newButtonXRayOrders.click();
     }
 
     @Then("Make sure the page tittle is {string}")
@@ -221,6 +229,7 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add Timestamp to Comments")
     public void add_timestamp_to_comments() {
         logger.info("Add Timestamp to Comments");
+        scrollDown(250,500);
         pages.getMedicalEncountersPage().commentsTimestamp.click();
     }
 
@@ -335,12 +344,6 @@ public class MedicalEncountersSteps extends BrowserUtils {
         }
     }
 
-    @Then("Select the Formulary")
-    public void select_the_formulary() {
-        logger.info("Select the Formulary");
-
-    }
-
     @Then("Select the Lab Test Ordered")
     public void select_the_lab_test_ordered() {
         logger.info("Select the Lab Test Ordered");
@@ -353,7 +356,13 @@ public class MedicalEncountersSteps extends BrowserUtils {
         logger.info("Select the Priority");
         Select select = new Select(pages.getMedicalEncountersPage().priority);
         select.selectByValue("1");
+    }
 
+    @Then("Select the X-Ray Priority")
+    public void select_the_x_ray_priority() {
+        logger.info("Select the X-Ray Priority");
+        Select select = new Select(pages.getMedicalEncountersPage().xRayPriority);
+        select.selectByValue("1");
     }
 
     @Then("Select the Fasting")
@@ -372,18 +381,150 @@ public class MedicalEncountersSteps extends BrowserUtils {
 
     @Then("Select the X-Ray Ordered")
     public void select_the_x_ray_ordered() {
-        logger.info("");
-    }
-
-    @Then("Select the Diagnosis Code")
-    public void select_the_diagnosis_code() {
         logger.info("Select the X-Ray Ordered");
+        Select select = new Select(pages.getMedicalEncountersPage().xRayOrdered);
+        select.selectByValue("74010");
     }
 
-    @Then("Select the today's date for X-Ray Schedule Date")
-    public void select_the_today_s_date_for_x_ray_schedule_date() {
-        logger.info("Select the today's date for X-Ray Schedule Date");
+    @Then("Select the X-Ray Taken Date")
+    public void select_the_x_ray_taken_date() {
+        logger.info("Select the X-Ray Taken Date");
+        scrollDown(250, 500);
+        pages.getMedicalEncountersPage().xRayTakenDate.click();
     }
 
+    @Then("Select the Time")
+    public void select_the_time() {
+        logger.info("Select the Time");
+        pages.getMedicalEncountersPage().time.click();
+    }
+
+    @Then("Enter the Stuff")
+    public void enter_the_stuff() {
+        logger.info("Enter the Stuff");
+    }
+
+    @Then("Select the Shipped Date")
+    public void select_the_shipped_date() {
+        logger.info("Select the Shipped Date");
+        pages.getMedicalEncountersPage().shippedDate.click();
+    }
+
+    @Then("Select the X-Ray Site")
+    public void select_the_x_ray_site() {
+        logger.info("Select the X-Ray Site");
+        Select select = new Select(pages.getMedicalEncountersPage().xRaySite);
+        select.selectByValue("000005000");
+    }
+
+    @Then("Add TimeStamp to X-Ray Taken Comments")
+    public void add_time_stamp_to_x_ray_comments() {
+        logger.info("Add TimeStamp to X-Ray Comments");
+        pages.getMedicalEncountersPage().xRayTakenComments.click();
+    }
+
+    @Then("Add TimeStamp to Results Comments")
+    public void add_time_stamp_to_results_comments() {
+        logger.info("Add TimeStamp to Results Comments");
+        pages.getMedicalEncountersPage().resultsComments.click();
+    }
+
+    @Then("Enter the Diagnosis Code")
+    public void enter_the_diagnosis_code() {
+        logger.info("Enter the Diagnosis Code");
+        WebElement diagnosisCode = pages.getMedicalEncountersPage().diagnosisCodeAssessment;
+       // diagnosisCode.sendKeys("a");
+       // diagnosisCode.clear();
+        diagnosisCode.sendKeys("headache");
+        wait(1);
+        diagnosisCode.sendKeys(Keys.DOWN);
+        diagnosisCode.sendKeys(Keys.ENTER);
+    }
+
+    @Then("Click Next button on Assessment")
+    public void click_next_button_on_assessment() {
+        logger.info("Click Next button on Assessment");
+        pages.getMedicalEncountersPage().nextButton.click();
+        wait(1);
+        Driver.getDriver().switchTo().alert().accept();
+    }
+
+    @Then("Select the Current associated SNOMED")
+    public void select_the_current_associated_snomed_s() {
+        logger.info("Select the Current associated SNOMED");
+        Select select = new Select(pages.getMedicalEncountersPage().currentAssociatedSnomed);
+        select.selectByValue("127295002");
+    }
+
+    @Then("Click the Add Diagnosis")
+    public void click_the_add_diagnosis() {
+        logger.info("Click the Add Diagnosis");
+        pages.getMedicalEncountersPage().addDiagnosis.click();
+    }
+
+    @Then("Verify the added Diagnosis")
+    public void verify_the_added_diagnosis() {
+        logger.info("Verify the added Diagnosis");
+    }
+
+    @Then("Select the Category")
+    public void select_the_category() {
+        logger.info("Select the Category");
+        Select select = new Select(pages.getMedicalEncountersPage().category);
+        select.selectByValue("E");
+    }
+
+    @Then("Select the Type")
+    public void select_the_type() {
+        logger.info("Select the Type");
+        Select select = new Select(pages.getMedicalEncountersPage().type);
+        select.selectByValue("EP7");
+    }
+
+    @Then("Enter the SNOMED Code")
+    public void enter_the_snomed_code() {
+        logger.info("Enter the SNOMED Code");
+        WebElement SNOMEDCode = pages.getMedicalEncountersPage().SNOMEDCode;
+        SNOMEDCode.sendKeys("ana");
+        wait(1);
+        SNOMEDCode.sendKeys(Keys.DOWN);
+        SNOMEDCode.sendKeys(Keys.ENTER);
+    }
+
+    @Then("Add Timestamp to Baseline History - Assessment")
+    public void add_timestamp_to_baseline_history_assessment() {
+        logger.info("Add Timestamp to Baseline History - Assessment");
+        pages.getMedicalEncountersPage().baselineHistoryAssessmentTimestamp.click();
+    }
+
+    @Then("Add Timestamp to Baseline Procedures")
+    public void add_timestamp_to_baseline_procedures() {
+        logger.info("Add Timestamp to Baseline Procedures");
+        pages.getMedicalEncountersPage().baselineProceduresTimestamp.click();
+    }
+
+    @Then("Add Timestamp to Patient Education")
+    public void add_timestamp_to_patient_education() {
+        logger.info("Add Timestamp to Patient Education");
+        pages.getMedicalEncountersPage().patientEducationTimestamp.click();
+    }
+
+    @Then("Add Timestamp to Findings to be documented per Encounter")
+    public void add_timestamp_to_findings_to_be_documented_per_encounter() {
+        logger.info("Add Timestamp to Findings to be documented per Encounter");
+        pages.getMedicalEncountersPage().findingsToBeDocumentedPerEncounterTimestamp.click();
+    }
+
+    @Then("Click on New button of New Related Health Problems, Conditions, Allergies section")
+    public void click_on_new_button_of_new_related_health_problems_conditions_allergies_section() {
+        logger.info("Click on New button of New Related Health Problems/Conditions/Allergies section");
+        pages.getMedicalEncountersPage().newButtonRelatedHealthProblems.click();
+    }
+
+    @Then("Select the Onset Date")
+    public void select_the_onset_date() {
+        logger.info("Select the Onset Date");
+        pages.getMedicalEncountersPage().onsetDate.click();
+    }
 
 }
