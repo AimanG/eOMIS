@@ -46,7 +46,6 @@ public class BrowserUtils extends DBUtils {
     public static void scrollDown(int num, int num2){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy("+num+","+num2+")", "");
-
     }
     /**
      * Generates the String path to the screenshot taken.

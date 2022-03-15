@@ -7,6 +7,42 @@ Feature:  Medical Encounters
     And Go to Health -> Medical Provider -> Medical Encounters
     Then Make sure DOC "045632" is displayed correctly
 
+  Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Arkansas Valley Correctional Facility"
+    And Select the Type - "<Type>"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button
+    Then Verify Complex location is "Arkansas Valley Correctional Facility"
+    And Click Save and Close button
+    Examples:
+      | Type                                 |
+      | Administrative - Provider            |
+      | Appointment No-show - Provider       |
+      | Appointment Refusal - Provider       |
+      | Chart Review - Provider              |
+      | Chronic Care Visit                   |
+      | CTCF Infirmary Admission/Hospice     |
+      | Diet Consult Request - Provider      |
+      | DRDC Infirmary Admission OBS         |
+      | Emergency - Provider (w/ transport)  |
+      | Emergency - Provider (w/o transport) |
+      | Follow-up - Provider                 |
+      | IBAAP - Provider                     |
+      | Infectious Disease - Provider        |
+      | Infirmary Admission - Provider       |
+      | Infirmary Discharge - Provider       |
+      | Infirmary Note - Provider            |
+      | Intake Physical Exam - Provider      |
+      | Routine Physical Exam Self Referral  |
+      | Sick Call - Provider                 |
+
+
   Scenario: Verify Health Scores
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -186,7 +222,7 @@ Feature:  Medical Encounters
       | Unspecified atrial fibrillation [I48.91]                    |
       | Unspecified lump in breast [N63]                            |
 
-  Scenario Outline: Create X-Ray Orders
+  Scenario Outline: Create New X-Ray Orders
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "045632"
@@ -243,40 +279,169 @@ Feature:  Medical Encounters
       | Unspecified atrial fibrillation [I48.91]                    |
       | Unspecified lump in breast [N63]                            |
 
-  Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
+  Scenario Outline: Create New Consultation Request
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "045632"
     And Go to Health -> Medical Provider -> Medical Encounters
     And Click on a New button in Health Services Encounters
-    Then Select the Complex - "Arkansas Valley Correctional Facility"
-    And Select the Type - "<Type>"
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
     Then Click Next button
     Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Consultation Request" section
+    And Click on New button of Consultation Request section
+    * Select the Request Type
+    * Select the Priority
+    * Select the Service Type
+    * Select the "<Location>" of Consultation Request
+    * Enter the Specialist
+    * Enter the Procedure Requested
+    * Add TimeStamp to PURPOSE OF REQUEST
+    * Select N to SUPPORTING DOCUMENTATION, PROGRESS OR SPECIALISTS NOTES, DIAGNOSTIC RESULTS, ATTACHED OR FAXED
+    * Add TimeStamp to PHYSICAL FUNCTIONAL EXAM PERTINENT TO REQUEST
+    * Add TimeStamp to PRIOR CONSERVATIVE MANAGEMENT
+    * Add TimeStamp to MRD
+    * Add TimeStamp to EFFECT ON ADL'S WHEN INDICATED
+    * Select Good to PATIENT CARE COMPLIANCE HISTORY WITH TREATMENT PLAN
+    * Select the Working Diagnosis
+    * Add TimeStamp to Subjective Notes
+    * Add TimeStamp to Describe Signs and Symptoms Suggesting Diagnosis
+    * Add TimeStamp to Failed Therapies
+    * Add TimeStamp to Related Lab Test Orders
+    * Add TimeStamp to Related XRay Orders
     And Click Save button
-    Then Verify Complex location is "Arkansas Valley Correctional Facility"
-    And Click Save and Close button
+    Then Click Save and Close button
     Examples:
-      | Type                                 |
-      | Administrative - Provider            |
-      | Appointment No-show - Provider       |
-      | Appointment Refusal - Provider       |
-      | Chart Review - Provider              |
-      | Chronic Care Visit                   |
-      | CTCF Infirmary Admission/Hospice     |
-      | Diet Consult Request - Provider      |
-      | DRDC Infirmary Admission OBS         |
-      | Emergency - Provider (w/ transport)  |
-      | Emergency - Provider (w/o transport) |
-      | Follow-up - Provider                 |
-      | IBAAP - Provider                     |
-      | Infectious Disease - Provider        |
-      | Infirmary Admission - Provider       |
-      | Infirmary Discharge - Provider       |
-      | Infirmary Note - Provider            |
-      | Intake Physical Exam - Provider      |
-      | Routine Physical Exam Self Referral  |
-      | Sick Call - Provider                 |
+      | Location                                         |
+      | ACC-General Population MIN/MINR  [ACC-GPII]      |
+      | ACC-Intake Use Only  [ACC-INTK]                  |
+      | ACC-Restrictive Housing  [ACC-RH]                |
+      | Adams County Jail  [JB-01]                       |
+      | Alamosa County Jail  [JB-02]                     |
+      | Alamosa Office  [000039000]                      |
+      | Any Colorado City Jail  [ANYCTYJAIL]             |
+      | Arapahoe Community Treatment Center  [ARAP/ACTC] |
+      | Arapahoe County Jail  [JB-03]                    |
+      | Arapahoe County Residential Center  [ARAP/ACRC]  |
+      | Archuleta County Jail  [JB-04]                   |
+      | Aurora Office  [000039001]                       |
+      | AVCF-General Population MEDIUM  [AVCF-GPIII]     |
+      | AVCF-Intake Use Only  [AVCF-INTK]                |
+      | AVCF-Protective Custody  [AVCF-PC]               |
+      | AVCF-Restrictive Housing  [AVCF-RH]              |
+      | Baca County Jail  [JB-05]                        |
+      | BCCF-General Population MEDIUM  [BCCF-GPIII]     |
+      | BCCF-Intake Use Only  [BCCF-INTK]                |
+      | BCCF-Restrictive Housing  [BCCF-RH]              |
+      | Bent County Jail  [JB-06]                        |
+      | BOLDR/Bctc  [IS/BCTC]                            |
+      | BOLDR/Lctc  [IS/B/LCTC]                          |
+      | Boulder County Jail  [JB-07]                     |
+      | Broadway Office  [000039005]                     |
+      | Broomfield County Jail  [JB-80]                  |
+      | BUENA VISTA TRANSITIONAL WORK CENTER  [BW-TWC]   |
+      | BVCF-General Population CLOSE  [BVCF-GPIV]       |
+
+
+  Scenario: Create New Patient Transfer Holds
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Patient Transfer Holds" section
+    And Click on New button of Patient Transfer Holds section
+    * Select the Hold Type
+    * Select the Status
+    * Select the As of Date
+    * Add Timestamp to Comments
+    And Click Save button
+    Then Click Save and Close button
+
+  Scenario: Create New Other Actions/Procedures
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Other Actions/Procedures" section
+    And Click on New button of Other Actions Procedures section
+    * Select the Category
+    * Select the Status
+    * Select the As of Date
+    * Add Timestamp to Specify Comments
+    And Click Save button
+    Then Click Save and Close button
+
+  Scenario: Initiate Kite Follow-up Appointments
+    Given Enter Provider User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "045632"
+    And Go to Health -> Medical Provider -> Medical Encounters
+    And Click on a Initiate Kite
+    Then Select the Complex - "Bent County Correctional Facility"
+    And Select the Type - "Administrative - Provider"
+    Then Click Next button
+    Then Add Timestamp to Subjective Notes
+    And Click Save button and Accept alert
+    Then Scroll down to "Follow-up Appointments" section
+    And Click on New button of Other Actions Procedures section
+    * Select the Triage Date
+    * Select the Area of Service
+    * Select the Acuity
+    * Select the Complaint Category
+    * Select the Target Complete Date
+    * Add Timestamp to Inmate Health Issue
+    * Add Timestamp to Reviewer Comments
+    And Click Save button
+    Then Click Save and Close button
+
+#  Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
+#    Given Enter Provider User ID and Password at DeCORuM login screen
+#    When Click Logon button
+#    Then Select the Offender "045632"
+#    And Go to Health -> Medical Provider -> Medical Encounters
+#    And Click on a New button in Health Services Encounters
+#    Then Select the Complex - "Arkansas Valley Correctional Facility"
+#    And Select the Type - "<Type>"
+#    Then Click Next button
+#    Then Add Timestamp to Subjective Notes
+#    And Click Save button
+#    Then Verify Complex location is "Arkansas Valley Correctional Facility"
+#    And Click Save and Close button
+#    Examples:
+#      | Type                                 |
+#      | Administrative - Provider            |
+#      | Appointment No-show - Provider       |
+#      | Appointment Refusal - Provider       |
+#      | Chart Review - Provider              |
+#      | Chronic Care Visit                   |
+#      | CTCF Infirmary Admission/Hospice     |
+#      | Diet Consult Request - Provider      |
+#      | DRDC Infirmary Admission OBS         |
+#      | Emergency - Provider (w/ transport)  |
+#      | Emergency - Provider (w/o transport) |
+#      | Follow-up - Provider                 |
+#      | IBAAP - Provider                     |
+#      | Infectious Disease - Provider        |
+#      | Infirmary Admission - Provider       |
+#      | Infirmary Discharge - Provider       |
+#      | Infirmary Note - Provider            |
+#      | Intake Physical Exam - Provider      |
+#      | Routine Physical Exam Self Referral  |
+#      | Sick Call - Provider                 |
 
   Scenario: Verify Health Scores
     Given Enter Provider User ID and Password at DeCORuM login screen

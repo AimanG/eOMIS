@@ -24,8 +24,8 @@ public class MedicalEncountersSteps extends BrowserUtils {
 
 
         switch (sectionName) {
-            case "Lab Test Orders":
-
+            case "Consultation Request":
+                scrollDown(3000, 3250);
                 break;
             case "Objective":
                 pages.getNursingEncountersPage().objectiveSection.click();
@@ -37,11 +37,15 @@ public class MedicalEncountersSteps extends BrowserUtils {
                 scrollDown(2250, 2750);
                 break;
             case "Patient Transfer Holds":
-
+                scrollDown(2250, 2750);
                 break;
             case "Other Actions/Procedures":
-
+                scrollDown(2500, 2750);
                 break;
+            case " Follow-up Appointments":
+                scrollDown(2500, 2750);
+                break;
+
 
         }
     }
@@ -229,7 +233,7 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add Timestamp to Comments")
     public void add_timestamp_to_comments() {
         logger.info("Add Timestamp to Comments");
-        scrollDown(250,500);
+        scrollDown(250, 500);
         pages.getMedicalEncountersPage().commentsTimestamp.click();
     }
 
@@ -354,8 +358,9 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Select the Priority")
     public void select_the_priority() {
         logger.info("Select the Priority");
+        scrollDown(0, 250);
         Select select = new Select(pages.getMedicalEncountersPage().priority);
-        select.selectByValue("1");
+        select.selectByValue("4");
     }
 
     @Then("Select the X-Ray Priority")
@@ -433,8 +438,8 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void enter_the_diagnosis_code() {
         logger.info("Enter the Diagnosis Code");
         WebElement diagnosisCode = pages.getMedicalEncountersPage().diagnosisCodeAssessment;
-       // diagnosisCode.sendKeys("a");
-       // diagnosisCode.clear();
+        // diagnosisCode.sendKeys("a");
+        // diagnosisCode.clear();
         diagnosisCode.sendKeys("headache");
         wait(1);
         diagnosisCode.sendKeys(Keys.DOWN);
@@ -470,8 +475,8 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Select the Category")
     public void select_the_category() {
         logger.info("Select the Category");
-        Select select = new Select(pages.getMedicalEncountersPage().category);
-        select.selectByValue("E");
+//        Select select = new Select(pages.getMedicalEncountersPage().category);
+//        select.selectByValue("E");
     }
 
     @Then("Select the Type")
@@ -525,6 +530,295 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void select_the_onset_date() {
         logger.info("Select the Onset Date");
         pages.getMedicalEncountersPage().onsetDate.click();
+    }
+
+    @Then("Click on New button of Consultation Request section")
+    public void click_on_new_button_of_consultation_request_section() {
+        logger.info("Click on New button of Consultation Request section");
+        pages.getMedicalEncountersPage().newConsultationRequest.click();
+    }
+
+    @Then("Select the Request Type")
+    public void select_the_request_type() {
+        logger.info("Select the Request Type");
+        Select select = new Select(pages.getMedicalEncountersPage().requestType);
+        select.selectByValue("1");
+    }
+
+    @Then("Select the Service Type")
+    public void select_the_service_type() {
+        logger.info("Select the Service Type");
+        Select select = new Select(pages.getMedicalEncountersPage().serviceType);
+        select.selectByValue("114");
+    }
+
+    @Then("Select the {string} of Consultation Request")
+    public void select_the_location(String location) {
+        logger.info("Select the " + location + " of Consultation Request");
+        Select select = new Select(pages.getMedicalEncountersPage().location);
+
+        switch (location) {
+            case "ACC-General Population MIN/MINR  [ACC-GPII]":
+                select.selectByValue("000005000");
+                break;
+            case "ACC-Intake Use Only  [ACC-INTK]":
+                select.selectByValue("000005001");
+                break;
+            case "ACC-Restrictive Housing  [ACC-RH]":
+                select.selectByValue("000005002");
+                break;
+            case "Adams County Jail  [JB-01]":
+                select.selectByValue("000007000");
+                break;
+            case "Alamosa County Jail  [JB-02]":
+                select.selectByValue("000007001");
+                break;
+            case "Alamosa Office  [000039000]":
+                select.selectByValue("000039000");
+                break;
+            case "Any Colorado City Jail  [ANYCTYJAIL]":
+                select.selectByValue("000002070");
+                break;
+            case "Arapahoe Community Treatment Center  [ARAP/ACTC]":
+                select.selectByValue("000006504");
+                break;
+            case "Arapahoe County Jail  [JB-03]":
+                select.selectByValue("000007002");
+                break;
+            case "Arapahoe County Residential Center  [ARAP/ACRC]":
+                select.selectByValue("000006506");
+                break;
+            case "Archuleta County Jail  [JB-04]":
+                select.selectByValue("000007003");
+                break;
+            case "Aurora Office  [000039001]":
+                select.selectByValue("000039001");
+                break;
+            case "AVCF-General Population MEDIUM  [AVCF-GPIII]":
+                select.selectByValue("000005003");
+                break;
+            case "AVCF-Intake Use Only  [AVCF-INTK]":
+                select.selectByValue("000005004");
+                break;
+            case "AVCF-Protective Custody  [AVCF-PC]":
+                select.selectByValue("000005005");
+                break;
+            case "AVCF-Restrictive Housing  [AVCF-RH]":
+                select.selectByValue("000005006");
+                break;
+            case "Baca County Jail  [JB-05]":
+                select.selectByValue("000007004");
+                break;
+            case "BCCF-General Population MEDIUM  [BCCF-GPIII]":
+                select.selectByValue("000005007");
+                break;
+            case "BCCF-Intake Use Only  [BCCF-INTK]":
+                select.selectByValue("000005008");
+                break;
+            case "BCCF-Restrictive Housing  [BCCF-RH]":
+                select.selectByValue("000005009");
+                break;
+            case "Bent County Jail  [JB-06]":
+                select.selectByValue("000007005");
+                break;
+            case "BOLDR/Bctc  [IS/BCTC]":
+                select.selectByValue("000007507");
+                break;
+            case "BOLDR/Lctc  [IS/B/LCTC]":
+                select.selectByValue("000007508");
+                break;
+            case "Boulder County Jail  [JB-07]":
+                select.selectByValue("000007006");
+                break;
+            case "Broadway Office  [000039005]":
+                select.selectByValue("000039005");
+                break;
+            case "Broomfield County Jail  [JB-80]":
+                select.selectByValue("000007007");
+                break;
+            case "BUENA VISTA TRANSITIONAL WORK CENTER  [BW-TWC]":
+                select.selectByValue("100032549");
+                break;
+            case "BVCF-General Population CLOSE  [BVCF-GPIV]":
+                select.selectByValue("000005010");
+                break;
+//            case "":
+//                select.selectByValue("000005000");
+//                break;
+
+        }
+    }
+
+    @Then("Enter the Specialist")
+    public void enter_the_specialist() {
+        logger.info("Enter the Specialist");
+        pages.getMedicalEncountersPage().specialist.sendKeys("Dr");
+    }
+
+    @Then("Enter the Procedure Requested")
+    public void enter_the_procedure_requested() {
+        logger.info("Enter the Procedure Requested");
+
+        WebElement procedureRequested = pages.getMedicalEncountersPage().procedureRequested;
+        procedureRequested.sendKeys("ana");
+        wait(1);
+        procedureRequested.sendKeys(Keys.DOWN);
+        procedureRequested.sendKeys(Keys.ENTER);
+
+    }
+
+    @Then("Add TimeStamp to PURPOSE OF REQUEST")
+    public void add_time_stamp_to_purpose_of_request() {
+        logger.info("Add TimeStamp to PURPOSE OF REQUEST");
+        scrollDown(0, 250);
+        pages.getMedicalEncountersPage().purposeOfRequest.click();
+    }
+
+    @Then("Select N to SUPPORTING DOCUMENTATION, PROGRESS OR SPECIALISTS NOTES, DIAGNOSTIC RESULTS, ATTACHED OR FAXED")
+    public void select_n_to_supporting_documentation_progress_or_specialists_notes_diagnostic_results_attached_or_faxed() {
+        logger.info("Select N to SUPPORTING DOCUMENTATION, PROGRESS OR SPECIALISTS NOTES, DIAGNOSTIC RESULTS, ATTACHED OR FAXED");
+        pages.getMedicalEncountersPage().supportingN.click();
+    }
+
+    @Then("Add TimeStamp to PHYSICAL FUNCTIONAL EXAM PERTINENT TO REQUEST")
+    public void add_time_stamp_to_physical_functional_exam_pertinent_to_request() {
+        logger.info("Add TimeStamp to PHYSICAL FUNCTIONAL EXAM PERTINENT TO REQUEST");
+        scrollDown(250, 500);
+        pages.getMedicalEncountersPage().physicalFunctionalExamPertinent.click();
+    }
+
+    @Then("Add TimeStamp to PRIOR CONSERVATIVE MANAGEMENT")
+    public void add_time_stamp_to_prior_conservative_management() {
+        logger.info("Add TimeStamp to PRIOR CONSERVATIVE MANAGEMENT");
+        pages.getMedicalEncountersPage().priorConservativeManagement.click();
+    }
+
+    @Then("Add TimeStamp to MRD")
+    public void add_time_stamp_to_mrd() {
+        logger.info("Add TimeStamp to MRD");
+        pages.getMedicalEncountersPage().mrd.click();
+    }
+
+    @Then("Add TimeStamp to EFFECT ON ADL'S WHEN INDICATED")
+    public void add_time_stamp_to_effect_on_adl_s_when_indicated() {
+        logger.info("Add TimeStamp to EFFECT ON ADL'S WHEN INDICATED");
+        pages.getMedicalEncountersPage().effectOnAdlsWhenIndicated.click();
+    }
+
+    @Then("Select Good to PATIENT CARE COMPLIANCE HISTORY WITH TREATMENT PLAN")
+    public void select_good_to_patient_care_compliance_history_with_treatment_plan() {
+        logger.info("Select Good to PATIENT CARE COMPLIANCE HISTORY WITH TREATMENT PLAN");
+        scrollDown(450, 700);
+        pages.getMedicalEncountersPage().complianceGood.click();
+    }
+
+    @Then("Select the Working Diagnosis")
+    public void select_the_working_diagnosis() {
+        logger.info("Select the Working Diagnosis");
+        Select select = new Select(pages.getMedicalEncountersPage().workingDiagnosis);
+        select.selectByValue("R77.9");
+    }
+
+    @Then("Add TimeStamp to Subjective Notes")
+    public void add_time_stamp_to_subjective_notes() {
+        logger.info("Add TimeStamp to Subjective Notes");
+        pages.getMedicalEncountersPage().subjectiveNotes.click();
+    }
+
+    @Then("Add TimeStamp to Describe Signs and Symptoms Suggesting Diagnosis")
+    public void add_time_stamp_to_describe_signs_and_symptoms_suggesting_diagnosis() {
+        logger.info("Add TimeStamp to Describe Signs and Symptoms Suggesting Diagnosis");
+        pages.getMedicalEncountersPage().describeSignsAndSymptomsSuggesting.click();
+    }
+
+    @Then("Add TimeStamp to Failed Therapies")
+    public void add_time_stamp_to_failed_therapies() {
+        logger.info("Add TimeStamp to Failed Therapies");
+        scrollDown(7500, 1000);
+        pages.getMedicalEncountersPage().failedTherapies.click();
+    }
+
+    @Then("Add TimeStamp to Related Lab Test Orders")
+    public void add_time_stamp_to_related_lab_test_orders() {
+        logger.info("Add TimeStamp to Related Lab Test Orders");
+        pages.getMedicalEncountersPage().relatedLabTestOrders.click();
+    }
+
+    @Then("Add TimeStamp to Related XRay Orders")
+    public void add_time_stamp_to_related_x_ray_orders() {
+        logger.info("Add TimeStamp to Related XRay Orders");
+        pages.getMedicalEncountersPage().relatedXRayOrders.click();
+    }
+
+    @Then("Click on New button of Patient Transfer Holds section")
+    public void click_on_new_button_of_patient_transfer_holds_section() {
+        logger.info("Click on New button of Patient Transfer Holds section");
+        pages.getMedicalEncountersPage().newPatientTransferHolds.click();
+    }
+
+    @Then("Select the Hold Type")
+    public void select_the_hold_type() {
+        logger.info("Select the Hold Type");
+        Select select = new Select(pages.getMedicalEncountersPage().holdType);
+        select.selectByValue("A-00");
+    }
+
+    @Then("Select the Status")
+    public void select_the_status() {
+        logger.info("Select the Status");
+        Select select = new Select(pages.getMedicalEncountersPage().status);
+        select.selectByValue("A");
+    }
+
+    @Then("Select the As of Date")
+    public void select_the_as_of_date() {
+        logger.info("Select the As of Date");
+//        pages.getMedicalEncountersPage().asOfDate.click();
+    }
+
+    @Then("Click on New button of Other Actions Procedures section")
+    public void click_on_new_button_of_other_actions_procedures_section() {
+        logger.info("Click on New button of Other Actions/Procedures section");
+        pages.getMedicalEncountersPage().newOtherActionsProcedures.click();
+    }
+
+    @Then("Add Timestamp to Specify Comments")
+    public void add_timestamp_to_specify_comments() {
+        logger.info("Add Timestamp to Specify Comments");
+       // pages.getMedicalEncountersPage().specifyCommentsTimestamp.click();
+    }
+
+    @Then("Click on a Initiate Kite")
+    public void click_on_a_initiate_kite() {
+
+    }
+    @Then("Select the Triage Date")
+    public void select_the_triage_date() {
+
+    }
+    @Then("Select the Area of Service")
+    public void select_the_area_of_service() {
+
+    }
+    @Then("Select the Acuity")
+    public void select_the_acuity() {
+
+    }
+    @Then("Select the Complaint Category")
+    public void select_the_complaint_category() {
+
+    }
+    @Then("Select the Target Complete Date")
+    public void select_the_target_complete_date() {
+
+    }
+    @Then("Add Timestamp to Inmate Health Issue")
+    public void add_timestamp_to_inmate_health_issue() {
+
+    }
+    @Then("Add Timestamp to Reviewer Comments")
+    public void add_timestamp_to_reviewer_comments() {
+
     }
 
 }

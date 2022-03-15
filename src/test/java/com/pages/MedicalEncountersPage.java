@@ -23,6 +23,15 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "(//input[@value='New'])[4]")
     public WebElement newButtonXRayOrders;
 
+    @FindBy(xpath = "(//input[@value='New'])[5]")
+    public WebElement newConsultationRequest;
+
+    @FindBy(xpath = "(//input[@value='New'])[6]")
+    public WebElement newPatientTransferHolds;
+
+    @FindBy(xpath = "(//input[@value='New'])[7]")
+    public WebElement newOtherActionsProcedures;
+
     @FindBy(xpath = "//strong[text()='MSSS032B - Vital Signs']")
     public WebElement title;
 
@@ -131,7 +140,7 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "//select[@id='LabTestTypeFormulary']")
     public WebElement labTestOrdered;
 
-    @FindBy(xpath = "//select[@id='LabPriority']")
+    @FindBy(xpath = "//select[@id='urPriorityIndex']")
     public WebElement priority;
 
     @FindBy(xpath = "//select[@id='LabFastingReq']")
@@ -209,11 +218,70 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "(//div/span/span[@class='fa fa-crosshairs'])[1]")
     public WebElement onsetDate;
 
+    @FindBy(xpath = "//select[@id='urClinicType']")
+    public WebElement requestType;
 
+    @FindBy(xpath = "//select[@id='spclClinicTyp']")
+    public WebElement serviceType;
 
+    @FindBy(xpath = "//*[@id='IURLocation']")
+    public WebElement location;
 
+    @FindBy(xpath = "//input[@id='consultSpecialist']")
+    public WebElement specialist;
 
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[1]")
+    public WebElement purposeOfRequest;
 
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[2]")
+    public WebElement physicalFunctionalExamPertinent;
 
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[3]")
+    public WebElement priorConservativeManagement;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[4]")
+    public WebElement mrd;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[5]")
+    public WebElement effectOnAdlsWhenIndicated;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[6]")
+    public WebElement subjectiveNotes;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[7]")
+    public WebElement describeSignsAndSymptomsSuggesting;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[8]")
+    public WebElement failedTherapies;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[9]")
+    public WebElement relatedLabTestOrders;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[10]")
+    public WebElement relatedXRayOrders;
+
+    @FindBy(xpath = "//div[@class='screen-extension-section-wrapper']/div[4]/label[1]/span[1]")
+    public WebElement supportingN;
+
+    @FindBy(xpath = "//div[@class='screen-extension-section-wrapper']/div[14]/label[2]/span[1]")
+    public WebElement complianceGood;
+
+    @FindBy(xpath = "//select[@id='diagnosisCode']")
+    public WebElement workingDiagnosis;
+
+    @FindBy(xpath = "//input[@id='procedureRequested']")
+    public WebElement procedureRequested;
+
+    @FindBy(xpath = "//select[@id='TransferHoldType']")
+    public WebElement holdType;
+
+    @FindBy(xpath = "//select[@id='TransferHoldStatus']")
+    public WebElement status;
+
+    @FindBy(xpath = "(//span[@class='fa fa-crosshairs'])[2]")
+    public WebElement asOfDate;
+
+    @FindBy(xpath = "(//button[@data-original-title='Timestamp'])[1]")
+    public WebElement specifyCommentsTimestamp;
 
 }
