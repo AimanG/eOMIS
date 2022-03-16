@@ -42,11 +42,12 @@ public class MedicalEncountersSteps extends BrowserUtils {
             case "Other Actions/Procedures":
                 scrollDown(2500, 2750);
                 break;
-            case " Follow-up Appointments":
+            case "Follow-up Appointments":
                 scrollDown(2500, 2750);
                 break;
-
-
+            case "Scanned Document/Photo":
+                scrollDown(2700, 3000);
+                break;
         }
     }
 
@@ -149,7 +150,7 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void select_the_source() {
         logger.info("Select the Source");
         Select select = new Select(pages.getMedicalEncountersPage().source);
-        select.selectByValue("2");
+        select.selectByValue("A");
     }
 
     @Then("Enter the Liters")
@@ -425,13 +426,13 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add TimeStamp to X-Ray Taken Comments")
     public void add_time_stamp_to_x_ray_comments() {
         logger.info("Add TimeStamp to X-Ray Comments");
-        pages.getMedicalEncountersPage().xRayTakenComments.click();
+        pages.getMedicalEncountersPage().timestamp2.click();
     }
 
     @Then("Add TimeStamp to Results Comments")
     public void add_time_stamp_to_results_comments() {
         logger.info("Add TimeStamp to Results Comments");
-        pages.getMedicalEncountersPage().resultsComments.click();
+        pages.getMedicalEncountersPage().timestamp3.click();
     }
 
     @Then("Enter the Diagnosis Code")
@@ -475,8 +476,8 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Select the Category")
     public void select_the_category() {
         logger.info("Select the Category");
-//        Select select = new Select(pages.getMedicalEncountersPage().category);
-//        select.selectByValue("E");
+        Select select = new Select(pages.getMedicalEncountersPage().category);
+        select.selectByValue("BA10");
     }
 
     @Then("Select the Type")
@@ -499,25 +500,25 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add Timestamp to Baseline History - Assessment")
     public void add_timestamp_to_baseline_history_assessment() {
         logger.info("Add Timestamp to Baseline History - Assessment");
-        pages.getMedicalEncountersPage().baselineHistoryAssessmentTimestamp.click();
+        pages.getMedicalEncountersPage().timestamp2.click();
     }
 
     @Then("Add Timestamp to Baseline Procedures")
     public void add_timestamp_to_baseline_procedures() {
         logger.info("Add Timestamp to Baseline Procedures");
-        pages.getMedicalEncountersPage().baselineProceduresTimestamp.click();
+        pages.getMedicalEncountersPage().timestamp3.click();
     }
 
     @Then("Add Timestamp to Patient Education")
     public void add_timestamp_to_patient_education() {
         logger.info("Add Timestamp to Patient Education");
-        pages.getMedicalEncountersPage().patientEducationTimestamp.click();
+        pages.getMedicalEncountersPage().timestamp4.click();
     }
 
     @Then("Add Timestamp to Findings to be documented per Encounter")
     public void add_timestamp_to_findings_to_be_documented_per_encounter() {
         logger.info("Add Timestamp to Findings to be documented per Encounter");
-        pages.getMedicalEncountersPage().findingsToBeDocumentedPerEncounterTimestamp.click();
+        pages.getMedicalEncountersPage().timestamp5.click();
     }
 
     @Then("Click on New button of New Related Health Problems, Conditions, Allergies section")
@@ -671,7 +672,7 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void add_time_stamp_to_purpose_of_request() {
         logger.info("Add TimeStamp to PURPOSE OF REQUEST");
         scrollDown(0, 250);
-        pages.getMedicalEncountersPage().purposeOfRequest.click();
+        pages.getMedicalEncountersPage().timestamp1.click();
     }
 
     @Then("Select N to SUPPORTING DOCUMENTATION, PROGRESS OR SPECIALISTS NOTES, DIAGNOSTIC RESULTS, ATTACHED OR FAXED")
@@ -684,25 +685,25 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void add_time_stamp_to_physical_functional_exam_pertinent_to_request() {
         logger.info("Add TimeStamp to PHYSICAL FUNCTIONAL EXAM PERTINENT TO REQUEST");
         scrollDown(250, 500);
-        pages.getMedicalEncountersPage().physicalFunctionalExamPertinent.click();
+        pages.getMedicalEncountersPage().timestamp2.click();
     }
 
     @Then("Add TimeStamp to PRIOR CONSERVATIVE MANAGEMENT")
     public void add_time_stamp_to_prior_conservative_management() {
         logger.info("Add TimeStamp to PRIOR CONSERVATIVE MANAGEMENT");
-        pages.getMedicalEncountersPage().priorConservativeManagement.click();
+        pages.getMedicalEncountersPage().timestamp3.click();
     }
 
     @Then("Add TimeStamp to MRD")
     public void add_time_stamp_to_mrd() {
         logger.info("Add TimeStamp to MRD");
-        pages.getMedicalEncountersPage().mrd.click();
+        pages.getMedicalEncountersPage().timestamp4.click();
     }
 
     @Then("Add TimeStamp to EFFECT ON ADL'S WHEN INDICATED")
     public void add_time_stamp_to_effect_on_adl_s_when_indicated() {
         logger.info("Add TimeStamp to EFFECT ON ADL'S WHEN INDICATED");
-        pages.getMedicalEncountersPage().effectOnAdlsWhenIndicated.click();
+        pages.getMedicalEncountersPage().timestamp5.click();
     }
 
     @Then("Select Good to PATIENT CARE COMPLIANCE HISTORY WITH TREATMENT PLAN")
@@ -722,20 +723,20 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add TimeStamp to Subjective Notes")
     public void add_time_stamp_to_subjective_notes() {
         logger.info("Add TimeStamp to Subjective Notes");
-        pages.getMedicalEncountersPage().subjectiveNotes.click();
+        pages.getMedicalEncountersPage().timestamp6.click();
     }
 
     @Then("Add TimeStamp to Describe Signs and Symptoms Suggesting Diagnosis")
     public void add_time_stamp_to_describe_signs_and_symptoms_suggesting_diagnosis() {
         logger.info("Add TimeStamp to Describe Signs and Symptoms Suggesting Diagnosis");
-        pages.getMedicalEncountersPage().describeSignsAndSymptomsSuggesting.click();
+        pages.getMedicalEncountersPage().timestamp7.click();
     }
 
     @Then("Add TimeStamp to Failed Therapies")
     public void add_time_stamp_to_failed_therapies() {
         logger.info("Add TimeStamp to Failed Therapies");
         scrollDown(7500, 1000);
-        pages.getMedicalEncountersPage().failedTherapies.click();
+        pages.getMedicalEncountersPage().timestamp8.click();
     }
 
     @Then("Add TimeStamp to Related Lab Test Orders")
@@ -767,13 +768,13 @@ public class MedicalEncountersSteps extends BrowserUtils {
     public void select_the_status() {
         logger.info("Select the Status");
         Select select = new Select(pages.getMedicalEncountersPage().status);
-        select.selectByValue("A");
+        select.selectByValue("1");
     }
 
     @Then("Select the As of Date")
     public void select_the_as_of_date() {
         logger.info("Select the As of Date");
-//        pages.getMedicalEncountersPage().asOfDate.click();
+        pages.getMedicalEncountersPage().asOfDate.click();
     }
 
     @Then("Click on New button of Other Actions Procedures section")
@@ -785,40 +786,96 @@ public class MedicalEncountersSteps extends BrowserUtils {
     @Then("Add Timestamp to Specify Comments")
     public void add_timestamp_to_specify_comments() {
         logger.info("Add Timestamp to Specify Comments");
-       // pages.getMedicalEncountersPage().specifyCommentsTimestamp.click();
+         pages.getMedicalEncountersPage().timestamp1.click();
+    }
+
+    @Then("Select the Type or Pick List")
+    public void select_the_type_or_pick_list() {
+        logger.info("Select the Type or Pick List");
+        Select select = new Select(pages.getMedicalEncountersPage().typeActionsProcedures);
+        select.selectByValue("BA1005");
     }
 
     @Then("Click on a Initiate Kite")
     public void click_on_a_initiate_kite() {
-
+        logger.info("Click on a Initiate Kite");
+        pages.getMedicalEncountersPage().initiateKite.click();
     }
+
     @Then("Select the Triage Date")
     public void select_the_triage_date() {
-
+        logger.info("Select the Triage Date");
+        pages.getMedicalEncountersPage().triageDate.click();
     }
+
     @Then("Select the Area of Service")
     public void select_the_area_of_service() {
-
+        logger.info("Select the Area of Service");
+        Select select = new Select(pages.getMedicalEncountersPage().areaOfService);
+        select.selectByValue("A");
     }
+
     @Then("Select the Acuity")
     public void select_the_acuity() {
-
+        logger.info("Select the Acuity");
+        Select select = new Select(pages.getMedicalEncountersPage().acuity);
+        select.selectByValue("F");
     }
+
     @Then("Select the Complaint Category")
     public void select_the_complaint_category() {
-
+        logger.info("Select the Complaint Category");
+        Select select = new Select(pages.getMedicalEncountersPage().complaintCategory);
+        select.selectByValue("079");
     }
+
     @Then("Select the Target Complete Date")
     public void select_the_target_complete_date() {
-
+        logger.info("Select the Target Complete Date");
+        pages.getMedicalEncountersPage().targetCompleteDate.click();
     }
+
     @Then("Add Timestamp to Inmate Health Issue")
     public void add_timestamp_to_inmate_health_issue() {
-
+        logger.info("Add Timestamp to Inmate Health Issue");
+        pages.getMedicalEncountersPage().timestamp1.click();
     }
+
     @Then("Add Timestamp to Reviewer Comments")
     public void add_timestamp_to_reviewer_comments() {
-
+        logger.info("Add Timestamp to Reviewer Comments");
+        pages.getMedicalEncountersPage().timestamp2.click();
     }
 
+    @Then("Click on New button of Scanned Document Photo")
+    public void click_on_new_button_of_scanned_document_photo() {
+      logger.info("Click on New button of Scanned Document Photo");
+        pages.getMedicalEncountersPage().newScannedDocumentsPhotos.click();
+    }
+
+    @Then("Enter the Document Photo Title")
+    public void enter_the_document_photo_title() {
+        logger.info("Enter the Document Photo Title");
+        pages.getMedicalEncountersPage().documentPhotoTitle.sendKeys("DP-1");
+    }
+
+    @Then("Select the Judgment Order Prefix")
+    public void select_the_judgment_order_prefix() {
+        logger.info("Select the Judgment Order Prefix");
+        Select select = new Select(pages.getMedicalEncountersPage().judgmentOrderPrefix);
+        select.selectByValue("AA");
+    }
+
+    @Then("Select the Privacy Level")
+    public void select_the_privacy_level() {
+        logger.info("Select the Privacy Level");
+        Select select = new Select(pages.getMedicalEncountersPage().privacyLevel);
+        select.selectByValue("N");
+    }
+
+    @Then("Enter the Dup Check for Keyword")
+    public void enter_the_dup_check_in_title_for_keyword() {
+        logger.info("Enter the Dup Check for Keyword");
+        pages.getMedicalEncountersPage().dupCheckForKeyword.sendKeys("DP-01");
+    }
 }

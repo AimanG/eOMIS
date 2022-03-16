@@ -379,6 +379,7 @@ Feature:  Medical Encounters
     Then Scroll down to "Other Actions/Procedures" section
     And Click on New button of Other Actions Procedures section
     * Select the Category
+    * Select the Type or Pick List
     * Select the Status
     * Select the As of Date
     * Add Timestamp to Specify Comments
@@ -390,14 +391,14 @@ Feature:  Medical Encounters
     When Click Logon button
     Then Select the Offender "045632"
     And Go to Health -> Medical Provider -> Medical Encounters
-    And Click on a Initiate Kite
+    And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
     Then Click Next button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Follow-up Appointments" section
-    And Click on New button of Other Actions Procedures section
+    And Click on a Initiate Kite
     * Select the Triage Date
     * Select the Area of Service
     * Select the Acuity
@@ -407,6 +408,29 @@ Feature:  Medical Encounters
     * Add Timestamp to Reviewer Comments
     And Click Save button
     Then Click Save and Close button
+
+#  Scenario: Create Scanned Document/Photo
+#    Given Enter Provider User ID and Password at DeCORuM login screen
+#    When Click Logon button
+#    Then Select the Offender "045632"
+#    And Go to Health -> Medical Provider -> Medical Encounters
+#    And Click on a New button in Health Services Encounters
+#    Then Select the Complex - "Bent County Correctional Facility"
+#    And Select the Type - "Administrative - Provider"
+#    Then Click Next button
+#    Then Add Timestamp to Subjective Notes
+#    And Click Save button and Accept alert
+#    Then Scroll down to "Scanned Document/Photo" section
+#    And Click on New button of Scanned Document Photo
+#    * Enter the Document Photo Title
+#    * Select the Judgment Order Prefix
+#    * Select the Source
+#    * Select the Privacy Level
+#    * Enter the Dup Check for Keyword
+#    * Add Timestamp to Comments
+#    And Click Save button
+#    Then Click Save and Close button
+
 
 #  Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
 #    Given Enter Provider User ID and Password at DeCORuM login screen
