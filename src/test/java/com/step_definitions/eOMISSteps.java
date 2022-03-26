@@ -54,6 +54,10 @@ public class eOMISSteps extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("045632");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
+            case "191445":
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("191445");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
         }
     }
 

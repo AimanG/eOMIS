@@ -32,6 +32,12 @@ public class LandingPage {
     @FindBy(xpath = "//a[text()='Nursing']")
     public WebElement nursing;
 
+    @FindBy(xpath = "//a[text()='Behavioral Health']")
+    public WebElement behavioralHealth;
+
+    @FindBy(xpath = "//a[text()='Alcohol and Drug Encounters']")
+    public WebElement alcoholAbnDrugEncounters;
+
     @FindBy(xpath = "//a[text()='Medical Provider']")
     public WebElement medicalProvider;
 

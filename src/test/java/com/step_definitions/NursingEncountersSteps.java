@@ -267,6 +267,48 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "Sick Call - Provider":
                 select.selectByValue("BC05");
                 break;
+            case "A&D - Appointment No-show":
+                select.selectByValue("FA63");
+                break;
+
+
+
+            case "A&D - Appointment Refusal":
+                select.selectByValue("FA64");
+                break;
+            case "A&D - Assessment":
+                select.selectByValue("FA22");
+                break;
+            case "A&D - Group Counseling":
+                select.selectByValue("FA59");
+                break;
+            case "A&D - Individual Counseling":
+                select.selectByValue("FA58");
+                break;
+            case "A&D - Intake":
+                select.selectByValue("FA57");
+                break;
+            case "A&D - Multi-Disciplinary Team Staffing":
+                select.selectByValue("FA37");
+                break;
+            case "A&D - Progress Review":
+                select.selectByValue("FA62");
+                break;
+            case "A&D - Status Review":
+                select.selectByValue("FA65");
+                break;
+            case "A&D - Treatment Packet Documents":
+                select.selectByValue("FA66");
+                break;
+            case "A&D - Treatment/Service Plan":
+                select.selectByValue("FA43");
+                break;
+//            case "A&D - Appointment No-show":
+//                select.selectByValue("FA63");
+//                break;
+//            case "A&D - Appointment No-show":
+//                select.selectByValue("FA63");
+//                break;
         }
     }
 
