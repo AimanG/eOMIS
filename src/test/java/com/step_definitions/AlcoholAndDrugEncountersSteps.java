@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
@@ -110,7 +111,7 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
     @Then("Select the Client returned during current incarceration and does not need reassessment")
     public void select_the_client_returned_during_current_incarceration_and_does_not_need_reassessment_will_reapply_the_previous_qualifier() {
         logger.info("Select the Client returned during current incarceration and does not need reassessment");
-        scrollDown(500,750);
+        scrollDown(500, 750);
         pages.getAlcoholAndDrugEncountersPage().clientRetDurCurIncAndPreTreLev.click();
     }
 
@@ -125,6 +126,57 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
         logger.info("Select the Client returned during current incarceration and previous treatment level qualifier may need to be reconsidered");
         pages.getAlcoholAndDrugEncountersPage().clientRetDurCurIncAndPreTreLev.click();
     }
+
+    @Then("Verify the Standard Forms")
+    public void verify_the_standard_forms() {
+        logger.info("Verify the Standard Forms");
+        String standardForm = pages.getAlcoholAndDrugEncountersPage().standardForm.getText();
+        System.out.println(standardForm);
+    }
+
+    @Then("Verify the Error Message")
+    public void verify_the_error_message() {
+        logger.info("Verify the Error Message");
+    }
+
+
+    @Then("Select the Standard Form as {string}")
+    public void select_the_standard_form_as(String standardForm) {
+        logger.info("Select the Standard Form as " + standardForm);
+        Select select = new Select(pages.getAlcoholAndDrugEncountersPage().standardForms);
+
+        switch (standardForm) {
+            case "A&D Treatment Level Qualifier":
+                select.selectByValue("7BW");
+                break;
+            case "Adult Substance Use Survey":
+                select.selectByValue("4SS");
+                break;
+            case "Mandatory Disclosure and Information for Behavioral Health":
+                select.selectByValue("7MD");
+                break;
+        }
+    }
+
+    @Then("Click on New button for LSI Assessment")
+    public void click_on_new_button_for_lsi_assessment() {
+        logger.info("Click on New button for LSI Assessment");
+        pages.getAlcoholAndDrugEncountersPage().newButtonLSIAssessment.click();
+    }
+
+    @Then("Select the Test Source")
+    public void select_the_test_source() {
+        logger.info("Select the Test Source");
+        Select select = new Select(pages.getAlcoholAndDrugEncountersPage().testSource);
+        select.selectByValue("C");
+    }
+
+    @Then("Add Timestamp to Specify Drug")
+    public void add_timestamp_to_specify_drug() {
+       logger.info("Add Timestamp to Specify Drug");
+       pages.getLsiAssessmentsPage().specifyDrug.click();
+    }
+
 
 
 }

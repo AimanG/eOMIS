@@ -260,8 +260,8 @@ public class LSIAssessmentsPage {
     @FindBy(xpath = "//input[@name='companionCrimAcquaintSome']")
     public WebElement someCriminalAcquaintancesCheckboxValue;
 
-    @FindBy(xpath = "//input[@name='companionCrimFriendSome']")
-    public WebElement someCriminalFriendsCheckboxValue;
+    @FindBy(xpath = "(//button[@class='timestamp btn btn-default btn-sm btn-small omis-widget-inited'])[1]")
+    public WebElement specifyDrug;
 
     @FindBy(xpath = "//input[@name='companionAntiCrimAcquaintFew']")
     public WebElement veryFewPreSchoolAcquaintancesCheckboxValue;

@@ -47,11 +47,19 @@ public class AlcoholAndDrugEncountersPage {
     @FindBy(xpath = "(//div/p)[26]/label")
     public WebElement clientRetDurCurIncAndPreTreLev;
 
-//    @FindBy(xpath = "//input[@id='supervisor']")
-//    public WebElement supervisorName;
-//
-//    @FindBy(xpath = "//input[@id='supervisor']")
-//    public WebElement supervisorName;
+    @FindBy(xpath = "//span[@id='select2-stdFormType-container']")
+    public WebElement standardForm;
+
+    @FindBy(xpath = "//select[@id='stdFormType']")
+    public WebElement standardForms;
+
+    @FindBy(xpath = "(//input[@type='button'])[2]")
+    public WebElement newButtonLSIAssessment;
+
+    @FindBy(xpath = "//select[@id='lsiTestSource']")
+    public WebElement testSource;
+
+
 
 
 }

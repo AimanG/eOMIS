@@ -893,8 +893,8 @@ public class LSIAssessmentsSteps extends BrowserUtils {
         Select authorityInteractionsRate = new Select(pages.getLsiAssessmentsPage().authorityInteractionsRate);
         authorityInteractionsRate.selectByValue("3");
 
-
     }
+
 
 
 }
