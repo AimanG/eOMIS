@@ -155,6 +155,30 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
             case "Mandatory Disclosure and Information for Behavioral Health":
                 select.selectByValue("7MD");
                 break;
+            case "Confidentiality of Alcohol and Drug Abuse Patient Records":
+                select.selectByValue("7SN");
+                break;
+            case "Consent for Treatment and Follow-up Contact":
+                select.selectByValue("7SM");
+                break;
+            case "Counselor Disclosure Statement":
+                select.selectByValue("7SI");
+                break;
+            case "Notice of Directives":
+                select.selectByValue("7SP");
+                break;
+            case "Outpatient Classroom Rules":
+                select.selectByValue("7SQ");
+                break;
+            case "TC Treatment Consent and Agreement":
+                select.selectByValue("7SJ");
+                break;
+            case "Client's Rights":
+                select.selectByValue("7SK");
+                break;
+            case "Client Responsibilities":
+                select.selectByValue("7SL");
+                break;
         }
     }
 
@@ -173,10 +197,92 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
     @Then("Add Timestamp to Specify Drug")
     public void add_timestamp_to_specify_drug() {
-       logger.info("Add Timestamp to Specify Drug");
-       pages.getLsiAssessmentsPage().specifyDrug.click();
+        logger.info("Add Timestamp to Specify Drug");
+        pages.getLsiAssessmentsPage().specifyDrug.click();
     }
 
+    @Then("Select the Start Group radio button")
+    public void select_the_start_group_radio_button() {
+        logger.info("Select the Start Group radio button");
+        scrollDown(0, 250);
+        pages.getAlcoholAndDrugEncountersPage().startGroup.click();
 
+    }
+
+    @Then("Select the Progress Note radio button")
+    public void select_the_progress_note_radio_button() {
+        logger.info("Select the Progress Note radio button");
+        pages.getAlcoholAndDrugEncountersPage().progressNote.click();
+    }
+
+    @Then("Select the Progress radio button")
+    public void select_the_progress_radio_button() {
+        logger.info("Select the Progress radio button");
+        pages.getAlcoholAndDrugEncountersPage().progress.click();
+    }
+
+    @Then("Select the No Change radio button")
+    public void select_the_no_change_radio_button() {
+        logger.info("Select the No Change radio button");
+        pages.getAlcoholAndDrugEncountersPage().noChange.click();
+    }
+
+    @Then("Select the Regress radio button")
+    public void select_the_regress_radio_button() {
+        logger.info("Select the Regress radio button");
+        pages.getAlcoholAndDrugEncountersPage().regress.click();
+    }
+
+    @Then("Select the End Group radio button")
+    public void select_the_end_group_radio_button() {
+        logger.info("Select the End Group radio button");
+        pages.getAlcoholAndDrugEncountersPage().endGroup.click();
+    }
+
+    @Then("Select the Date of staffing")
+    public void select_the_date_of_staffing() {
+        logger.info("Select the Date of staffing");
+        scrollDown(250, 500);
+        pages.getAlcoholAndDrugEncountersPage().dateOfStaffing.click();
+    }
+
+    @Then("Enter the Current assigned facility")
+    public void enter_the_current_assigned_facility() {
+        logger.info("Enter the Current assigned facility");
+        pages.getAlcoholAndDrugEncountersPage().currentAssignedFacility.sendKeys("Denver Womens Correctional Facility", Keys.ENTER);
+
+    }
+
+    @Then("Add Timestamp to Staff in attendance with position titles")
+    public void add_timestamp_to_staff_in_attendance_with_position_titles() {
+        logger.info("Add Timestamp to Staff in attendance with position titles");
+        pages.getAlcoholAndDrugEncountersPage().staffInAttendanceWithPositionTittles.click();
+
+    }
+
+    @Then("Add Timestamp to Topic of staffing")
+    public void add_timestamp_to_topic_of_staffing() {
+        logger.info("Add Timestamp to Topic of staffing");
+        pages.getAlcoholAndDrugEncountersPage().topicOfStaffing.click();
+    }
+
+    @Then("Add Timestamp to Decision or action")
+    public void add_timestamp_to_decision_or_action() {
+        logger.info("Add Timestamp to Decision or action");
+        pages.getAlcoholAndDrugEncountersPage().decisionOrAction.click();
+    }
+
+    @Then("Select the Not Available as a Sign")
+    public void select_the_not_available_as_a_sign() {
+       logger.info("Select the Not Available as a Sign");
+       pages.getAlcoholAndDrugEncountersPage().bypass.click();
+        pages.getAlcoholAndDrugEncountersPage().notAvailable.click();
+    }
+
+    @Then("Select the Add as a Witness")
+    public void select_the_add_as_a_witness() {
+        logger.info("Select the Add as a Witness");
+        pages.getAlcoholAndDrugEncountersPage().addWitness.click();
+    }
 
 }

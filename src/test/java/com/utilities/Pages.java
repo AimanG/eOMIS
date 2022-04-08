@@ -10,6 +10,7 @@ public class Pages {
     private NursingEncountersPage nursingEncountersPage;
     private MedicalEncountersPage medicalEncountersPage;
     private AlcoholAndDrugEncountersPage alcoholAndDrugEncountersPage;
+    private SOTMPEncountersPage sotmpEncountersPage;
 
     public LoginPage getLoginPage(){
         return (loginPage == null) ? loginPage = new LoginPage() : loginPage;
@@ -33,5 +34,9 @@ public class Pages {
 
     public AlcoholAndDrugEncountersPage getAlcoholAndDrugEncountersPage(){
         return (alcoholAndDrugEncountersPage == null) ? alcoholAndDrugEncountersPage = new AlcoholAndDrugEncountersPage() : alcoholAndDrugEncountersPage;
+    }
+
+    public SOTMPEncountersPage getSotmpEncountersPage(){
+        return (sotmpEncountersPage == null) ? sotmpEncountersPage = new SOTMPEncountersPage() : sotmpEncountersPage;
     }
 }

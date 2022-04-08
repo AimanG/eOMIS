@@ -303,12 +303,6 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "A&D - Treatment/Service Plan":
                 select.selectByValue("FA43");
                 break;
-//            case "A&D - Appointment No-show":
-//                select.selectByValue("FA63");
-//                break;
-//            case "A&D - Appointment No-show":
-//                select.selectByValue("FA63");
-//                break;
         }
     }
 
@@ -324,6 +318,8 @@ public class NursingEncountersSteps extends BrowserUtils {
         logger.info("Click Save button");
         pages.getNursingEncountersPage().saveButton.click();
         wait(1);
+        Driver.getDriver().switchTo().alert().accept();
+
     }
 
     @And("Click Save button and Accept alert")

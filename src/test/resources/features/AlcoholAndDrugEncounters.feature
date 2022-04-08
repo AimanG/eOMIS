@@ -1,4 +1,4 @@
-Feature:  Medical Encounters
+Feature: Alcohol and Drug Encounters
 
   Scenario: Verify selected DOC number
     Given Enter BH_tester User ID and Password at DeCORuM login screen
@@ -50,70 +50,12 @@ Feature:  Medical Encounters
     #Then Verify the Standard Forms
     Then Add Timestamp to Comments
     And Click Save and Close button
-    #Then Verify the Error Message
+    Then Verify the Error Message
 
     Examples:
       | Type                      |
       | A&D - Appointment No-show |
       | A&D - Appointment Refusal |
-
-
-  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility3
-    Given Enter BH_tester User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "191445"
-    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
-    And Click on a New button in Health Services Encounters
-    Then Select the Complex - "Arkansas Valley Correctional Facility"
-    And Select the Type - "A&D - Progress Review"
-    Then Click Next button
-    And Select the Standard Form as "<Standard Forms>"
-    And Click on a New button
-    #Then Verify the Standard Forms
-    * Enter the Supervisor Name
-    * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
-    * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
-    * Select the Client has been expelled from or quit treatment at the recommended level
-    * Select the Client has refused treatment at the recommended level
-    * Select the Client has refused to complete the assessment process
-    * Select the Client has previously completed recommended treatment level AND Client has had a positive urinalysis, technical violation, Code of Penal Discipline violation, or relapse since completion of treatment AND Clinician recommends client repeat treatment at the recommended treatment level
-    * Select the Client has not completed treatment at their recommended treatment level
-    * Select the Client returned during current incarceration and does not need reassessment
-    * Select the Reassessment request has been approved but not yet completed
-    * Select the Client returned during current incarceration and previous treatment level qualifier may need to be reconsidered
-    Then Add Timestamp to Comments
-    And Click Save and Close button
-    Examples:
-      | Standard Forms                                             |
-      | A&D Treatment Level Qualifier                              |
-      | Adult Substance Use Survey                                 |
-      | Mandatory Disclosure and Information for Behavioral Health |
-
-  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility4
-    Given Enter BH_tester User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "191445"
-    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
-    And Click on a New button in Health Services Encounters
-    Then Select the Complex - "Arkansas Valley Correctional Facility"
-    And Select the Type - "A&D - Treatment Packet Documents"
-    Then Click Next button
-    And Select the Standard Form as "<Standard Forms>"
-    And Click on a New button
-   # Then Verify the Standard Forms
-    Then Add Timestamp to Comments
-    And Click Save and Close button
-    Examples:
-      | Standard Forms                                            |
-      | A&D Treatment Level Qualifier                             |
-      | Client Responsibilities                                   |
-      | Client's Rights                                           |
-      | Confidentiality of Alcohol and Drug Abuse Patient Records |
-      | Consent for Treatment and Follow-up Contact               |
-      | Counselor Disclosure Statement                            |
-      | Notice of Directives                                      |
-      | Outpatient Classroom Rules                                |
-      | TC Treatment Consent and Agreement                        |
 
 
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Assessment
@@ -183,7 +125,6 @@ Feature:  Medical Encounters
     * Verify if checkbox "34. Some criminal friends (CY)" is unchecked by default
     * Verify if checkbox "35. Very few pro-social acquaintances (CY)" is unchecked by default
     * Verify if checkbox "36. Very few pro-social friends (CY)" is unchecked by default
-
     * Verify if checkbox "37. Alcohol problem, ever (L)" is unchecked by default
     * Check the checkbox "37. Alcohol problem, ever (L)"
     * Uncheck the checkbox "37. Alcohol problem, ever (L)"
@@ -244,8 +185,15 @@ Feature:  Medical Encounters
     Then Click Next button
     And Add Timestamp to Subjective Notes
     Then Click Save button
+    * Select the Start Group radio button
+    * Select the Progress Note radio button
+    * Select the Progress radio button
+    * Select the No Change radio button
+    * Select the Regress radio button
+    * Select the End Group radio button
     And Click Save and Close button
 
+    #
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Individual Counseling
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -259,20 +207,7 @@ Feature:  Medical Encounters
     Then Click Save button
     And Click Save and Close button
 
-  Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Individual Counseling
-    Given Enter BH_tester User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "191445"
-    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
-    And Click on a New button in Health Services Encounters
-    Then Select the Complex - "Arkansas Valley Correctional Facility"
-    And Select the Type - "A&D - Individual Counseling"
-    Then Click Next button
-    And Add Timestamp to Subjective Notes
-    Then Click Save button
-    And Click Save and Close button
-
-
+#
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Intake
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -286,19 +221,7 @@ Feature:  Medical Encounters
     Then Click Save button
     And Click Save and Close button
 
-  Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Treatment/Service Plan
-    Given Enter BH_tester User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "191445"
-    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
-    And Click on a New button in Health Services Encounters
-    Then Select the Complex - "Arkansas Valley Correctional Facility"
-    And Select the Type - "A&D - Treatment/Service Plan"
-    Then Click Next button
-    And Add Timestamp to Subjective Notes
-    Then Click Save button
-    And Click Save and Close button
-
+#
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Multi-Disciplinary Team Staffing
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -308,10 +231,14 @@ Feature:  Medical Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Multi-Disciplinary Team Staffing"
     Then Click Next button
-    And Add Timestamp to Subjective Notes
-    Then Click Save button
+    * Select the Date of staffing
+    * Enter the Current assigned facility
+    * Add Timestamp to Staff in attendance with position titles
+    * Add Timestamp to Topic of staffing
+    * Add Timestamp to Decision or action
     And Click Save and Close button
 
+#
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Status Review
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -324,4 +251,126 @@ Feature:  Medical Encounters
     And Add Timestamp to Subjective Notes
     Then Click Save button
     And Click Save and Close button
+
+  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility3
+    Given Enter BH_tester User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "191445"
+    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Arkansas Valley Correctional Facility"
+    And Select the Type - "A&D - Progress Review"
+    Then Click Next button
+    And Select the Standard Form as "<Standard Forms>"
+    And Click on a New button
+    #Then Verify the Standard Forms
+    * Enter the Supervisor Name
+    * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
+    * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
+    * Select the Client has been expelled from or quit treatment at the recommended level
+    * Select the Client has refused treatment at the recommended level
+    * Select the Client has refused to complete the assessment process
+    * Select the Client has previously completed recommended treatment level AND Client has had a positive urinalysis, technical violation, Code of Penal Discipline violation, or relapse since completion of treatment AND Clinician recommends client repeat treatment at the recommended treatment level
+    * Select the Client has not completed treatment at their recommended treatment level
+    * Select the Client returned during current incarceration and does not need reassessment
+    * Select the Reassessment request has been approved but not yet completed
+    * Select the Client returned during current incarceration and previous treatment level qualifier may need to be reconsidered
+    Then Add Timestamp to Comments
+    And Click Save and Close button
+    Examples:
+      | Standard Forms                                             |
+      | A&D Treatment Level Qualifier                              |
+      | Adult Substance Use Survey                                 |
+      | Mandatory Disclosure and Information for Behavioral Health |
+
+    #
+#  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility3
+#    Given Enter BH_tester User ID and Password at DeCORuM login screen
+#    When Click Logon button
+#    Then Select the Offender "191445"
+#    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
+#    And Click on a New button in Health Services Encounters
+#    Then Select the Complex - "Arkansas Valley Correctional Facility"
+#    And Select the Type - "A&D - Treatment Packet Documents"
+#    Then Click Next button
+#    And Select the Standard Form as "<Standard Forms>"
+#    And Click on a New button
+#    * Enter the Supervisor Name
+#    * Select the Client has completed recommended level of treatment
+#    * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
+#    * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
+#    * Select the Client has been expelled from or quit treatment at the recommended level
+#    * Select the Client has refused treatment at the recommended level
+#    * Select the Client has refused to complete the assessment process
+#    * Select the Client has previously completed recommended treatment level AND Client has had a positive urinalysis, technical violation, Code of Penal Discipline violation, or relapse since completion of treatment AND Clinician recommends client repeat treatment at the recommended treatment level
+#    * Select the Client has not completed treatment at their recommended treatment level
+#    * Select the Client returned during current incarceration and does not need reassessment
+#    * Select the Reassessment request has been approved but not yet completed
+#    * Select the Client returned during current incarceration and previous treatment level qualifier may need to be reconsidered
+#   # Then Verify the Standard Forms
+#    Then Add Timestamp to Comments
+#    And Click Save and Close button
+#    Examples:
+#      | Standard Forms                |
+#      | A&D Treatment Level Qualifier |
+
+#
+  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility4
+    Given Enter BH_tester User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "191445"
+    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Arkansas Valley Correctional Facility"
+    And Select the Type - "A&D - Treatment Packet Documents"
+    Then Click Next button
+    And Select the Standard Form as "<Standard Forms>"
+    And Click on a New button
+    * Select the Not Available as a Sign
+    * Select the Add as a Witness
+   # Then Verify the Standard Forms
+    And Click Save and Close button
+    Examples:
+      | Standard Forms                                            |
+      | Client Responsibilities                                   |
+      | Client's Rights                                           |
+      | Confidentiality of Alcohol and Drug Abuse Patient Records |
+      | Consent for Treatment and Follow-up Contact               |
+      | Counselor Disclosure Statement                            |
+      | Notice of Directives                                      |
+      | TC Treatment Consent and Agreement                        |
+
+#
+  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility41
+    Given Enter BH_tester User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "191445"
+    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Arkansas Valley Correctional Facility"
+    And Select the Type - "A&D - Treatment Packet Documents"
+    Then Click Next button
+    And Select the Standard Form as "<Standard Forms>"
+    And Click on a New button
+    * Select the Not Available as a Sign
+   # Then Verify the Standard Forms
+    And Click Save and Close button
+    Examples:
+      | Standard Forms                                            |
+      | Outpatient Classroom Rules                                |
+
+
+#  Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Treatment/Service Plan
+#    Given Enter BH_tester User ID and Password at DeCORuM login screen
+#    When Click Logon button
+#    Then Select the Offender "191445"
+#    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
+#    And Click on a New button in Health Services Encounters
+#    Then Select the Complex - "Arkansas Valley Correctional Facility"
+#    And Select the Type - "A&D - Treatment/Service Plan"
+#    Then Click Next button
+#    And Add Timestamp to Subjective Notes
+#    Then Click Save button
+#    And Click Save and Close button
+
 

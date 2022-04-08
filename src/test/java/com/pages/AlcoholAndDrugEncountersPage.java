@@ -59,7 +59,46 @@ public class AlcoholAndDrugEncountersPage {
     @FindBy(xpath = "//select[@id='lsiTestSource']")
     public WebElement testSource;
 
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[1]")
+    public WebElement startGroup;
 
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[2]")
+    public WebElement progressNote;
 
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[3]")
+    public WebElement progress;
+
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[4]")
+    public WebElement noChange;
+
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[5]")
+    public WebElement regress;
+
+    @FindBy(xpath = "(//div[@class='screen-extension-section-wrapper']/div/label/span)[6]")
+    public WebElement endGroup;
+
+    @FindBy(xpath = "((//div[@class='screen-extension-section-wrapper']/div)[3]/div/span)[1]")
+    public WebElement dateOfStaffing;
+
+    @FindBy(xpath = "//input[@id='SCRNEXTN_facility']")
+    public WebElement currentAssignedFacility;
+
+    @FindBy(xpath = "((//div[@id='SCRNEXTN_staff-wrapper']/div/div)[2]/div/button)[1]")
+    public WebElement staffInAttendanceWithPositionTittles;
+
+    @FindBy(xpath = "((//div[@id='SCRNEXTN_staffingtopic-wrapper']/div/div)[2]/div/button)[1]")
+    public WebElement topicOfStaffing;
+
+    @FindBy(xpath = "((//div[@id='SCRNEXTN_decisionaction-wrapper']/div/div)[2]/div/button)[1]")
+    public WebElement decisionOrAction;
+
+    @FindBy(xpath = "//button[@data-action='bypass']")
+    public WebElement bypass;
+
+    @FindBy(xpath = "//ul/li/a[@data-reason='20']")
+    public WebElement notAvailable;
+
+    @FindBy(xpath = "//button[@data-action='add']")
+    public WebElement addWitness;
 
 }
