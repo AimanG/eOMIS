@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 
 public class eOMISSteps extends BrowserUtils {
 
@@ -29,6 +30,8 @@ public class eOMISSteps extends BrowserUtils {
     public void click_logon_button() {
         logger.info("Click Logon button");
         pages.getLoginPage().logon.click();
+
+
     }
 
     @Then("Select the Offender {string}")
@@ -58,6 +61,17 @@ public class eOMISSteps extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("191445");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
+            case "116046":
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("116046");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
+            case "164128":
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("164128");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
+
+
+
         }
     }
 

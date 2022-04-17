@@ -40,6 +40,17 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
     }
 
+    @Then("Go to Health -> Behavioral Health -> SOTMP Encounters")
+    public void go_to_health_behavioral_health_sotmp_encounters() {
+        logger.info("Go to Health -> Behavioral Health -> SOTMP Encounters");
+        Driver.getDriver().manage().window().maximize();
+        wait(5);
+        pages.getLandingPage().behavioralHealth.click();
+        waitForClickability(pages.getLandingPage().behavioralHealth, 10);
+        scrollToElement(pages.getLandingPage().SOTMPEncounters);
+        pages.getLandingPage().SOTMPEncounters.click();
+    }
+
     @Then("Click on a New button")
     public void click_on_a_new_button() {
         logger.info("Click on a New button");
@@ -242,7 +253,6 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
     @Then("Select the Date of staffing")
     public void select_the_date_of_staffing() {
         logger.info("Select the Date of staffing");
-        scrollDown(250, 500);
         pages.getAlcoholAndDrugEncountersPage().dateOfStaffing.click();
     }
 
@@ -269,6 +279,7 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
     @Then("Add Timestamp to Decision or action")
     public void add_timestamp_to_decision_or_action() {
         logger.info("Add Timestamp to Decision or action");
+        scrollDown(200, 300);
         pages.getAlcoholAndDrugEncountersPage().decisionOrAction.click();
     }
 

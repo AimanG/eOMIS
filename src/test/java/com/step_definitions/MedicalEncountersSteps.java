@@ -53,9 +53,9 @@ public class MedicalEncountersSteps extends BrowserUtils {
 
     @Then("Click on New button of Objective section")
     public void click_on_new_button_of_objective_section() {
+
         logger.info("Click on New button of Objective section");
         pages.getMedicalEncountersPage().newButtonObjective.click();
-
     }
 
     @Then("Click on New button of X-Ray Orders section")

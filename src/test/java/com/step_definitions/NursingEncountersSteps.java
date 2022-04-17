@@ -270,9 +270,6 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "A&D - Appointment No-show":
                 select.selectByValue("FA63");
                 break;
-
-
-
             case "A&D - Appointment Refusal":
                 select.selectByValue("FA64");
                 break;
@@ -300,8 +297,54 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "A&D - Treatment Packet Documents":
                 select.selectByValue("FA66");
                 break;
-            case "A&D - Treatment/Service Plan":
-                select.selectByValue("FA43");
+
+            case "SOTMP - Appointment No-show":
+                select.selectByValue("FS84");
+                break;
+            case "SOTMP - Appointment Refusal":
+                select.selectByValue("FS85");
+                break;
+            case "SOTMP - Assessment":
+                select.selectByValue("FS14");
+                break;
+            case "SOTMP - Discharge Summary":
+                select.selectByValue("FS81");
+                break;
+            case "SOTMP - Family/Support":
+                select.selectByValue("FS78");
+                break;
+            case "SOTMP - Group Counseling":
+                select.selectByValue("FS75");
+                break;
+            case "SOTMP - Individual Counseling":
+                select.selectByValue("FS74");
+                break;
+            case "SOTMP - Multi-Disciplinary Team Staffing":
+                select.selectByValue("FS70");
+                break;
+            case "SOTMP - Parole Board Summary":
+                select.selectByValue("FS76");
+                break;
+            case "SOTMP - Participation Assessment":
+                select.selectByValue("FS76");
+                break;
+            case "SOTMP - PREA 14 Day Intake Aggressor":
+                select.selectByValue("FS79");
+                break;
+            case "SOTMP - PREA 60 Day Referral":
+                select.selectByValue("FS83");
+                break;
+            case "SOTMP - Psychological Services":
+                select.selectByValue("FS71");
+                break;
+            case "SOTMP - Sexual Violence Diagnostics":
+                select.selectByValue("FS86");
+                break;
+            case "SOTMP - Status Review":
+                select.selectByValue("FS87");
+                break;
+            case "SOTMP - Termination Review":
+                select.selectByValue("FS88");
                 break;
         }
     }

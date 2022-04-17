@@ -692,7 +692,7 @@ Feature:  Nursing Encounters
       | TB Interview - Nursing               |
       | Work Related Injury                  |
 
-  Scenario Outline: Verify selected Complex location -  Fremont Correctional Facility
+  Scenario Outline: Verify selected Complex location - Fremont Correctional Facility
     Given Enter Nurse User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "187437"
