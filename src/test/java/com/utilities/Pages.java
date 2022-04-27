@@ -11,6 +11,7 @@ public class Pages {
     private MedicalEncountersPage medicalEncountersPage;
     private AlcoholAndDrugEncountersPage alcoholAndDrugEncountersPage;
     private SOTMPEncountersPage sotmpEncountersPage;
+    private MentalHealthEncountersPage mentalHealthEncountersPage;
 
     public LoginPage getLoginPage(){
         return (loginPage == null) ? loginPage = new LoginPage() : loginPage;
@@ -36,7 +37,11 @@ public class Pages {
         return (alcoholAndDrugEncountersPage == null) ? alcoholAndDrugEncountersPage = new AlcoholAndDrugEncountersPage() : alcoholAndDrugEncountersPage;
     }
 
-    public SOTMPEncountersPage getSotmpEncountersPage(){
+    public SOTMPEncountersPage getSOTMPEncountersPage(){
         return (sotmpEncountersPage == null) ? sotmpEncountersPage = new SOTMPEncountersPage() : sotmpEncountersPage;
+    }
+
+    public MentalHealthEncountersPage getMentalHealthEncountersPage(){
+        return (mentalHealthEncountersPage == null) ? mentalHealthEncountersPage = new MentalHealthEncountersPage() : mentalHealthEncountersPage;
     }
 }

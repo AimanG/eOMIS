@@ -5,7 +5,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-
+import org.sikuli.script.Key;
+import org.sikuli.script.Screen;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -27,11 +28,16 @@ public class BrowserUtils extends DBUtils {
 
     public static void switchToIFrameByWebElement(WebElement element){
         Driver.getDriver().switchTo().frame(element);
-    };
+    }
+
+    public static void clickEsp(){
+        Screen sc = new Screen();
+        sc.type(Key.ESC);
+    }
 
     public static void switchToIFrameByID(String iFrameID){
         Driver.getDriver().switchTo().frame(iFrameID);
-    };
+    }
 
     public static String getTodaysDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");

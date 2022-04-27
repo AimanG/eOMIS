@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
 
         features = "src/test/resources/features",
-        glue = "com.step_definitions",
+        glue = "com/step_definitions",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@wip"
         // ,monochrome=true
 )
 public class CukesRunner {

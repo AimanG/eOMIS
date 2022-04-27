@@ -7,7 +7,7 @@ Feature:  SOTMP Encounters
     And Go to Health -> Behavioral Health -> SOTMP Encounters
     Then Make sure DOC "116046" is displayed correctly
 
-  @smoke
+  @smoke @wip
   Scenario Outline: Create New SOTMP Encounters - Arkansas Valley Correctional Facility
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -23,17 +23,17 @@ Feature:  SOTMP Encounters
     Examples:
       | Type                                 |
       | SOTMP - Appointment No-show          |
-#      | SOTMP - Appointment Refusal          |
-#      | SOTMP - Assessment                   |
-#      | SOTMP - Discharge Summary            |
-#      | SOTMP - Family/Support               |
-#      | SOTMP - Group Counseling             |
-#      | SOTMP - Individual Counseling        |
-#      | SOTMP - Parole Board Summary         |
-#      | SOTMP - Participation Assessment     |
-#      | SOTMP - PREA 14 Day Intake Aggressor |
-#      | SOTMP - PREA 60 Day Referral         |
-#      | SOTMP - Psychological Services       |
+      | SOTMP - Appointment Refusal          |
+      | SOTMP - Assessment                   |
+      | SOTMP - Discharge Summary            |
+      | SOTMP - Family/Support               |
+      | SOTMP - Group Counseling             |
+      | SOTMP - Individual Counseling        |
+      | SOTMP - Parole Board Summary         |
+      | SOTMP - Participation Assessment     |
+      | SOTMP - PREA 14 Day Intake Aggressor |
+      | SOTMP - PREA 60 Day Referral         |
+      | SOTMP - Psychological Services       |
 
   Scenario Outline: Create New SOTMP Encounters - Arrowhead Correctional Center
     Given Enter BH_tester User ID and Password at DeCORuM login screen

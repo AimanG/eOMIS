@@ -9,7 +9,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
 public class eOMISSteps extends BrowserUtils {
 
@@ -31,7 +30,6 @@ public class eOMISSteps extends BrowserUtils {
         logger.info("Click Logon button");
         pages.getLoginPage().logon.click();
 
-
     }
 
     @Then("Select the Offender {string}")
@@ -40,6 +38,9 @@ public class eOMISSteps extends BrowserUtils {
         logger.info("Select the Offender " + DOCNumber);
 
         Driver.getDriver().manage().window().maximize();
+        waitForPageToLoad(10);
+        clickEsp();
+
         waitForClickability(pages.getLandingPage().offenderDOCLookup, 10);
         pages.getLandingPage().offenderDOCLookup.click();
 
@@ -69,7 +70,6 @@ public class eOMISSteps extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("164128");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
-
 
 
         }

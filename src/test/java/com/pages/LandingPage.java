@@ -11,7 +11,7 @@ public class LandingPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//form[@name='OffenderLookupForm']/div/div[2]/div/span/span[1]/span/span[1]")
+    @FindBy(xpath = "//form[@name='OffenderLookupForm']/div/div[2]/div/span/span[1]/span/span[1]/span")
     public WebElement offenderDOCLookup;
 
     @FindBy(xpath = "//ul/li/small/a/i[@class='fa fa-bars']")
