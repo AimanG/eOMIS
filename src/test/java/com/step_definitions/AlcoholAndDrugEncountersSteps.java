@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Given("Enter BH_tester User ID and Password at DeCORuM login screen")
@@ -49,6 +49,19 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
         waitForClickability(pages.getLandingPage().behavioralHealth, 10);
         scrollToElement(pages.getLandingPage().SOTMPEncounters);
         pages.getLandingPage().SOTMPEncounters.click();
+    }
+
+
+    @Then("Go to Health -> Behavioral Health -> Mental Health Encounters")
+    public void go_to_health_behavioral_health_mental_health_encounters() {
+
+        logger.info("Go to Health -> Behavioral Health -> Mental Health Encounters");
+        Driver.getDriver().manage().window().maximize();
+        wait(5);
+        pages.getLandingPage().behavioralHealth.click();
+        waitForClickability(pages.getLandingPage().behavioralHealth, 10);
+        scrollToElement(pages.getLandingPage().mentalHealthEncounters);
+        pages.getLandingPage().mentalHealthEncounters.click();
     }
 
     @Then("Click on a New button")

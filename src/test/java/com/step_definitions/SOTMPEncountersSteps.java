@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 public class SOTMPEncountersSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
 
     @Then("Add Timestamp to Incidental Comments")
     public void add_timestamp_to_incidental_comments() {

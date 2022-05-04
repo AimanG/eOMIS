@@ -10,10 +10,10 @@ import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 
-public class eOMISSteps extends BrowserUtils {
+public class LoginSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
 
     @Given("Enter User ID and Password at DeCORuM login screen")
     public void enter_user_id_and_password_at_de_co_ru_m_login_screen() {

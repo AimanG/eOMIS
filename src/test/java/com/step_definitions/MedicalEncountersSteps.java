@@ -3,10 +3,8 @@ package com.step_definitions;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import com.utilities.Pages;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -15,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 public class MedicalEncountersSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Then("Scroll down to {string} section")

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 public class LSIAssessmentsSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Then("Click on New button")

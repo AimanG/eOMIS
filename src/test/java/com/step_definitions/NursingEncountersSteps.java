@@ -7,13 +7,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
 public class NursingEncountersSteps extends BrowserUtils {
 
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
 
     @Then("Click on a New button in Health Services Encounters")
     public void click_on_a_new_button_in_health_services_encounters() {
@@ -297,7 +296,6 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "A&D - Treatment Packet Documents":
                 select.selectByValue("FA66");
                 break;
-
             case "SOTMP - Appointment No-show":
                 select.selectByValue("FS84");
                 break;
@@ -346,6 +344,100 @@ public class NursingEncountersSteps extends BrowserUtils {
             case "SOTMP - Termination Review":
                 select.selectByValue("FS88");
                 break;
+            case "Behavioral Health Transition Form":
+                select.selectByValue("FB02");
+                break;
+            case "IBAAP - Behavioral Health":
+                select.selectByValue("FM74");
+                break;
+            case "Infirmary Admission - Mental Health":
+                select.selectByValue("FMA6");
+                break;
+            case "Intake Facility Mandatory Disclosure":
+                select.selectByValue("FMB1");
+                break;
+            case "Mental Health Appraisal":
+                select.selectByValue("FM01");
+                break;
+            case "Mental Health Crisis":
+                select.selectByValue("FM03");
+                break;
+            case "Mental Health Infirmary Note":
+                select.selectByValue("FM09");
+                break;
+            case "Mental Health Safety Plan Follow-up":
+                select.selectByValue("FMA5");
+                break;
+            case "Mental Health Screening":
+                select.selectByValue("FM02");
+                break;
+            case "Mental Status Exam":
+                select.selectByValue("FM27");
+                break;
+            case "MH - Appointment No-show":
+                select.selectByValue("FMA1");
+                break;
+            case "MH - Appointment Refusal":
+                select.selectByValue("FMA2");
+                break;
+            case "MH - Assessment":
+                select.selectByValue("FM44");
+                break;
+            case "MH - Group Counseling":
+                select.selectByValue("FM83");
+                break;
+            case "MH - Individual Counseling":
+                select.selectByValue("FM41");
+                break;
+            case "MH - Involuntary Medication Disposition":
+                select.selectByValue("FM88");
+                break;
+            case "MH - Involuntary Medication Report":
+                select.selectByValue("FC05");
+                break;
+            case "MH - JCAP Individual Counseling":
+                select.selectByValue("FM97");
+                break;
+            case "MH - Management Control Comprehensive Evaluation":
+                select.selectByValue("FM85");
+                break;
+            case "MH - Multi-Disciplinary Team Staffing":
+                select.selectByValue("FM16");
+                break;
+            case "MH - Pre-Restrictive Housing Assessment":
+                select.selectByValue("FM91");
+                break;
+            case "MH - PREA":
+                select.selectByValue("FM89");
+                break;
+            case "MH - Psychological Services":
+                select.selectByValue("FM84");
+                break;
+            case "MH - Psychosocial Assessment":
+                select.selectByValue("FM71");
+                break;
+            case "MH - Restrictive Housing Individual Counseling":
+                select.selectByValue("FM86");
+                break;
+            case "MH - RTP Discharge Summary":
+                select.selectByValue("FM87");
+                break;
+            case "MH - Self Referral":
+                select.selectByValue("FM96");
+                break;
+            case "MH - Status Review":
+                select.selectByValue("FM98");
+                break;
+            case "MH - Watch/Rounds":
+                select.selectByValue("FM07");
+                break;
+            case "Parole Mental Health":
+                select.selectByValue("FM17");
+                break;
+            case "RTP Referral":
+                select.selectByValue("FM68");
+                break;
+
         }
     }
 

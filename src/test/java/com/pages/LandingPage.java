@@ -41,6 +41,9 @@ public class LandingPage {
     @FindBy(xpath = "//a[text()='SOTMP Encounters']")
     public WebElement SOTMPEncounters;
 
+    @FindBy(xpath = "//a[text()='Mental Health Encounters']")
+    public WebElement mentalHealthEncounters;
+
     @FindBy(xpath = "//a[text()='Medical Provider']")
     public WebElement medicalProvider;
 

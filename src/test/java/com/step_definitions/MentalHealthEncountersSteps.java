@@ -6,5 +6,5 @@ import org.apache.log4j.Logger;
 
 public class MentalHealthEncountersSteps extends BrowserUtils {
     Pages pages = new Pages();
-    Logger logger = Logger.getLogger(eOMISSteps.class);
+    Logger logger = Logger.getLogger(LoginSteps.class);
 }
