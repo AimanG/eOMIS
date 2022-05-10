@@ -70,6 +70,10 @@ public class LoginSteps extends BrowserUtils {
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys("164128");
                 pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
                 break;
+            case "193445":
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("193445");
+                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
+                break;
 
 
         }

@@ -168,42 +168,7 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
     public void select_the_standard_form_as(String standardForm) {
         logger.info("Select the Standard Form as " + standardForm);
         Select select = new Select(pages.getAlcoholAndDrugEncountersPage().standardForms);
-
-        switch (standardForm) {
-            case "A&D Treatment Level Qualifier":
-                select.selectByValue("7BW");
-                break;
-            case "Adult Substance Use Survey":
-                select.selectByValue("4SS");
-                break;
-            case "Mandatory Disclosure and Information for Behavioral Health":
-                select.selectByValue("7MD");
-                break;
-            case "Confidentiality of Alcohol and Drug Abuse Patient Records":
-                select.selectByValue("7SN");
-                break;
-            case "Consent for Treatment and Follow-up Contact":
-                select.selectByValue("7SM");
-                break;
-            case "Counselor Disclosure Statement":
-                select.selectByValue("7SI");
-                break;
-            case "Notice of Directives":
-                select.selectByValue("7SP");
-                break;
-            case "Outpatient Classroom Rules":
-                select.selectByValue("7SQ");
-                break;
-            case "TC Treatment Consent and Agreement":
-                select.selectByValue("7SJ");
-                break;
-            case "Client's Rights":
-                select.selectByValue("7SK");
-                break;
-            case "Client Responsibilities":
-                select.selectByValue("7SL");
-                break;
-        }
+        select.selectByVisibleText(standardForm);
     }
 
     @Then("Click on New button for LSI Assessment")
@@ -298,8 +263,8 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
     @Then("Select the Not Available as a Sign")
     public void select_the_not_available_as_a_sign() {
-       logger.info("Select the Not Available as a Sign");
-       pages.getAlcoholAndDrugEncountersPage().bypass.click();
+        logger.info("Select the Not Available as a Sign");
+        pages.getAlcoholAndDrugEncountersPage().bypass.click();
         pages.getAlcoholAndDrugEncountersPage().notAvailable.click();
     }
 

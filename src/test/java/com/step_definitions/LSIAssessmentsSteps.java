@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -19,7 +20,11 @@ public class LSIAssessmentsSteps extends BrowserUtils {
 
     @Then("Click on New button")
     public void click_on_new_button() {
-        switchToIFrameByWebElement(pages.getLsiAssessmentsPage().iframe);
+        try {
+            switchToIFrameByWebElement(pages.getLsiAssessmentsPage().iframe);
+        }catch (NoSuchElementException e){
+
+        }
         logger.info("Click on New button");
         pages.getLsiAssessmentsPage().newButton.click();
     }

@@ -18,7 +18,6 @@ Feature: Alcohol and Drug Encounters
     And Select the Type - "<Type>"
     Then Click Next button
     And Click on a New button
-    #Then Verify the Standard Forms
     * Enter the Supervisor Name
     * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
     * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
@@ -47,7 +46,6 @@ Feature: Alcohol and Drug Encounters
     And Select the Type - "<Type>"
     Then Click Next button
     And Click on a New button
-    #Then Verify the Standard Forms
     Then Add Timestamp to Comments
     And Click Save and Close button
     Then Verify the Error Message
@@ -193,7 +191,7 @@ Feature: Alcohol and Drug Encounters
     * Select the End Group radio button
     And Click Save and Close button
 
-    #
+
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Individual Counseling
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -207,7 +205,7 @@ Feature: Alcohol and Drug Encounters
     Then Click Save button
     And Click Save and Close button
 
-#
+
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Intake
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -221,7 +219,7 @@ Feature: Alcohol and Drug Encounters
     Then Click Save button
     And Click Save and Close button
 
-#
+
   Scenario: Create New Alcohol and Drug Encounters with Type - A&D - Multi-Disciplinary Team Staffing
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -263,7 +261,6 @@ Feature: Alcohol and Drug Encounters
     Then Click Next button
     And Select the Standard Form as "<Standard Forms>"
     And Click on a New button
-    #Then Verify the Standard Forms
     * Enter the Supervisor Name
     * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
     * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
@@ -283,38 +280,7 @@ Feature: Alcohol and Drug Encounters
       | Adult Substance Use Survey                                 |
       | Mandatory Disclosure and Information for Behavioral Health |
 
-    #
-#  Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility3
-#    Given Enter BH_tester User ID and Password at DeCORuM login screen
-#    When Click Logon button
-#    Then Select the Offender "191445"
-#    And Go to Health -> Behavioral Health -> Alcohol and Drug Encounters
-#    And Click on a New button in Health Services Encounters
-#    Then Select the Complex - "Arkansas Valley Correctional Facility"
-#    And Select the Type - "A&D - Treatment Packet Documents"
-#    Then Click Next button
-#    And Select the Standard Form as "<Standard Forms>"
-#    And Click on a New button
-#    * Enter the Supervisor Name
-#    * Select the Client has completed recommended level of treatment
-#    * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
-#    * Select the Client has completed the recommended level of treatment AND Client has been recommended for an aftercare program
-#    * Select the Client has been expelled from or quit treatment at the recommended level
-#    * Select the Client has refused treatment at the recommended level
-#    * Select the Client has refused to complete the assessment process
-#    * Select the Client has previously completed recommended treatment level AND Client has had a positive urinalysis, technical violation, Code of Penal Discipline violation, or relapse since completion of treatment AND Clinician recommends client repeat treatment at the recommended treatment level
-#    * Select the Client has not completed treatment at their recommended treatment level
-#    * Select the Client returned during current incarceration and does not need reassessment
-#    * Select the Reassessment request has been approved but not yet completed
-#    * Select the Client returned during current incarceration and previous treatment level qualifier may need to be reconsidered
-#   # Then Verify the Standard Forms
-#    Then Add Timestamp to Comments
-#    And Click Save and Close button
-#    Examples:
-#      | Standard Forms                |
-#      | A&D Treatment Level Qualifier |
 
-#
   Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility4
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -328,7 +294,6 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button
     * Select the Not Available as a Sign
     * Select the Add as a Witness
-   # Then Verify the Standard Forms
     And Click Save and Close button
     Examples:
       | Standard Forms                                            |
@@ -340,7 +305,7 @@ Feature: Alcohol and Drug Encounters
       | Notice of Directives                                      |
       | TC Treatment Consent and Agreement                        |
 
-#
+
   Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility41
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -353,7 +318,6 @@ Feature: Alcohol and Drug Encounters
     And Select the Standard Form as "<Standard Forms>"
     And Click on a New button
     * Select the Not Available as a Sign
-   # Then Verify the Standard Forms
     And Click Save and Close button
     Examples:
       | Standard Forms                                            |
