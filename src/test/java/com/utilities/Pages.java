@@ -12,6 +12,7 @@ public class Pages {
     private AlcoholAndDrugEncountersPage alcoholAndDrugEncountersPage;
     private SOTMPEncountersPage sotmpEncountersPage;
     private MentalHealthEncountersPage mentalHealthEncountersPage;
+    private IJPPage getIJPPage;
 
     public LoginPage getLoginPage(){
         return (loginPage == null) ? loginPage = new LoginPage() : loginPage;
@@ -43,5 +44,9 @@ public class Pages {
 
     public MentalHealthEncountersPage getMentalHealthEncountersPage(){
         return (mentalHealthEncountersPage == null) ? mentalHealthEncountersPage = new MentalHealthEncountersPage() : mentalHealthEncountersPage;
+    }
+
+    public IJPPage getIJPPage(){
+        return (getIJPPage == null) ? getIJPPage = new IJPPage() : getIJPPage;
     }
 }

@@ -35,6 +35,23 @@ public class LandingPage {
     @FindBy(xpath = "//a[text()='Behavioral Health']")
     public WebElement behavioralHealth;
 
+    @FindBy(xpath = "//a[text()='Reports']")
+    public WebElement reports;
+
+
+
+    @FindBy(xpath = "//a[text()='Inmate Record']")
+    public WebElement inMateRecords;
+
+    @FindBy(xpath = "//a[text()='Inmate Case Notes']")
+    public WebElement inmateCaseNotes;
+
+    @FindBy(xpath = "//a[text()='Time Computation Reports']")
+    public WebElement timeComputationReports;
+
+    @FindBy(xpath = "//a[text()='Earned Time Awards For Case Manager']")
+    public WebElement earnedTimeAwardsForCaseManager;
+
     @FindBy(xpath = "//a[text()='Alcohol and Drug Encounters']")
     public WebElement alcoholAbnDrugEncounters;
 

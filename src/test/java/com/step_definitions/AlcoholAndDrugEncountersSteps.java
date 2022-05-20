@@ -42,6 +42,7 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
 
     @Then("Go to Health -> Behavioral Health -> SOTMP Encounters")
     public void go_to_health_behavioral_health_sotmp_encounters() {
+
         logger.info("Go to Health -> Behavioral Health -> SOTMP Encounters");
         Driver.getDriver().manage().window().maximize();
         wait(5);

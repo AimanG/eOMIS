@@ -39,44 +39,13 @@ public class LoginSteps extends BrowserUtils {
 
         Driver.getDriver().manage().window().maximize();
         waitForPageToLoad(10);
-        clickEsp();
+        clickEsc();
 
         waitForClickability(pages.getLandingPage().offenderDOCLookup, 10);
         pages.getLandingPage().offenderDOCLookup.click();
 
-        switch (DOCNumber) {
-
-            case "190456":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("190456");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "187437":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("187437");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "045632":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("045632");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "191445":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("191445");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "116046":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("116046");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "164128":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("164128");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-            case "193445":
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys("193445");
-                pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
-                break;
-
-
-        }
+        pages.getLandingPage().offenderDOCLookupSearch.sendKeys(DOCNumber);
+        pages.getLandingPage().offenderDOCLookupSearch.sendKeys(Keys.ENTER);
     }
 
     @Then("Go to Health -> Nursing -> Nursing Encounters")
@@ -95,8 +64,8 @@ public class LoginSteps extends BrowserUtils {
     @Then("Go to Health -> Medical Provider -> Medical Encounters")
     public void go_to_health_medical_medical_nursing_encounters() {
 
-        Driver.getDriver().manage().window().maximize();
         logger.info("Go to Health -> Medical Provider -> Medical Encounters");
+        Driver.getDriver().manage().window().maximize();
         wait(5);
         pages.getLandingPage().medicalProvider.click();
         waitForClickability(pages.getLandingPage().medicalProvider, 10);

@@ -30,7 +30,7 @@ public class BrowserUtils extends DBUtils {
         Driver.getDriver().switchTo().frame(element);
     }
 
-    public static void clickEsp(){
+    public static void clickEsc(){
         Screen sc = new Screen();
         sc.type(Key.ESC);
     }
