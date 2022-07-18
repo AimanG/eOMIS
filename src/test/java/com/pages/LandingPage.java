@@ -20,11 +20,20 @@ public class LandingPage {
     @FindBy(xpath = "//a[text()='Offender']")
     public WebElement offenderFunctionalAreaButton;
 
+    @FindBy(xpath = "//a[text()='Support']")
+    public WebElement supportFunctionalAreaButton;
+
     @FindBy(xpath = "//nav/ul/li[4]/a[@role='menuitem']")
     public WebElement offenderAssessments;
 
+    @FindBy(xpath = "//*[contains(text(), 'Facility Search By Name/ID')]")
+    public WebElement facilitySearchByNameID;
+
     @FindBy(xpath = "//*[contains(text(), 'LSI Assessments')]")
     public WebElement lsiAssessments;
+
+    @FindBy(xpath = "//*[contains(text(), 'Correctional Facility Information')]")
+    public WebElement correctionalFacilityInformation;
 
     @FindBy(xpath = "//input[@type='search']")
     public WebElement offenderDOCLookupSearch;

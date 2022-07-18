@@ -9,7 +9,7 @@ public class Hooks {
 
     @BeforeStep
     public void setUp(){
-        BrowserUtils.wait(1);
+//        BrowserUtils.wait(1);
     }
 
 
