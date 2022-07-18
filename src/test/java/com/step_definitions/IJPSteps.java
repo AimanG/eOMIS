@@ -4,9 +4,11 @@ import com.utilities.BrowserUtils;
 import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
 import com.utilities.Pages;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -17,10 +19,19 @@ public class IJPSteps extends BrowserUtils {
     @Given("Enter CMITSTR User ID and Password at DeCORuM login screen")
     public void enter_bh_tester_user_id_and_password_at_de_co_ru_m_login_screen() {
 
-        logger.info("Enter BH_tester User ID and Password at DeCORuM login screen");
+        logger.info("Enter CMITSTR User ID and Password at DeCORuM login screen");
         Driver.getDriver().get(ConfigurationReader.getProperties("url"));
         pages.getLoginPage().userId.sendKeys("CMITSTR");
         pages.getLoginPage().password.sendKeys("pepsi123");
+    }
+
+    @Given("Enter OMSAII User ID and Password at DeCORuM login screen")
+    public void enter_omsaii_user_id_and_password_at_de_co_ru_m_login_screen() {
+
+        logger.info("Enter OMSAII User ID and Password at DeCORuM login screen");
+        Driver.getDriver().get(ConfigurationReader.getProperties("url"));
+        pages.getLoginPage().userId.sendKeys("OFULLTSTR");
+        pages.getLoginPage().password.sendKeys("Water001");
     }
 
     @Then("Click on Prison Tab")
@@ -256,5 +267,286 @@ public class IJPSteps extends BrowserUtils {
         logger.info("Receive Sentence Credits Debits browse screen with another row added");
     }
 
+    @Then("Click Jobs and Programs")
+    public void click_jobs_programs() {
 
+        logger.info("Click Jobs and Programs");
+        Driver.getDriver().manage().window().maximize();
+        hover(pages.getLandingPage().jobAndPrograms);
+        pages.getLandingPage().jobAndPrograms.click();
+    }
+
+    @Then("Click Job Program Assignments")
+    public void click_job_program_assignments() {
+
+        logger.info("Click Jobs and Programs");
+        hover(pages.getLandingPage().jobProgramAssignments);
+        pages.getLandingPage().jobProgramAssignments.click();
+    }
+
+    @Then("Receive Job Program Assignments \\(IJPS010A) screen")
+    public void receive_job_program_assignments_ijps010a_screen() {
+        logger.info("Receive Job Program Assignments (IJPS010A) screen");
+    }
+
+    @Then("Click Assigned Date Time hyperlink")
+    public void click_assigned_date_time_hyperlink() {
+        logger.info("Click Assigned Date Time hyperlink");
+        pages.getIJPPage().assignedDateTime.click();
+
+    }
+
+    @Then("Receive Job Program Assignment \\(IJPS010B) screen")
+    public void receive_job_program_assignment_ijps010b_screen() {
+        logger.info("Receive Job Program Assignment (IJPS010B) screen");
+    }
+
+    @Then("Click Edit button above Attendance browse grid")
+    public void click_edit_button_above_attendance_browse_grid() {
+        logger.info("Click Edit button above Attendance browse grid");
+    }
+
+    @Then("Receive Job Program Assignment \\(IJPS010B) screen in Edit Mode")
+    public void receive_job_program_assignment_ijps010b_screen_in_edit_mode() {
+        logger.info("Receive Job Program Assignment (IJPS010B) screen in Edit Mode");
+    }
+
+    @Then("Click New in the Attendance grid")
+    public void click_new_in_the_attendance_grid() {
+        logger.info("Click New in the Attendance grid");
+    }
+
+    @Then("Receive Assignment Attendance \\(IJPS010D) screen in Add Mode")
+    public void receive_assignment_attendance_ijps010d_screen_in_add_mode() {
+        logger.info("Receive Assignment Attendance (IJPS010D) screen in Add Mode");
+    }
+
+    @Then("Enter Required Fields")
+    public void enter_required_fields() {
+        logger.info("Enter Required Fields");
+    }
+
+    @Then("Click Attendance List Search by Section")
+    public void click_attendance_list_search_by_section() {
+        logger.info("Click Attendance List Search by Section");
+        hover(pages.getLandingPage().attendanceListSearchBySection);
+        pages.getLandingPage().attendanceListSearchBySection.click();
+    }
+
+    @Then("Select the Facility Name - {string}")
+    public void select_the_facility_name(String facilityName) {
+        logger.info("Select the Facility Name - " + facilityName);
+
+        switchToIFrameByID("iframeSearch");
+
+        pages.getIJPPage().facilityName.click();
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(facilityName);
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(Keys.ENTER);
+
+    }
+
+    @Then("Select the Assignment Category as {string}")
+    public void select_the_assignment_category_as(String assignmentCategory) {
+        logger.info("Select the Assignment Category as " + assignmentCategory);
+        pages.getIJPPage().assignmentCategory.click();
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(assignmentCategory);
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(Keys.ENTER);
+        wait(1);
+    }
+
+    @Then("Select the Assignment Type {string}")
+    public void select_the_assignment_type(String type) {
+        logger.info("Select the Assignment Type");
+        pages.getIJPPage().assignmentType.click();
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(type);
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(Keys.ENTER);
+        wait(1);
+    }
+
+    @Then("Select the Section # {string}")
+    public void select_the_section(String section) {
+        logger.info("Select the Section #");
+        pages.getIJPPage().sectionNo.click();
+
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(section);
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(Keys.ENTER);
+
+    }
+
+    @Then("Click on today's date")
+    public void click_on_today_s_date() {
+        logger.info("Click on today's date");
+        pages.getIJPPage().attendanceDate.click();
+    }
+
+    @Then("Click Search button")
+    public void click_search_button() {
+        logger.info("Click Search button");
+        pages.getIJPPage().searchButton.click();
+    }
+
+    @Then("Receive Attendance List \\(IJPS065B) screen")
+    public void receive_attendance_list_ijps065b_screen() {
+        switchToDefailt();
+        switchToIFrameByID("iframeMain");
+        logger.info("Receive Attendance List (IJPS065B) screen");
+    }
+
+
+    @Then("Click Save Button")
+    public void click_save_button() {
+        logger.info("Click Save Button");
+        pages.getIJPPage().saveButton.click();
+    }
+
+    @Then("Scroll to bottom of page and Click Produce Attendance Roster button")
+    public void scroll_to_bottom_of_page_and_click_produce_attendance_roster_button() {
+        logger.info("Scroll to bottom of page and Click Produce Attendance Roster button");
+    }
+
+    @Then("Receive Section Attendance Roster \\(IJPS065G) that includes these Inmates")
+    public void receive_section_attendance_roster_ijps065g_that_includes_these_inmates() {
+        logger.info("Receive Section Attendance Roster(IJPS065G) that includes these Inmates");
+    }
+
+    @Then("Click Printer Icon to Print Attendance List")
+    public void click_printer_icon_to_print_attendance_list() {
+        logger.info("Click Printer Icon to Print Attendance List");
+    }
+
+    @Then("Click Prior Page Button")
+    public void click_prior_page_button() {
+        logger.info("Click Prior Page Button");
+    }
+
+    @Then("Click Produce Absentee List button")
+    public void click_produce_absentee_list_button() {
+        logger.info("Click Produce Absentee List button");
+    }
+
+    @Then("Receive Section Absentee List \\(IJPS065E) that includes the inmate\\(s) marked as absentee")
+    public void receive_section_absentee_list_ijps065e_that_includes_the_inmate_s_marked_as_absentee() {
+        logger.info("Receive Section Absentee List (IJPS065E) that includes the inmate(s) marked as absentee");
+    }
+
+    @Then("Click the Printer Icon to Print Absentee List")
+    public void click_the_printer_icon_to_print_absentee_list() {
+        logger.info("Click the Printer Icon to Print Absentee List");
+    }
+
+    @Then("Select the Attendance Code")
+    public void select_the_attendance_code() {
+        logger.info("Select the Attendance Code");
+        pages.getIJPPage().attendanceCode.click();
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys("A-Full Day Unexcused (No Pay)");
+        pages.getIJPPage().attendanceListSearchBySectionInput.sendKeys(Keys.ENTER);
+
+    }
+
+    @Then("Enter Comments")
+    public void enter_comments() {
+        logger.info("Enter Comments");
+        pages.getIJPPage().comments.sendKeys("OMSAII Tester");
+    }
+
+
+    @Then("Receive Job-Program Assignments \\(IJPS{int}A) screen")
+    public void receiveJobProgramAssignmentsIJPSAScreen(int arg0) {
+    }
+
+    @And("Select Program")
+    public void selectProgram() {
+        switchToIFrameByID("iframeMain");
+        pages.getIJPPage().assignedDateTimeFirstValue.click();
+        wait(5);
+    }
+
+    @Then("Receive Job-Program Assignment \\(IJPS{int}B) screen")
+    public void receiveJobProgramAssignmentIJPSBScreen(int arg0) {
+    }
+
+    @And("Click on the Row in the Attendance browse grid")
+    public void clickOnTheRowInTheAttendanceBrowseGrid() {
+        switchToIFrameByID("iframeMain");
+        scrollDown(0, 250);
+        wait(5);
+        //pages.getIJPPage().attendanceYear.click();
+    }
+
+    @Then("Receive Assignment Attendance \\(IJPS{int}D) screen")
+    public void receiveAssignmentAttendanceIJPSDScreen(int arg0) {
+    }
+
+    @And("Click Batch Job Processing menu choice \\(under Administration tab)")
+    public void clickBatchJobProcessingMenuChoiceUnderAdministrationTab() {
+    }
+
+    @Then("Click Other")
+    public void clickOther() {
+    }
+
+    @And("Click Nightly Database Maintenance")
+    public void clickNightlyDatabaseMaintenance() {
+    }
+
+    @Then("Receive the following pop-up message, {string}")
+    public void receiveTheFollowingPopUpMessage(String arg0) {
+    }
+
+    @And("Click to Continue")
+    public void clickToContinue() {
+    }
+
+    @Then("Click on Assignment Roster Search by Location")
+    public void click_on_assignment_roster_search_by_location() {
+        logger.info("Click on Assignment Roster Search by Location");
+        hover(pages.getLandingPage().assignmentRosterSearchByLocation);
+        pages.getLandingPage().assignmentRosterSearchByLocation.click();
+    }
+
+    @Then("Click on Assignment Roster Search by Section")
+    public void click_on_assignment_roster_search_by_section() {
+        logger.info("Click Attendance List Search by Section");
+        hover(pages.getLandingPage().assignmentRosterSearchBySection);
+        pages.getLandingPage().assignmentRosterSearchBySection.click();
+    }
+
+    @Then("Receive Assignment Roster Search by Section \\(IJPS060B)")
+    public void receive_assignment_roster_search_by_section_ijps060b() {
+
+    }
+
+    @Then("Click in Next Perf. Eval. Date column for first inmate on list")
+    public void click_in_next_perf_eval_date_column_for_first_inmate_on_list() {
+
+    }
+
+    @Then("Receive Job Performance \\(IJPS010F) screen in Add Mode")
+    public void receive_job_performance_ijps010f_screen_in_add_mode() {
+
+    }
+
+    @Then("Repeat for every inmate in the grid")
+    public void repeat_for_every_inmate_in_the_grid() {
+
+    }
+
+    @Then("Receive Assignment Roster Search by Section")
+    public void receive_assignment_roster_search_by_section() {
+
+    }
+
+    @Then("Select the Section Location as {string}")
+    public void select_the_section_location_as(String string) {
+    }
+
+    @Then("Click Nightly Database Maintenance menu choice")
+    public void click_nightly_database_maintenance_menu_choice() {
+
+    }
+
+    @Then("Receive the following pop-up message, you choose {string}")
+    public void receive_the_following_pop_up_message_you_choose(String string) {
+    }
 }
+

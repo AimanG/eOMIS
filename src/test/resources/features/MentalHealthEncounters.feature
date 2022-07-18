@@ -7,7 +7,7 @@ Feature: Mental Health Encounters
     And Go to Health -> Behavioral Health -> Mental Health Encounters
     Then Make sure DOC "193445" is displayed correctly
 
-  Scenario Outline: Create New Mental Health Encounters - Arkansas Valley Correctional Facility, Behavioral Health Transition Form
+  Scenario: Create New Mental Health Encounters - Arkansas Valley Correctional Facility, Behavioral Health Transition Form
     Given Enter BH_tester User ID and Password at DeCORuM login screen
     When Click Logon button
     Then Select the Offender "193445"
@@ -15,8 +15,8 @@ Feature: Mental Health Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Mental Health Type - "Behavioral Health Transition Form"
-    Then Click Next button
-    And Select the Standard Form as "<Type>"
+    Then Click Next encounter button
+    And Select the Standard Form as "Behavioral Health Transition Form"
     Then Click on New button
     * Enter the Parole Office Destination
     * Enter the Parole Mental Health Clinician
@@ -35,10 +35,23 @@ Feature: Mental Health Encounters
     * Unselect the ROI Obtained to Substance Use
     * Select the ROI Obtained to Parole
     * Unselect the ROI Obtained to Parole
+    And Click Save button
+
+
+  Scenario Outline: Create New Mental Health Encounters - Arkansas Valley Correctional Facility, Behavioral Health Transition Form types
+    Given Enter BH_tester User ID and Password at DeCORuM login screen
+    When Click Logon button
+    Then Select the Offender "193445"
+    And Go to Health -> Behavioral Health -> Mental Health Encounters
+    And Click on a New button in Health Services Encounters
+    Then Select the Complex - "Arkansas Valley Correctional Facility"
+    And Select the Mental Health Type - "Behavioral Health Transition Form"
+    Then Click Next button
+    And Select the Standard Form as "<Type>"
+    Then Click on New button
     And Click Save and Close button
     Examples:
       | Type                                                       |
-      | Behavioral Health Transition Form                          |
       | Behavioral Health Treatment Plan                           |
       | Brief Psychiatric Rating Scale (BPRS)                      |
       | Mandatory Disclosure and Information for Behavioral Health |

@@ -54,6 +54,13 @@ public class NursingEncountersSteps extends BrowserUtils {
     public void click_next_button() {
 
         logger.info("Click Next button");
+        pages.getIJPPage().next.click();
+    }
+
+    @Then("Click Next encounter button")
+    public void click_next_encounter_button() {
+
+        logger.info("Click Next button");
         pages.getNursingEncountersPage().nextButton.click();
     }
 
@@ -80,6 +87,12 @@ public class NursingEncountersSteps extends BrowserUtils {
             logger.info("Click Save and Close button");
             pages.getNursingEncountersPage().saveAndCloseButton.click();
         }
+
+//    @Then("Click Save button")
+//    public void click_save_and_close_button () {
+//        logger.info("Click Save and Close button");
+//        pages.getNursingEncountersPage().saveAndCloseButton.click();
+//    }
 
         @Then("Add Timestamp to Subjective Notes")
         public void add_timestamp_to_subjective_notes () {

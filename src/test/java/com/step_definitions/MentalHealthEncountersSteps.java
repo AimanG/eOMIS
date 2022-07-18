@@ -12,86 +12,112 @@ public class MentalHealthEncountersSteps extends BrowserUtils {
     @Then("Enter the Parole Office Destination")
     public void enter_the_parole_office_destination() {
         logger.info("Enter the Parole Office Destination");
+        pages.getMentalHealthEncountersPage().paroleOfficeDestination.clear();
+        pages.getMentalHealthEncountersPage().paroleOfficeDestination.sendKeys("Test Destination");
     }
 
     @Then("Enter the Parole Mental Health Clinician")
     public void enter_the_parole_mental_health_clinician() {
         logger.info("Enter the Parole Mental Health Clinician");
+        pages.getMentalHealthEncountersPage().paroleMentalHealthDestination.clear();
+        pages.getMentalHealthEncountersPage().paroleMentalHealthDestination.sendKeys("Test Mental Health Destination");
     }
 
     @Then("Enter the Contact Information")
     public void enter_the_contact_information() {
         logger.info("Enter the Contact Information");
+        pages.getMentalHealthEncountersPage().contactInformation.clear();
+        pages.getMentalHealthEncountersPage().contactInformation.sendKeys("Test Contact Information");
     }
 
     @Then("Add Timestamp to Individualized strategies to promote offender success; identify resources such as supports and coping skills: what individualized strategies have been identified and used")
     public void add_timestamp_to_individualized_strategies_to_promote_offender_success_identify_resources_such_as_supports_and_coping_skills_what_individualized_strategies_have_been_identified_and_used() {
         logger.info("Add Timestamp to Individualized strategies to promote offender success; identify resources such as supports and coping skills: what individualized strategies have been identified and used");
+        pages.getMentalHealthEncountersPage().timestampField1.clear();
+        pages.getMedicalEncountersPage().timestamp1.click();
     }
 
     @Then("Add Timestamp to Describe helpful approaches that increased offenders motivation for change and or independent living skills")
     public void add_timestamp_to_describe_helpful_approaches_that_increased_offenders_motivation_for_change_and_or_independent_living_skills() {
         logger.info("Add Timestamp to Describe helpful approaches that increased offenders motivation for change and or independent living skills");
+        pages.getMentalHealthEncountersPage().timestampField2.clear();
+        pages.getMedicalEncountersPage().timestamp2.click();
     }
 
     @Then("Add Timestamp to Current identified barriers and risk factors: Include current danger to self and or others and or grave disability - specify behavior risk factors")
     public void add_timestamp_to_current_identified_barriers_and_risk_factors_include_current_danger_to_self_and_or_others_and_or_grave_disability_specify_behavior_risk_factors() {
         logger.info("Add Timestamp to Current identified barriers and risk factors: Include current danger to self and or others and or grave disability - specify behavior risk factors");
+        pages.getMentalHealthEncountersPage().timestampField3.clear();
+        pages.getMedicalEncountersPage().timestamp3.click();
     }
 
     @Then("Add Timestamp to Identify gaps in resources that need to be addressed to promote offender success:")
     public void add_timestamp_to_identify_gaps_in_resources_that_need_to_be_addressed_to_promote_offender_success() {
         logger.info("Add Timestamp to Identify gaps in resources that need to be addressed to promote offender success:");
+        pages.getMentalHealthEncountersPage().timestampField4.clear();
+        pages.getMedicalEncountersPage().timestamp4.click();
     }
 
     @Then("Add Timestamp to Describe offenders attitude, motivation toward community success")
     public void add_timestamp_to_describe_offenders_attitude_motivation_toward_community_success() {
         logger.info("Add Timestamp to Describe offenders attitude, motivation toward community success");
+        pages.getMentalHealthEncountersPage().timestampField5.clear();
+        pages.getMedicalEncountersPage().timestamp5.click();
     }
 
     @Then("Add Timestamp to Transition Plan: In Reach appointment completed - date and community provider")
     public void add_timestamp_to_transition_plan_in_reach_appointment_completed_date_and_community_provider() {
         logger.info("Add Timestamp to Transition Plan: In Reach appointment completed - date and community provider");
+        pages.getMentalHealthEncountersPage().timestampField6.clear();
+        pages.getMedicalEncountersPage().timestamp6.click();
     }
 
     @Then("Select the ROI Obtained to Sex Offender")
     public void select_the_roi_obtained_to_sex_offender() {
         logger.info("Select the ROI Obtained to Sex Offender");
+        pages.getMentalHealthEncountersPage().sexOffenderROIObtained.click();
     }
 
     @Then("Unselect the ROI Obtained to Sex Offender")
     public void unselect_the_roi_obtained_to_sex_offender() {
         logger.info("Unselect the ROI Obtained to Sex Offender");
+        pages.getMentalHealthEncountersPage().sexOffenderROIObtained.click();
     }
 
     @Then("Select the ROI Obtained to Mental Health")
     public void select_the_roi_obtained_to_mental_health() {
         logger.info("Select the ROI Obtained to Mental Health");
+        pages.getMentalHealthEncountersPage().mentalHealthROIObtained.click();
     }
 
     @Then("Unselect the ROI Obtained to Mental Health")
     public void unselect_the_roi_obtained_to_mental_health() {
         logger.info("Unselect the ROI Obtained to Mental Health");
+        pages.getMentalHealthEncountersPage().mentalHealthROIObtained.click();
     }
 
     @Then("Select the ROI Obtained to Substance Use")
     public void select_the_roi_obtained_to_substance_use() {
         logger.info("Select the ROI Obtained to Substance Use");
+        pages.getMentalHealthEncountersPage().substanceUseROIObtained.click();
     }
 
     @Then("Unselect the ROI Obtained to Substance Use")
     public void unselect_the_roi_obtained_to_substance_use() {
         logger.info("Unselect the ROI Obtained to Substance Use");
+        pages.getMentalHealthEncountersPage().substanceUseROIObtained.click();
     }
 
     @Then("Select the ROI Obtained to Parole")
     public void select_the_roi_obtained_to_parole() {
         logger.info("Select the ROI Obtained to Parole");
+        pages.getMentalHealthEncountersPage().paroleROIObtained.click();
     }
 
     @Then("Unselect the ROI Obtained to Parole")
     public void unselect_the_roi_obtained_to_parole() {
         logger.info("Unselect the ROI Obtained to Parole");
+        pages.getMentalHealthEncountersPage().paroleROIObtained.click();
     }
 
     @Then("Select Approved to IBAAP APPROVAL DENIAL")

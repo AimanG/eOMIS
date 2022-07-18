@@ -1,5 +1,4 @@
 package com.step_definitions;
-
 import com.utilities.BrowserUtils;
 import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
@@ -22,14 +21,12 @@ public class LoginSteps extends BrowserUtils {
         Driver.getDriver().get(ConfigurationReader.getProperties("url"));
         pages.getLoginPage().userId.sendKeys("OFULLTSTR");
         pages.getLoginPage().password.sendKeys("Water001");
-
     }
 
     @When("Click Logon button")
     public void click_logon_button() {
         logger.info("Click Logon button");
         pages.getLoginPage().logon.click();
-
     }
 
     @Then("Select the Offender {string}")
@@ -74,7 +71,6 @@ public class LoginSteps extends BrowserUtils {
 
     }
 
-
     @Then("Click Continue button")
     public void click_continue_button() {
 
@@ -101,6 +97,4 @@ public class LoginSteps extends BrowserUtils {
         pages.getLoginPage().password.sendKeys("pepsi123");
 
     }
-
 }
-//Ctrl+Alt+L

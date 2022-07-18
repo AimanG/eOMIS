@@ -514,13 +514,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Case Management
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Case Management>"
+    And Select the Category - "Case Management"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -558,13 +558,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Court Services
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Court Services>"
+    And Select the Category - "Court Services"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -578,13 +578,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, DRDC/DWCF/YOS Programmer
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<DRDC/DWCF/YOS Programmer>"
+    And Select the Category - "DRDC/DWCF/YOS Programmer"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -608,13 +608,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Education
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Education>"
+    And Select the Category - "Education"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -628,13 +628,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Housing
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Housing>"
+    And Select the Category - "Housing"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -652,13 +652,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Inspector General
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "Inspector General>"
+    And Select the Category - "Inspector General"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -672,13 +672,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Movement
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Movement>"
+    And Select the Category - "Movement"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -692,13 +692,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Offender Services
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Offender Services>"
+    And Select the Category - "Offender Services"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -717,13 +717,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, PCDCIS Chrons
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<PCDCIS Chrons>"
+    And Select the Category - "PCDCIS Chrons"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -736,13 +736,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Program Provider
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Program Provider>"
+    And Select the Category - "Program Provider"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -757,7 +757,7 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Security
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
@@ -779,7 +779,7 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Special Program
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
@@ -799,13 +799,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Time & Release
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Time & Release>"
+    And Select the Category - "Time & Release"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -821,13 +821,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Transportation
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Transportation>"
+    And Select the Category - "Transportation"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -842,13 +842,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Visiting
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Visiting>"
+    And Select the Category - "Visiting"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -863,13 +863,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Volunteer/Faith and Citizens
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Volunteer/Faith and Citizens>"
+    And Select the Category - "Volunteer/Faith and Citizens"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -882,13 +882,13 @@ Feature: 3.2.4b – Award Monthly Earned Time
   Scenario Outline: Inmate Case Notes ICCS020A, Work Supervisor
     Given Enter CMITSTR User ID and Password at DeCORuM login screen
     When Click Logon button
-    Then Select the Offender "042294"
+    Then Select the Offender "192152"
     And Click Inmate Record
     Then Click Inmate Case Notes
     Then Receive Inmate Case Notes ICCS020A screen
     And  Click New button above Inmate Case Notes browse grid
     Then Receive Inmate Case Note (ICCS020B) screen in Add Mode
-    And Select the Category - "<Work Supervisor>"
+    And Select the Category - "Work Supervisor"
     Then Select the Type as "<Type>"
     And Click Next Step Button
     Then Click Save and Continue button
@@ -900,26 +900,6 @@ Feature: 3.2.4b – Award Monthly Earned Time
       | General Information                            |
       | Outside Agency (or Outside Individual) Contact |
 
-
-  Scenario Outline: Add a Sentence Credit/Debit
-    Given Enter CMITSTR User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "042294"
-    And Click Time Computation
-    Then Click Sentence Credits Debits
-    And Receive Sentence Credits Debits OTCS049A screen
-    Then Click New button above Sentence Credits Debits browse grid
-    And Receive Sentence Credit Debit OTCS049B screen in Add Mode
-    Then Select the Credit Debit Type
-    And Click the Next Step button
-    Then Select the "<Reason>"
-    And Enter the Days
-    Then Add a Timestamp on Comments
-    And Click Save button
-    Then Receive Sentence Credits Debits browse screen with another row added
-    Examples:
-      | Reason |
-      |        |
 
   Scenario: Run a monthly report to detect all inmates
     Given Enter CMITSTR User ID and Password at DeCORuM login screen

@@ -38,7 +38,20 @@ public class LandingPage {
     @FindBy(xpath = "//a[text()='Reports']")
     public WebElement reports;
 
+    @FindBy(xpath = "//a[text()='Jobs and Programs']")
+    public WebElement jobAndPrograms;
 
+    @FindBy(xpath = "//a[text()='Attendance List Search By Section']")
+    public WebElement attendanceListSearchBySection;
+
+    @FindBy(xpath = "//a[text()='Assignment Roster Search by Location']")
+    public WebElement assignmentRosterSearchByLocation;
+
+    @FindBy(xpath = "//a[text()='Assignment Roster Search by Section']")
+    public WebElement assignmentRosterSearchBySection;
+
+    @FindBy(xpath = "//a[text()='Job/Program Assignments']")
+    public WebElement jobProgramAssignments;
 
     @FindBy(xpath = "//a[text()='Inmate Record']")
     public WebElement inMateRecords;
@@ -69,5 +82,10 @@ public class LandingPage {
 
     @FindBy(xpath = "//a[text()='Medical Encounters']")
     public WebElement medicalEncounters;
+
+
+
+
+
 
 }

@@ -1,22 +1,21 @@
 package com.step_definitions;
+import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.BeforeStep;
 
 public class Hooks {
 
 
-//    @Before
-//    public void setUp(){
-//        System.out.println("I am setting up the test from the Hooks class!!!");
-//        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        // you can also add maximize screen here
-//        Driver.getDriver().manage().window().maximize();
-//    }
+    @BeforeStep
+    public void setUp(){
+        BrowserUtils.wait(1);
+    }
 
 
-//    @After
-//    public void tearDown(){
-//        Driver.closeDriver();
-//    }
+    @After
+    public void tearDown(){
+        Driver.closeDriver();
+    }
 
 }

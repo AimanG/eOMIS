@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -26,33 +27,38 @@ public class BrowserUtils extends DBUtils {
         }
     }
 
-    public static void switchToIFrameByWebElement(WebElement element){
+    public static void switchToIFrameByWebElement(WebElement element) {
         Driver.getDriver().switchTo().frame(element);
     }
 
-    public static void clickEsc(){
+    public static void clickEsc() {
         Screen sc = new Screen();
         sc.type(Key.ESC);
     }
 
-    public static void switchToIFrameByID(String iFrameID){
+    public static void switchToIFrameByID(String iFrameID) {
         Driver.getDriver().switchTo().frame(iFrameID);
     }
 
-    public static String getTodaysDate(){
+    public static void switchToDefailt() {
+        Driver.getDriver().switchTo().parentFrame();
+    }
+
+    public static String getTodaysDate() {
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date();
         return formatter.format(date);
     }
 
-    public static boolean validateCheckBox(WebElement element){
+    public static boolean validateCheckBox(WebElement element) {
         return element.getAttribute("value").equals("Y");
     }
 
-    public static void scrollDown(int num, int num2){
+    public static void scrollDown(int num, int num2) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy("+num+","+num2+")", "");
+        js.executeScript("window.scrollBy(" + num + "," + num2 + ")", "");
     }
+
     /**
      * Generates the String path to the screenshot taken.
      * Within the method, the screenshot is taken and is saved into FileUtils.
