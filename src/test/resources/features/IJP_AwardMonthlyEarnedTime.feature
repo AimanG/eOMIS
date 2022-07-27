@@ -1,3 +1,4 @@
+@regression
 Feature: 3.2.4b – Award Monthly Earned Time
 
   Scenario: Earned Time Awards for Case Manager

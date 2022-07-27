@@ -1,3 +1,4 @@
+@regression
 Feature: Compute Monthly Payroll
 
   Scenario: Earned Time Awards for Case Manager, program cor

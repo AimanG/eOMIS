@@ -1,3 +1,4 @@
+
 Feature: Alcohol and Drug Encounters
 
   Scenario: Verify selected DOC number
