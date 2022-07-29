@@ -7,11 +7,10 @@ import io.cucumber.java.BeforeStep;
 public class Hooks {
 
 
-//    @BeforeStep
-//    public void setUp(){
-//        BrowserUtils.wait(1);
-//    }
-
+    @BeforeStep
+    public void setUp(){
+        BrowserUtils.wait(1);
+    }
 
     @After
     public void tearDown(){

@@ -1,4 +1,4 @@
-@regression
+
 Feature: LSI Assessments
 
   Scenario: Verify selected DOC number

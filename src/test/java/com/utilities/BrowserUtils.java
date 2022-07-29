@@ -59,6 +59,11 @@ public class BrowserUtils extends DBUtils {
         js.executeScript("window.scrollBy(" + num + "," + num2 + ")", "");
     }
 
+    public static void scrollUp(int num, int num2) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(" + num + "," + num2 + ")", "");
+    }
+
     /**
      * Generates the String path to the screenshot taken.
      * Within the method, the screenshot is taken and is saved into FileUtils.

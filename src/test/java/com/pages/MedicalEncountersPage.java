@@ -293,6 +293,8 @@ public class MedicalEncountersPage {
     @FindBy(xpath = "//input[@id='dupeCheckKeyword']")
     public WebElement dupCheckForKeyword;
 
+    @FindBy(xpath = "//button[@id='nextstep_encounter']")
+    public WebElement nextStep;
 
 
 

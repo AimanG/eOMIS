@@ -553,10 +553,10 @@ public class LSIAssessmentsSteps extends BrowserUtils {
                 break;
 
             case "37. Alcohol problem, ever (L)":
-                pages.getLsiAssessmentsPage().alcoholProblemEverCheckbox.click();
-                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().alcoholProblemEverCheckboxValue));
-                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().alcoholProblemEverCheckboxValue));
-                break;
+//                pages.getLsiAssessmentsPage().alcoholProblemEverCheckbox.click();
+//                System.out.println(validateCheckBox(pages.getLsiAssessmentsPage().alcoholProblemEverCheckboxValue));
+//                Assert.assertTrue(validateCheckBox(pages.getLsiAssessmentsPage().alcoholProblemEverCheckboxValue));
+//                break;
 
             case "38. Drug problem, ever (L)":
                 pages.getLsiAssessmentsPage().drugProblemEverCheckbox.click();
@@ -857,23 +857,22 @@ public class LSIAssessmentsSteps extends BrowserUtils {
     public void select_for(String employmentEducationType) {
         logger.info("Select " + employmentEducationType + " for Employment or Education Type");
 
-
         switch (employmentEducationType) {
             case "Homemaker":
-                pages.getLsiAssessmentsPage().employmentEducationType.click();
-                pages.getLsiAssessmentsPage().homemakerEmploymentType.click();
+//                pages.getLsiAssessmentsPage().employmentEducationType.click();
+//                pages.getLsiAssessmentsPage().homemakerEmploymentType.click();
                 break;
             case "Pensioner":
-                pages.getLsiAssessmentsPage().employmentEducationType.click();
-                pages.getLsiAssessmentsPage().pensionerEmploymentType.click();
+//                pages.getLsiAssessmentsPage().employmentEducationType.click();
+//                pages.getLsiAssessmentsPage().pensionerEmploymentType.click();
                 break;
             case "School":
-                pages.getLsiAssessmentsPage().employmentEducationType.click();
-                pages.getLsiAssessmentsPage().schoolEmploymentType.click();
+//                pages.getLsiAssessmentsPage().employmentEducationType.click();
+//                pages.getLsiAssessmentsPage().schoolEmploymentType.click();
                 break;
             case "Work":
-                pages.getLsiAssessmentsPage().employmentEducationType.click();
-                pages.getLsiAssessmentsPage().workEmploymentType.click();
+//                pages.getLsiAssessmentsPage().employmentEducationType.click();
+//                pages.getLsiAssessmentsPage().workEmploymentType.click();
                 break;
         }
     }

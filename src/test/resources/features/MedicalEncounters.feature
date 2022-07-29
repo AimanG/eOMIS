@@ -7,6 +7,7 @@ Feature:  Medical Encounters
     And Go to Health -> Medical Provider -> Medical Encounters
     Then Make sure DOC "045632" is displayed correctly
 
+  @1
   Scenario Outline: Verify selected Complex location - Arkansas Valley Correctional Facility
     Given Enter Provider User ID and Password at DeCORuM login screen
     When Click Logon button
@@ -15,7 +16,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "<Type>"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button
     Then Verify Complex location is "Arkansas Valley Correctional Facility"
@@ -51,7 +52,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Click "S" jump button
@@ -79,7 +80,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Click on View History
 
   Scenario: Create New Objective
@@ -90,7 +91,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Objective" section
@@ -131,7 +132,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Assessment" section
@@ -150,7 +151,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Related Health Problems/Conditions/Allergies" section
@@ -175,7 +176,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Lab Test Orders" section
@@ -230,7 +231,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "X-Ray Orders" section
@@ -287,7 +288,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Consultation Request" section
@@ -353,7 +354,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Patient Transfer Holds" section
@@ -373,7 +374,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Other Actions/Procedures" section
@@ -394,7 +395,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button and Accept alert
     Then Scroll down to "Follow-up Appointments" section
@@ -452,7 +453,7 @@ Feature:  Medical Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Bent County Correctional Facility"
     And Select the Type - "Administrative - Provider"
-    Then Click Next button
+    Then Click Next step encounter button
     Then Add Timestamp to Subjective Notes
     And Click Save button
 #    Then Verify "Medical" Health Score displayed correctly in Banner

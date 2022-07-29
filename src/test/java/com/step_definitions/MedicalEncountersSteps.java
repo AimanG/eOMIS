@@ -876,4 +876,10 @@ public class MedicalEncountersSteps extends BrowserUtils {
         logger.info("Enter the Dup Check for Keyword");
         pages.getMedicalEncountersPage().dupCheckForKeyword.sendKeys("DP-01");
     }
+
+    @Then("Click Next step encounter button")
+    public void click_next_step_encounter_button() {
+       logger.info("Click Next step encounter button");
+       pages.getMedicalEncountersPage().nextStep.click();
+    }
 }

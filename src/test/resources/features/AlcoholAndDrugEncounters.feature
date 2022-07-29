@@ -17,7 +17,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "<Type>"
-    Then Click Next button
+    Then Click Next step encounter button
     And Click on a New button
     * Enter the Supervisor Name
     * Select the Client has previously completed recommended level of treatment AND Request for Reassessment not warranted at this time AND Client is recommended for relapse prevention treatment
@@ -35,7 +35,7 @@ Feature: Alcohol and Drug Encounters
     Examples:
       | Type                      |
       | A&D - Appointment No-show |
-      | A&D - Appointment Refusal |
+#      | A&D - Appointment Refusal |
 
   Scenario Outline: Negative Scenario - Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility without filling out mandatory fields 2
     Given Enter BH_tester User ID and Password at DeCORuM login screen
@@ -45,7 +45,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "<Type>"
-    Then Click Next button
+    Then Click Next step encounter button
     And Click on a New button
     Then Add Timestamp to Comments
     And Click Save and Close button
@@ -65,7 +65,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Assessment"
-    Then Click Next button
+    Then Click Next step encounter button
     And Add Timestamp to Subjective Notes
     Then Click Save button and Accept alert
     And Click on New button for LSI Assessment
@@ -181,7 +181,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Group Counseling"
-    Then Click Next button
+    Then Click Next step encounter button
     And Add Timestamp to Subjective Notes
     Then Click Save button
     * Select the Start Group radio button
@@ -201,7 +201,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Individual Counseling"
-    Then Click Next button
+    Then Click Next step encounter button
     And Add Timestamp to Subjective Notes
     Then Click Save button
     And Click Save and Close button
@@ -215,7 +215,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Intake"
-    Then Click Next button
+    Then Click Next step encounter button
     And Add Timestamp to Subjective Notes
     Then Click Save button
     And Click Save and Close button
@@ -229,7 +229,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Multi-Disciplinary Team Staffing"
-    Then Click Next button
+    Then Click Next step encounter button
     * Select the Date of staffing
     * Enter the Current assigned facility
     * Add Timestamp to Staff in attendance with position titles
@@ -246,7 +246,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Status Review"
-    Then Click Next button
+    Then Click Next step encounter button
     And Add Timestamp to Subjective Notes
     Then Click Save button
     And Click Save and Close button
@@ -259,7 +259,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Progress Review"
-    Then Click Next button
+    Then Click Next step encounter button
     And Select the Standard Form as "<Standard Forms>"
     And Click on a New button
     * Enter the Supervisor Name
@@ -278,8 +278,8 @@ Feature: Alcohol and Drug Encounters
     Examples:
       | Standard Forms                                             |
       | A&D Treatment Level Qualifier                              |
-      | Adult Substance Use Survey                                 |
-      | Mandatory Disclosure and Information for Behavioral Health |
+#      | Adult Substance Use Survey                                 |
+#      | Mandatory Disclosure and Information for Behavioral Health |
 
 
   Scenario Outline: Create New Alcohol and Drug Encounters for Complex - Arkansas Valley Correctional Facility4
@@ -290,7 +290,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Treatment Packet Documents"
-    Then Click Next button
+    Then Click Next step encounter button
     And Select the Standard Form as "<Standard Forms>"
     And Click on a New button
     * Select the Not Available as a Sign
@@ -315,7 +315,7 @@ Feature: Alcohol and Drug Encounters
     And Click on a New button in Health Services Encounters
     Then Select the Complex - "Arkansas Valley Correctional Facility"
     And Select the Type - "A&D - Treatment Packet Documents"
-    Then Click Next button
+    Then Click Next step encounter button
     And Select the Standard Form as "<Standard Forms>"
     And Click on a New button
     * Select the Not Available as a Sign

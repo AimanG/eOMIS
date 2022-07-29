@@ -110,6 +110,7 @@ public class AlcoholAndDrugEncountersSteps extends BrowserUtils {
     @Then("Select the Client has refused treatment at the recommended level")
     public void select_the_client_has_refused_treatment_at_the_recommended_level() {
         logger.info("Select the Client has refused treatment at the recommended level");
+        wait(3);
         scrollDown(250, 500);
         pages.getAlcoholAndDrugEncountersPage().clientHasRefTreAtTheRecLev.click();
     }
