@@ -1,17 +1,17 @@
-@regression
+
 Feature: Compute Monthly Payroll
 
-  Scenario: Earned Time Awards for Case Manager, program cor
-    Given Enter OMSAII User ID and Password at DeCORuM login screen
-    When Click Logon button
-    Then Select the Offender "192152"
-    Then Click Jobs and Programs
-    And Click Job Program Assignments
-    Then Receive Job Program Assignments (IJPS010A) screen
-    And Click Assigned Date Time hyperlink
-    Then Receive Job Program Assignment (IJPS010B) screen
-    And Click Edit button above Attendance browse grid
-    Then Receive Job Program Assignment (IJPS010B) screen in Edit Mode
+#  Scenario: Earned Time Awards for Case Manager, program cor
+#    Given Enter OMSAII User ID and Password at DeCORuM login screen
+#    When Click Logon button
+#    Then Select the Offender "192152"
+#    Then Click Jobs and Programs
+#    And Click Job Program Assignments
+#    Then Receive Job Program Assignments (IJPS010A) screen
+#    And Click Assigned Date Time hyperlink
+#    Then Receive Job Program Assignment (IJPS010B) screen
+#    And Click Edit button above Attendance browse grid
+#    Then Receive Job Program Assignment (IJPS010B) screen in Edit Mode
 
 
   Scenario Outline: Enter Daily Attendance for an Entire Section, ACC-General Population MIN/MINR
